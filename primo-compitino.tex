@@ -19,11 +19,30 @@
 
 \section{Massimi e minimi}
 \subsection{Definizioni principali}
+
+\paragraph{Hessiana}
 Si definisce matrice Hessiana della funzione f:
 $$  H_{f}(\mathbf{x})_{ij} = \frac{\partial^2 f(\mathbf{x})}{\partial x_i\, \partial x_j} $$
 $$ H(f) = \begin{bmatrix} \frac{\partial^2 f}{\partial x_1^2} & \frac{\partial^2 f}{\partial x_1\,\partial x_2} & \cdots & \frac{\partial^2 f}{\partial x_1\,\partial x_n} \\ \\ \frac{\partial^2 f}{\partial x_2\,\partial x_1} & \frac{\partial^2 f}{\partial x_2^2} & \cdots & \frac{\partial^2 f}{\partial x_2\,\partial x_n} \\ \\ \vdots & \vdots & \ddots & \vdots \\ \\ \frac{\partial^2 f}{\partial x_n\,\partial x_1} & \frac{\partial^2 f}{\partial x_n\,\partial x_2} & \cdots & \frac{\partial^2 f}{\partial x_n^2} \end{bmatrix}$$
+(Nota: se tutte le derivate seconde di f sono continue in una regione $\Omega$, allora l'hessiana di f è una matrice simmetrica in ogni punto di $\Omega$. (le derivate miste sono uguali) )
+
 
 \subsection{Come risolvere un esercizio}
+\begin{itemize}
+\item Calcola le derivate parziali $\frac{\partial f}{\partial x}$, $\frac{\partial f}{\partial y}$, e trovane gli zeri (all'interno di D).
+\item Usa la matrice Hessiana per determinare il tipo di punto stazionario.
+\begin{itemize}
+ \item Calcola gli autovalori della matrice [$A = H(f(\vec{x_0}))$; $det(A-\lambda I)$]
+ \item Se sono tutti positivi, il punto è un minimo.
+ \item Se sono tutti negativi, il punto è un massimo.
+ \item Se sono tutti nulli, il punto è di sella.
+ \item Altrimenti, il test non è conclusivo.
+\end{itemize}
+\item Possono esistere punti di minimo o massimo sul bordo:
+\begin{itemize}
+ \item
+\end{itemize}
+\end{itemize}
 
 \subsection{Ricorda}
 \subsection{Trucchetti}
