@@ -11,7 +11,16 @@
 
 \section{Continuità e differenziabilità}
 \subsection{Definizioni principali}
+\paragraph{Derivata direzionale}
+$$D_{\underbar{v}} \vec{f}(\underbar{x}_0) = \lim_{h \to 0}{\dfrac{\vec{f}(\underbar{x}_0+h\underbar{v})-\vec{f}(\underbar{x}_0)}{h}}$$
+\paragraph{Differenziale}
+Il differenziale è un'applicazione lineare che soddisfa:
 
+\paragraph{Matrice Jacobiana}
+$$J_f = \begin{bmatrix} \dfrac{\partial f_1}{\partial x_1} & \cdots & \dfrac{\partial f_1}{\partial x_n} \\ \vdots & \ddots & \vdots \\ \dfrac{\partial f_m}{\partial x_1} & \cdots & \dfrac{\partial f_m}{\partial x_n}  \end{bmatrix}$$
+In basi canoniche:
+$$ d\vec{f}(\underbar{x}_0)= J_f(\underbar{x}_0) $$
+$$D_{\vec{v}} \vec{f}(\underbar{x}_0) = d\vec{f}(\underbar{x}_0)\cdot\vec{v}$$
 \subsection{Come risolvere un esercizio}
 
 \subsection{Ricorda}
@@ -24,7 +33,7 @@
 \paragraph{Hessiana}
 Si definisce matrice Hessiana della funzione f:
 $$  H_{f}(\mathbf{x})_{ij} = \frac{\partial^2 f(\mathbf{x})}{\partial x_i\, \partial x_j} $$
-$$ H(f) = \begin{bmatrix} \frac{\partial^2 f}{\partial x_1^2} & \frac{\partial^2 f}{\partial x_1\,\partial x_2} & \cdots & \frac{\partial^2 f}{\partial x_1\,\partial x_n} \\ \\ \frac{\partial^2 f}{\partial x_2\,\partial x_1} & \frac{\partial^2 f}{\partial x_2^2} & \cdots & \frac{\partial^2 f}{\partial x_2\,\partial x_n} \\ \\ \vdots & \vdots & \ddots & \vdots \\ \\ \frac{\partial^2 f}{\partial x_n\,\partial x_1} & \frac{\partial^2 f}{\partial x_n\,\partial x_2} & \cdots & \frac{\partial^2 f}{\partial x_n^2} \end{bmatrix}$$
+$$ H(f) = \begin{bmatrix} \dfrac{\partial^2 f}{\partial x_1^2} & \dfrac{\partial^2 f}{\partial x_1\,\partial x_2} & \cdots & \dfrac{\partial^2 f}{\partial x_1\,\partial x_n} \\ \\ \dfrac{\partial^2 f}{\partial x_2\,\partial x_1} & \dfrac{\partial^2 f}{\partial x_2^2} & \cdots & \dfrac{\partial^2 f}{\partial x_2\,\partial x_n} \\ \\ \vdots & \vdots & \ddots & \vdots \\ \\ \dfrac{\partial^2 f}{\partial x_n\,\partial x_1} & \dfrac{\partial^2 f}{\partial x_n\,\partial x_2} & \cdots & \dfrac{\partial^2 f}{\partial x_n^2} \end{bmatrix}$$
 (Nota: se tutte le derivate seconde di f sono continue in una regione $\Omega$, allora l'hessiana di f è una matrice simmetrica in ogni punto di $\Omega$. (le derivate miste sono uguali) )
 
 
@@ -84,13 +93,16 @@ Un insieme semplice è...
 
 \section{Altro}
 \subsection{Formulette}
-Trigonometria - formule parametriche:
+\paragraph{Trigonometria}
+\subparagraph{Formule parametriche}
 $$sin(\alpha) = \frac{2t}{1+t^2}$$
 $$cos(\alpha) = \frac{1-t^2}{1+t^2}$$
 $$tan(\alpha) = \frac{2t}{1-t^2}$$
 ove $$t = tan(\frac{1}{2}\alpha)$$
 \subsection{Nozioni utili}
-
+\paragraph{Geometria analitica}
+\subparagraph{Piano tangente al grafico di una funzione}
+$$z = f(x_0, y_0) + \partial_x f(x_0, y_0) (x-x_0) + \partial_y f(x_0, y_0) (y - y_0) $$
 \end{document}
 
 
