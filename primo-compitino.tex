@@ -37,10 +37,13 @@ $$ H(f) = \begin{bmatrix} \frac{\partial^2 f}{\partial x_1^2} & \frac{\partial^2
  \item Se sono tutti negativi, il punto è un massimo.
  \item Se sono tutti nulli, il punto è di sella.
  \item Altrimenti, il test non è conclusivo.
+ \item FIXME: COME SI FA?
 \end{itemize}
 \item Possono esistere punti di minimo o massimo sul bordo:
 \begin{itemize}
- \item
+ \item Restringi la funzione al bordo.
+ \item Calcola la derivata e valuta i punti stazionari (nota: se la funzione era da $\mathbb{R}^2$ a $\mathbb{R}$, ora sarà semplicemente una funzione reale).
+ \item In caso la derivata non sia banale, approssimare il valore del punto stazionario, dando almeno un intervallo entro il quale è compreso.
 \end{itemize}
 \end{itemize}
 
@@ -62,7 +65,12 @@ $$ H(f) = \begin{bmatrix} \frac{\partial^2 f}{\partial x_1^2} & \frac{\partial^2
 \subsection{Ricorda}
 \subsection{Trucchetti}
 \section{Altro}
-
+\subsection{Formulette}
+Trigonometria - formule parametriche:
+$$sin(\alpha) = \frac{2t}{1+t^2}$$
+$$cos(\alpha) = \frac{1-t^2}{1+t^2}$$
+$$tan(\alpha) = \frac{2t}{1-t^2}$$
+ove $$t = tan(\frac{1}{2}\alpha)$$
 \subsection{Nozioni utili}
 
 \end{document}
