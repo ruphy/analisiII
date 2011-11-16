@@ -17,8 +17,8 @@ $$D_{\underbar{v}} \vec{f}(\underbar{x}_0) = \lim_{h \to 0}{\dfrac{\vec{f}(\unde
 \paragraph{Differenziale}
 Il differenziale è un'applicazione lineare che soddisfa la relazione:
 $$f(\vec{x_0}+\vec{h}) - f(\vec{x_0}) - df(\vec{x_0})\cdot\vec{h} = o(|h|)$$
-ovvero (in $\mathbb{R}^2$)
-$$ \lim_{|h, k| \to 0} \dfrac{f(\vec{x_0}+(h, k)) - f(\vec{x_0}) - df(\vec{x_0})(h, k)}{\sqrt{h^2+k^2}} = 0 $$
+ovvero (supponendo $f:\mathbb{R}^2\rightarrow\mathbb{R}$)
+$$ \lim_{|(h, k)| \to 0} \dfrac{f(\vec{x_0}+(h, k)) - f(\vec{x_0}) - df(\vec{x_0})(h, k)}{\sqrt{h^2+k^2}} = 0 $$
 Come vedremo sotto, per funzioni $f: \mathbb{R}^2 \rightarrow \mathbb{R}$
 $$df(\underbar{x}_0) = \nabla \cdot f(\underbar{x}_0)$$
 \paragraph{Matrice Jacobiana}
@@ -27,7 +27,9 @@ In basi canoniche:
 $$ d\vec{f}(\underbar{x}_0)= J_f(\underbar{x}_0) $$
 $$D_{\vec{v}} \vec{f}(\underbar{x}_0) = d\vec{f}(\underbar{x}_0)\cdot\vec{v}$$
 \subsection{Come risolvere un esercizio}
+\paragraph{Continuità in un punto $(x_0, y_0)$}
 
+Bisogna dimostrare che, $\forall \varepsilon > 0, \exists \delta=\delta(\varepsilon) B(x_0,y_0): \forall \underbar{x}\in B(x_0,y_0)$
 \subsection{Ricorda}
 
 \subsection{Trucchetti}
@@ -41,6 +43,8 @@ $$  H_{f}(\mathbf{x})_{ij} = \frac{\partial^2 f(\mathbf{x})}{\partial x_i\, \par
 $$ H(f) = \begin{bmatrix} \dfrac{\partial^2 f}{\partial x_1^2} & \dfrac{\partial^2 f}{\partial x_1\,\partial x_2} & \cdots & \dfrac{\partial^2 f}{\partial x_1\,\partial x_n} \\ \\ \dfrac{\partial^2 f}{\partial x_2\,\partial x_1} & \dfrac{\partial^2 f}{\partial x_2^2} & \cdots & \dfrac{\partial^2 f}{\partial x_2\,\partial x_n} \\ \\ \vdots & \vdots & \ddots & \vdots \\ \\ \dfrac{\partial^2 f}{\partial x_n\,\partial x_1} & \dfrac{\partial^2 f}{\partial x_n\,\partial x_2} & \cdots & \dfrac{\partial^2 f}{\partial x_n^2} \end{bmatrix}$$
 (Nota: se tutte le derivate seconde di f sono continue in una regione $\Omega$, allora l'hessiana di f è una matrice simmetrica in ogni punto di $\Omega$. (le derivate miste sono uguali) )
 
+\paragraph{Minori principali di Nord Ovest}
+I minori principali di Nord Ovest della matrice $A$ sono le sottomatrici quadrate della $A$ ottenute prendendo le prime $k$ righe dall´alto e le prime $k$ colonne da sinistra di $A$. 
 
 \subsection{Come risolvere un esercizio}
 \begin{itemize}
@@ -48,10 +52,24 @@ $$ H(f) = \begin{bmatrix} \dfrac{\partial^2 f}{\partial x_1^2} & \dfrac{\partial
 \item Usa la matrice Hessiana per determinare il tipo di punto stazionario.
 \begin{itemize}
  \item Calcola gli autovalori della matrice [$A = H(f(\vec{x_0}))$; $det(A-\lambda I)$]
- \item Se sono tutti positivi, il punto è un minimo.
- \item Se sono tutti negativi, il punto è un massimo.
- \item Se sono tutti nulli, il punto è di sella.
- \item Altrimenti, il test non è conclusivo.
+ \begin{itemize} 
+ \item Se sono tutti positivi,  $H(f)$ e'definita positiva.
+ \item Se sono tutti negativi,  $H(f)$ e'definita negativa.
+ \item Se sono in parte positivi,  $H(f)$ è indefinita.
+ \end{itemize} 
+ \item Alternativamente, siano $H_k$ i minori principali di Nord-Ovest di dimensione $k$.
+Sia $\Delta_k=det(H_k)\ \forall k=1,\dots,n$ (cioe'il determinante del minore principale di NO di $dim=k$) allora:
+ \begin{itemize}
+  \item Se $\Delta_k > 0 \forall k$ $H(f)$ è def positiva.
+  \item Se $(-1)^k\cdot\Delta_k > 0 \forall k$ $H(f)$ A è def negativa.
+ \end{itemize}
+ 
+
+ \item Se $H(f)$ è definita positiva il punto è minimo
+ \item Se $H(f)$ è definita negativa il punto è massimo
+ \item Se $H(f)$ è indefinita il punto è di sella
+ \item Se $H(f)$ è semidefinita il caso è ambiguo.
+ 
  \item FIXME: COME SI FA?
 \end{itemize}
 \item Possono esistere punti di minimo o massimo sul bordo:
@@ -121,6 +139,13 @@ Inoltre $m(\Omega) := m_{\mathrm{PJ}}(\Omega)$
 \begin{itemize}
  \item Se $G_f$ è grafico di una funzione, $m(G_f) = 0$.
 \end{itemize}
+\paragraph{Cambio di coordinate}
+Se per risolvere il tuo integrale devi effettuare un cambio di coordinate, devi procedere con cautela.
+
+Sia ad esempio $$(\rho, \theta) = \psi(x, y) = \left(\begin{matrix}\sqrt{x^2+y^2} \\ atan(y/x)\end{matrix}\right)^t$$
+e sia $J_\psi$ la matrice jacobiana associata.
+Allora, essendo $\vec{x} = (x, y) \in \Omega$ e $\vec{p} = (\rho, \theta) \in D$
+$$ \int_\Omega f(\vec{x}) d{x} = \int_{\psi(\Omega)} |J_\psi|\cdot f(\psi(\vec{x})) d\psi(x) = \int_D |J_\psi|\cdot f(\vec{p})d\vec{p} $$
 
 \subsection{Trucchetti}
 
