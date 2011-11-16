@@ -65,6 +65,11 @@ $$ H(f) = \begin{bmatrix} \dfrac{\partial^2 f}{\partial x_1^2} & \dfrac{\partial
 \subsection{Ricorda}
 \subsection{Trucchetti}
 
+\paragraph{Coordinate polari}
+È spesso utile passare in coordinate polari: $$ x = \rho cos(\theta)$$ $$ y = \rho sin(\theta) $$
+In questo caso: $$ \lim_{|h,k| \to 0} f(h, k) = \lim_{\rho \to 0} f(\rho, \theta)$$
+Nota: il passaggio in coordinate polari non è biunivoco, e bisogna sempre controllare la semiretta $x\geq0, y=0$
+
 \section{Funzioni implicite}
 \subsection{Definizioni principali}
 \paragraph{Funzione implicita}
@@ -101,17 +106,14 @@ Un insieme semplice è...
 $\Omega$ insieme entro il quale integrare, $f:\mathbb{R}^2\rightarrow\mathbb{R}$ funzione integranda.
 Inoltre $m(\Omega) := m_{\mathrm{PJ}}(\Omega)$
 \begin{itemize}
- \item Controlla che $\Omega$ sia misurabile, $\mathcal{E}f$ integrabile (soprattutto: limitata, monotona)
- \item Da qui puoi
+ \item Controlla che $\Omega$ sia misurabile, $\mathcal{E}f$ integrabile (soprattutto: limitata, monotona). In caso negativo fermati.
+ \item 1: Puoi cercare un insieme semplice $D$, e trasformare $\Omega$ in $D$ tramite un diffeomorfismo.
  \begin{itemize}
-  \item Cercare un insieme semplice $D$, e trasformare $\Omega$ in $D$ tramite un diffeomorfismo
-  \begin{itemize}
-   \item ...
-  \end{itemize}
-  \item Integrare sull'insieme $\Omega$
-  \begin{itemize}
-   \item ...
-  \end{itemize}
+  \item ...
+ \end{itemize}
+ \item 2: Puoi ntegrare sull'insieme $\Omega$
+ \begin{itemize}
+  \item ...
  \end{itemize}
 \end{itemize}
 
