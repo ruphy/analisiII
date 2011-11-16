@@ -1,6 +1,7 @@
 \documentclass[a4paper,10pt]{book}
 \usepackage[utf8x]{inputenc}
 \usepackage{amssymb, amsmath}
+\setcounter{chapter}{1}
 
 \author{Studenti vari}
 \title{Schema per il primo compitino}
@@ -14,8 +15,12 @@
 \paragraph{Derivata direzionale}
 $$D_{\underbar{v}} \vec{f}(\underbar{x}_0) = \lim_{h \to 0}{\dfrac{\vec{f}(\underbar{x}_0+h\underbar{v})-\vec{f}(\underbar{x}_0)}{h}}$$
 \paragraph{Differenziale}
-Il differenziale è un'applicazione lineare che soddisfa:
-
+Il differenziale è un'applicazione lineare che soddisfa la relazione:
+$$f(\vec{x_0}+\vec{h}) - f(\vec{x_0}) - df(\vec{x_0})\cdot\vec{h} = o(|h|)$$
+ovvero (in $\mathbb{R}^2$)
+$$ \lim_{|h, k| \to 0} \dfrac{f(\vec{x_0}+(h, k)) - f(\vec{x_0}) - df(\vec{x_0})(h, k)}{\sqrt{h^2+k^2}} = 0 $$
+Come vedremo sotto, per funzioni $f: \mathbb{R}^2 \rightarrow \mathbb{R}$
+$$df(\underbar{x}_0) = \nabla \cdot f(\underbar{x}_0)$$
 \paragraph{Matrice Jacobiana}
 $$J_f = \begin{bmatrix} \dfrac{\partial f_1}{\partial x_1} & \cdots & \dfrac{\partial f_1}{\partial x_n} \\ \vdots & \ddots & \vdots \\ \dfrac{\partial f_m}{\partial x_1} & \cdots & \dfrac{\partial f_m}{\partial x_n}  \end{bmatrix}$$
 In basi canoniche:
@@ -52,7 +57,7 @@ $$ H(f) = \begin{bmatrix} \dfrac{\partial^2 f}{\partial x_1^2} & \dfrac{\partial
 \item Possono esistere punti di minimo o massimo sul bordo:
 \begin{itemize}
  \item Restringi la funzione al bordo.
- \item Calcola la derivata e valuta i punti stazionari (nota: se la funzione era da $\mathbb{R}^2$ a $\mathbb{R}$, ora sarà semplicemente una funzione reale).
+ \item Calcola la derivata e valuta i punti stazionari (nota: se la funzione era $f: \mathbb{R}^2 \rightarrow \mathbb{R}$, la restrizione sarà del tipo $h: \mathbb{R} \rightarrow \mathbb{R}$, dove $h(x) = f(x, g(x))$.
  \item In caso la derivata non sia banale, approssimare il valore del punto stazionario, dando almeno un intervallo entro il quale è compreso.
 \end{itemize}
 \end{itemize}
@@ -66,13 +71,17 @@ $$ H(f) = \begin{bmatrix} \dfrac{\partial^2 f}{\partial x_1^2} & \dfrac{\partial
 Sia $f: \mathbb{R}^2 \rightarrow \mathbb{R}$.
 Sia $\phi(x)$ tale che $f(x, \phi(x)) = 0$ $\forall x \in \mathbb{R}$. $\phi(x)$ si dice funzione definita implicitamente da $f(x, y)$ rispetto a $y$.
 
+\paragraph{Esistenza e unicità}
+\subparagraph{In grande}
+\subparagraph{In piccolo}
+
 \subsection{Come risolvere un esercizio}
 \begin{itemize}
  \item Valuta se valgono o no le ipotesi del teorema di esistenza e unicità "in grande"
  \begin{itemize}
   \item Siano $y_1$ e $y_2$ estremi del dominio, o di uno specifico intervallo.
   \item Calcola $a = \lim_{y \to y_1}{f(x, y)}$ e $b = \lim_{y \to y_2}{f(x, y)}$.
-  \item Se $a < 0$ e $b > 0$, $\exists \phi(x)$ implicita.
+  \item Se $a < 0$ e $b > 0$, $\exists \phi(x)$.
   \item Altrimenti, prova a cercare un altro intervallo in cui questo è vero.
  \end{itemize}
  \item Prova a studiare $\phi'(x) = -\displaystyle\frac{\partial_x f}{\partial_y f}$
@@ -83,13 +92,36 @@ Sia $\phi(x)$ tale che $f(x, \phi(x)) = 0$ $\forall x \in \mathbb{R}$. $\phi(x)$
 
 \section{Integrali}
 \subsection{Definizioni principali}
+
 \paragraph{Insieme semplice}
 Un insieme semplice è...
 
 \subsection{Come risolvere un esercizio}
+\paragraph{Notazione:}
+$\Omega$ insieme entro il quale integrare, $f:\mathbb{R}^2\rightarrow\mathbb{R}$ funzione integranda.
+Inoltre $m(\Omega) := m_{\mathrm{PJ}}(\Omega)$
+\begin{itemize}
+ \item Controlla che $\Omega$ sia misurabile, $\mathcal{E}f$ integrabile (soprattutto: limitata, monotona)
+ \item Da qui puoi
+ \begin{itemize}
+  \item Cercare un insieme semplice $D$, e trasformare $\Omega$ in $D$ tramite un diffeomorfismo
+  \begin{itemize}
+   \item ...
+  \end{itemize}
+  \item Integrare sull'insieme $\Omega$
+  \begin{itemize}
+   \item ...
+  \end{itemize}
+ \end{itemize}
+\end{itemize}
 
 \subsection{Ricorda}
+\begin{itemize}
+ \item Se $G_f$ è grafico di una funzione, $m(G_f) = 0$.
+\end{itemize}
+
 \subsection{Trucchetti}
+
 
 \section{Altro}
 \subsection{Formulette}
@@ -98,7 +130,7 @@ Un insieme semplice è...
 $$sin(\alpha) = \frac{2t}{1+t^2}$$
 $$cos(\alpha) = \frac{1-t^2}{1+t^2}$$
 $$tan(\alpha) = \frac{2t}{1-t^2}$$
-ove $$t = tan(\frac{1}{2}\alpha)$$
+ove $$t = tan\left(\frac{\alpha}{2}\right)$$
 \subsection{Nozioni utili}
 \paragraph{Geometria analitica}
 \subparagraph{Piano tangente al grafico di una funzione}
