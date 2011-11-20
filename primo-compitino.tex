@@ -45,33 +45,84 @@ $$ H(f) = \begin{bmatrix} \dfrac{\partial^2 f}{\partial x_1^2} & \dfrac{\partial
 (Nota: se tutte le derivate seconde di f sono continue in una regione $\Omega$, allora l'hessiana di f è una matrice simmetrica in ogni punto di $\Omega$. (le derivate miste sono uguali) )
 
 \paragraph{Minori principali di Nord Ovest}
-I minori principali di Nord Ovest della matrice $A$ sono le sottomatrici quadrate della $A$ ottenute prendendo le prime $k$ righe dall´alto e le prime $k$ colonne da sinistra di $A$. 
+I minori principali di Nord Ovest della matrice $A$ sono le sottomatrici quadrate della $A$ ottenute prendendo le prime $k$ righe dallŽalto e le prime $k$ colonne da sinistra di $A$.
+Data la matrice:
+\begin{displaymath}
+A=\left(\begin{array}{cccc}
+a_{1,1} & a_{1,2} & \dots &a_{1,n} \\
+
+a_{2,1} & a_{2,2} & \dots &a_{2,n} \\
+
+\vdots & \vdots & \ddots & \vdots \\
+
+a_{n,1} & a_{n,2} & \dots &a_{n,n} \\
+\end{array}\right)
+\end{displaymath}
+il minori principale di Nord Ovest di dimensione $k$ è la sottomatrice:
+\begin{displaymath}
+A_k=\left(\begin{array}{ccc}
+a_{1,1} &  \dots &a_{1,k} \\
+
+
+\vdots & \ddots & \vdots \\
+
+a_{k,1} & \dots &a_{k,k} \\
+\end{array}\right)
+\end{displaymath}
 
 \subsection{Come risolvere un esercizio}
 \begin{itemize}
-\item Calcola le derivate parziali $\frac{\partial f}{\partial x}$, $\frac{\partial f}{\partial y}$, e trovane gli zeri (all'interno di D).
+\item Calcola le derivate parziali $\frac{\partial f}{\partial x}$, $\frac{\partial f}{\partial y}$, e risolvere il sistema (all'interno di D)
+\begin{displaymath}
+\left\{ \begin{array}{ll}
+\frac{\partial f}{\partial x}=0\\
+\\
+\frac{\partial f}{\partial y}=0\\
+\end{array} \right.
+\end{displaymath}
+i punti $\boldsymbol{x_0}=(x_0,y_0)$ che risolvono tale sistema sono detti punti stazionari.
+
 \item Usa la matrice Hessiana per determinare il tipo di punto stazionario.
 \begin{itemize}
- \item Calcola gli autovalori della matrice [$A = H(f(\vec{x_0}))$; $det(A-\lambda I)$]
- \begin{itemize} 
- \item Se sono tutti positivi,  $H(f)$ e'definita positiva.
- \item Se sono tutti negativi,  $H(f)$ e'definita negativa.
- \item Se sono in parte positivi,  $H(f)$ è indefinita.
- \end{itemize} 
- \item Alternativamente, siano $H_k$ i minori principali di Nord-Ovest di dimensione $k$.
-Sia $\Delta_k=det(H_k)\ \forall k=1,\dots,n$ (cioe'il determinante del minore principale di NO di $dim=k$) allora:
+ \item Calcola gli autovalori della matrice [$A = H(f(\boldsymbol{x_0}))$; $det(A-\lambda I)$]
  \begin{itemize}
-  \item Se $\Delta_k > 0 \forall k$ $H(f)$ è def positiva.
-  \item Se $(-1)^k\cdot\Delta_k > 0 \forall k$ $H(f)$ A è def negativa.
+ \item Se sono tutti positivi, $A$ e'definita positiva.
+ \item Se sono tutti negativi, $A$ e'definita negativa.
+ \item Se tutti gli autovalori della matrice $A$ sono maggiori di $0$ e ne esiste almeno uno uguale a $0$, allora la forma quadratica è semidefinita positiva, ma non definita positiva.
+ \item Se tutti gli autovalori della matrice $A$ sono minori di $0$ e ne esiste almeno uno uguale a $0$, allora la forma quadratica è semidefinita negativa, ma non definita negativa.
+ \item Se sono in parte positivi, in parte negativi $A$ è indefinita.
+ \end{itemize}
+ \item Alternativamente, siano $A_k$ i minori principali di Nord-Ovest di dimensione $k$.
+Sia $\Delta_k=det(A_k)\ \forall k=1,\dots,n$ (cioe'il determinante del minore principale di NO di $dim=k$) allora:
+ \begin{itemize}
+  \item Se $\Delta_k > 0 \forall k$ $A$ è definita positiva.
+  \item Se $(-1)^k\cdot\Delta_k > 0 \forall k$ $A$  è definita negativa.
+  \item Se $\Delta_k \geq 0 \forall k$ $A$ è semidefinita positiva. 
+  \item Se $(-1)^k\cdot\Delta_k \geq 0 \forall k$ $A$  è semidefinita negativa. 
+  \item Se non vale nessuna delle condizioni precedenti la matrice è indefinita 
+ \end{itemize}
+ \item a questo punto sappiamo che:
+ \begin{itemize}
+
+ \item Se $A$ è definita positiva il punto è minimo
+ \item Se $A$ è definita negativa il punto è massimo
+ \item Se $A$ è indefinita il punto è di sella
+ \item Se $A$ è semidefinita il caso è ambiguo.
  \end{itemize}
  
-
- \item Se $H(f)$ è definita positiva il punto è minimo
- \item Se $H(f)$ è definita negativa il punto è massimo
- \item Se $H(f)$ è indefinita il punto è di sella
- \item Se $H(f)$ è semidefinita il caso è ambiguo.
- 
- \item FIXME: COME SI FA?
+\end{itemize}
+\item Come risolvere il caso ambiguo?
+\begin{itemize}
+\item se $f(\boldsymbol {x_0})=0$, ove $\boldsymbol {x_0}$ è punto stazionario, allora si procede allo studio del segno della funzione:
+\begin{itemize}
+\item se $\exists U_{\boldsymbol {x_0}}\ni\boldsymbol {x_0}$, intorno di $\boldsymbol {x_0}$, tale che $\forall \boldsymbol{x}\in U_{\boldsymbol {x_0}}\\f(\boldsymbol{x})<0$, allora $\boldsymbol {x_0}$ è punto di massimo forte.
+\item se $\exists U_{\boldsymbol {x_0}}\ni\boldsymbol {x_0}$, intorno di $\boldsymbol {x_0}$, tale che $\forall \boldsymbol{x}\in U_{\boldsymbol {x_0}}\\f(\boldsymbol{x})\leq0$, allora $\boldsymbol {x_0}$ è punto di massimo debole.
+\item se $\exists U_{\boldsymbol {x_0}}\ni\boldsymbol {x_0}$, intorno di $\boldsymbol {x_0}$, tale che $\forall \boldsymbol{x}\in U_{\boldsymbol {x_0}}\\f(\boldsymbol{x})>0$, allora $\boldsymbol {x_0}$ è punto di minimo forte.
+\item se $\exists U_{\boldsymbol {x_0}}\ni\boldsymbol {x_0}$, intorno di $\boldsymbol {x_0}$, tale che $\forall \boldsymbol{x}\in U_{\boldsymbol {x_0}}\\f(\boldsymbol{x})\geq0$, allora $\boldsymbol {x_0}$ è punto di minimo debole.
+\end{itemize}
+Infatti le condizioni precedenti verificano nei vari casi la definizione stessa di punto di massimo o di minimo di una funzione.
+\item se $f:\mathbb{R}^2\to\mathbb{R}$ si può considerare la restrizione di $f$ alle curve conosciute del piano (rette, parabole, cubiche..). Se risulta che la funzione ristretta a una di queste curve non ammette estremante ma solo punto stazionario (es: punto di flesso), sicuramente $f$ non avrà ne un massimo ne un minimo in $\boldsymbol {x_0}$, che sarà quindi punto di sella.
+\item ultima spiaggia: provare con la definizione di massimo e minimo a dimostrare che il punto è un massimo, un minimo, o che non può essere ne l'uno ne l'altro ed è quindi un punto di sella.
 \end{itemize}
 \item Possono esistere punti di minimo o massimo sul bordo:
 \begin{itemize}
@@ -115,10 +166,22 @@ Sia $\phi(x)$ tale che $f(x, \phi(x)) = 0$ $\forall x \in \mathbb{R}$. $\phi(x)$
 \subsection{Trucchetti}
 
 \section{Integrali}
-\subsection{Definizioni principali}
-
+\subsection{Nozioni principali}
+\paragraph{Misura di un insieme}
+Sia $\Omega \subset \mathbb{R}^n$ un insieme limitato. $\Omega$ è misurabile $\leftrightarrow m(\partial\Omega) = 0$, e in particolar modo questo è vero quando $\partial\Omega = \cup G_f$ (funzioni continue).
+In questo caso
+$$m(\Omega) = \int \mathbb{I}_\Omega$$
 \paragraph{Insieme semplice}
 Un insieme semplice è...
+
+\paragraph{Diffeomorfismi tra aperti}
+(se $\Omega$ non è aperto, considero $\Omega^\circ = \bar{\Omega}\setminus\partial\Omega$)\\
+$$\int \mathbb{I}_\Omega = \int \mathbb{I}_{\Omega^\circ} + \int \mathbb{I}_{\bar{\Omega}\setminus\partial\Omega} $$
+perché $\Omega\setminus\Omega^\circ \in \partial\Omega$. Siccome $\Omega$ è misurabile, $\Omega^\circ$ è misurable ($\partial\Omega = \partial\Omega^\circ, m(\partial\Omega) = 0$, ed inoltre $m(\Omega\setminus\Omega^\circ) \leq m(\partial\Omega) = 0$).
+Da cui
+$$\int \mathbb{I}_\Omega = \int \mathbb{I}_{\Omega^\circ} $$
+Poi, sia $\Phi: A \subset \mathbb{R}^n \rightarrow \Omega^\circ$, se $det(J_\Phi) \neq 0$ e $\Phi$ biunivoca ?<testo incomprensibile di edo>? Allora $\Phi$ è un diffeomorfismo globale se $\Phi \in \mathbb{C}^1(\Omega^\circ)$, e
+$$\int_{\Omega^\circ} \mathbb{I} = \int_{\Phi(\Omega^\circ)} \mathbb{I} $$
 
 \subsection{Come risolvere un esercizio}
 \paragraph{Notazione:}
@@ -130,9 +193,19 @@ Inoltre $m(\Omega) := m_{\mathrm{PJ}}(\Omega)$
  \begin{itemize}
   \item ...
  \end{itemize}
- \item 2: Puoi ntegrare sull'insieme $\Omega$
+ \item 2: Puoi integrare sull'insieme $\Omega$
  \begin{itemize}
   \item ...
+ \end{itemize}
+ \item Nel caso di integrali impropri:
+ \begin{itemize}
+  \item Di prima specie: sia $f$ limitata, da integrare su $\Omega$ illimitato. Allora:
+  \item Controlla se è integrabile:
+  \begin{itemize}
+   \item $\mathcal{E}f|_{B_R} \in \Re, \forall R$
+   \item $\exists$ finito $\lim_{R \to +\infty} \int_{B_R}\mathcal{E}f$
+  \end{itemize}
+  
  \end{itemize}
 \end{itemize}
 
@@ -140,13 +213,13 @@ Inoltre $m(\Omega) := m_{\mathrm{PJ}}(\Omega)$
 \begin{itemize}
  \item Se $G_f$ è grafico di una funzione, $m(G_f) = 0$.
 \end{itemize}
-\paragraph{Cambio di coordinate}
+\paragraph{Cambio di coordinate (diffeomorfismi)}
 Se per risolvere il tuo integrale devi effettuare un cambio di coordinate, devi procedere con cautela.
 
 Sia ad esempio $$(\rho, \theta) = \psi(x, y) = \left(\begin{matrix}\sqrt{x^2+y^2} \\ atan(y/x)\end{matrix}\right)^t$$
 e sia $J_\psi$ la matrice jacobiana associata.
-Allora, essendo $\vec{x} = (x, y) \in \Omega$ e $\vec{p} = (\rho, \theta) \in D$
-$$ \int_\Omega f(\vec{x}) d{x} = \int_{\psi(\Omega)} |J_\psi|\cdot f(\psi(\vec{x})) d\psi(x) = \int_D |J_\psi|\cdot f(\vec{p})d\vec{p} $$
+Allora, essendo $D=\psi(\Omega)$,\\ $\vec{x} = (x, y) \in \Omega$ e $\vec{p} = (\rho, \theta) \in D$.
+$$ \int_\Omega f(\vec{x}) d\vec{x} = \int_{\psi(\Omega)} |J_\psi|\cdot f(\psi(\vec{x})) d\psi(x) = \int_D |J_\psi|\cdot f(\vec{p})d\vec{p} $$
 
 \subsection{Trucchetti}
 
