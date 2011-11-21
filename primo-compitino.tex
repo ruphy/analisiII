@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt]{book}
+\documentclass[a4paper,12pt]{book}
 \usepackage[utf8x]{inputenc}
 \usepackage{amssymb, amsmath}
 \setcounter{chapter}{1}
@@ -163,22 +163,54 @@ Sia $\phi(x)$ tale che $f(x, \phi(x)) = 0$ $\forall x \in \mathbb{R}$. $\phi(x)$
 
 \paragraph{Esistenza e unicità}
 \subparagraph{In grande}
+Sia $f: I \times J \rightarrow \mathbb{R}$. Sia $J = (b_1, b_2)$
+\begin{itemize}
+ \item $\forall x_0 \in I$, $f_{x_0}(y) $ continua e strettamente crescente in $J$.
+ \item $\displaystyle\lim_{y \to b_1+}f_x(y) < 0$ e $\displaystyle\lim_{y \to b_2-} f_x(y) > 0$ $\forall x \in I$.
+ \item Allora $\exists ! \phi(x): f(x, \phi(x)) = 0$ $\forall x \in I$ 
+\end{itemize}
 \subparagraph{In piccolo}
-
+Sia $f: I \times J \rightarrow \mathbb{R}$
+\begin{itemize}
+ \item $f(x_0, y_0) = 0$, e $f$ continua in un intorno di $(x_0, y_0) \in I\times J$
+ \item $\partial_y f(x, y)$ esista e sia continua in un intorno $U$ di $(x_0, y_0)$
+ \item Allora $\exists ! \phi(x): f(x, \phi(x)) = 0$ $	\forall x \in U$
+\end{itemize}
 \subsection{Come risolvere un esercizio}
 \begin{itemize}
- \item Valuta se valgono o no le ipotesi del teorema di esistenza e unicità "in grande"
+ \item Trova l'insieme di definizione $D$ della funzione implicita (es. primo quadrante)
+ \item Calcola i limiti per gli estremi di $D$, e valutane il segno.
+ \item Valuta se valgono o no le ipotesi del teorema di esistenza e unicità -in grande-
  \begin{itemize}
-  \item Siano $y_1$ e $y_2$ estremi del dominio, o di uno specifico intervallo.
-  \item Calcola $a = \lim_{y \to y_1}{f(x, y)}$ e $b = \lim_{y \to y_2}{f(x, y)}$.
-  \item Se $a < 0$ e $b > 0$, $\exists \phi(x)$.
-  \item Altrimenti, prova a cercare un altro intervallo in cui questo è vero.
+  \item Trova se $f$ è continua e controlla che $\partial_y f(x, y) > 0$ $\forall x$.
+  \item Siano $y_1$ e $y_2$ estremi del dominio, o di uno specifico sottointervallo.
+  \item Calcola $a = \displaystyle\lim_{y \to y_1+}{f(x, y)}$ e $b = \displaystyle\lim_{y \to y_2-}{f(x, y)}$. Se $a < 0$ e $b > 0$, $\exists \phi(x)$.
+  \item Altrimenti, prova a cercare un altro intervallo in cui le condizioni sopra sono verificate.
  \end{itemize}
- \item Prova a studiare $\phi'(x) = -\displaystyle\frac{\partial_x f}{\partial_y f}$
+ \item Prova a studiare il segno intorno agli assi.
+ \item Studia i limiti di $\phi(x)$. Supponendo che ad esempio $0 < x < +\infty$, per definizione:
+	 $$ \lim_{x \to +\infty} f(x, \phi(x)) = 0$$
+	 che da sicuramente qualche informazione su
+	 $$ \lim_{x \to +\infty} \phi(x) $$
+ \item Prova a studiare gli estremanti di $\phi(x)$, ricordando che
+ 	 $$\phi'(x) = -\displaystyle\frac{\partial_x f}{\partial_y f}$$
 \end{itemize}
 
-\subsection{Ricorda}
+\subsection{Ricorda che ...}
+\paragraph{Limiti della funzione implicita}
+Spesso la funzione implicita usa il trucco dello $0^-$. [Fra?]
+
 \subsection{Trucchetti}
+\paragraph{Utilizzo della forma della funzione $f(x, y)$ per semplificare l'espressione di $\phi'(x)$}
+Ogni tanto, studiando $\phi'(x)$, si possono ottenere espressioni non banali, e studiarne il segno può non essere semplice. Allora si può ricorrere alla definizione della funzione originale, ponendola uguale a 0. Supponiamo che
+$$ f(x,y) = g(x,y)+h(x,y) $$
+Ovviamente, per definizione di funzione implicita:
+$$ g(x,y)+h(x,y) = 0 \Rightarrow g(x, y) = -h(x,y)$$
+Ma supponendo che
+$$ \phi'(x) = \psi(x, y, g(x,y), h(x, y))$$
+Allora
+$$ \phi'(x) = \psi(x, y, g(x,y), -g(x, y))$$
+che in alcuni casi può semplificare molto le situazioni.
 
 \section{Integrali}
 \subsection{Nozioni principali}
