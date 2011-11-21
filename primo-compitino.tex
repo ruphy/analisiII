@@ -31,9 +31,26 @@ $$D_{\vec{v}} \vec{f}(\underbar{x}_0) = d\vec{f}(\underbar{x}_0)\cdot\vec{v}$$
 \paragraph{Continuità in un punto $(x_0, y_0)$}
 
 Bisogna ovviamente dimostrare che, $$\lim_{\ubar{x}\rightarrow\ubar{x}_0}\ubar{f}(\ubar{x}) = \ubar{f}(\ubar{x}_0)$$
-\subsection{Ricorda}
+Puoi passare in coordinate polari, ricordando che questa trasformazione non è biunivoca (vedi sez. "Ricorda").
 
+\paragraph{Differenziabilità in un punto $(x_0, y_0)$}
+Per questo esercizio, in generale, si può procedere in due modi:
+\begin{itemize}
+ \item Applicando la definizione, dunque calcolando direttamente $\nabla f(x_0, y_0)$, e verificando che vada a 0 il limite
+ $$\lim_{|(h, k)| \to 0} \dfrac{f(\vec{x_0}+(h, k)) - f(\vec{x_0}) - \nabla f(\vec{x_0})(h, k)}{\sqrt{h^2+k^2}} = 0 $$
+ \item Applicando il teorema del differenziale totale: bisogna dimostrare che, in un intorno di $(x_0, y_0)$ $f$ ammetta derivate parziali, e che queste siano continue in $(x_0, y_0)$. A questo punto $df(x_0, y_0) = \nabla f(x_0, y_0)$
+\end{itemize}
+
+\subsection{Ricorda}
+\paragraph{Teorema di Schwarz}
+Se la funzione $f(x,y)$ ammette derivate parziali miste in $(x_0, y_0)$, e queste sono ivi continue, allora in questo punto esse sono uguali ($\partial_{xy}f(x_0, y_0) = \partial_{yx}f(x_0, y_0)$).
 \subsection{Trucchetti}
+È spesso utile passare in coordinate polari: $$ x = \rho cos(\theta)$$ $$ y = \rho sin(\theta) $$
+Ricorda che
+$$ \lim_{|(x, y)| \to 0} f(x, y) = \lim_{\rho \to 0} f(\rho, \theta) $$
+\textbf{ma questa conversione non è biunivoca!}
+In generale questo non è un problema, ma se ad esempio usi questo passaggio per verificare la continuità, devi verificare che questo valga anche per la semiretta $\{(x, y) : x\geq 0, y=0\}$
+
 
 \section{Massimi e minimi}
 \subsection{Definizioni principali}
@@ -42,7 +59,7 @@ Bisogna ovviamente dimostrare che, $$\lim_{\ubar{x}\rightarrow\ubar{x}_0}\ubar{f
 Si definisce matrice Hessiana della funzione f:
 $$  H_{f}(\mathbf{x})_{ij} = \frac{\partial^2 f(\mathbf{x})}{\partial x_i\, \partial x_j} $$
 $$ H(f) = \begin{bmatrix} \dfrac{\partial^2 f}{\partial x_1^2} & \dfrac{\partial^2 f}{\partial x_1\,\partial x_2} & \cdots & \dfrac{\partial^2 f}{\partial x_1\,\partial x_n} \\ \\ \dfrac{\partial^2 f}{\partial x_2\,\partial x_1} & \dfrac{\partial^2 f}{\partial x_2^2} & \cdots & \dfrac{\partial^2 f}{\partial x_2\,\partial x_n} \\ \\ \vdots & \vdots & \ddots & \vdots \\ \\ \dfrac{\partial^2 f}{\partial x_n\,\partial x_1} & \dfrac{\partial^2 f}{\partial x_n\,\partial x_2} & \cdots & \dfrac{\partial^2 f}{\partial x_n^2} \end{bmatrix}$$
-(Nota: se tutte le derivate seconde di f sono continue in una regione $\Omega$, allora l'hessiana di f è una matrice simmetrica in ogni punto di $\Omega$. (le derivate miste sono uguali) )
+Nota: se tutte le derivate seconde di f sono continue in una regione $\Omega$, allora l'hessiana di f è una matrice simmetrica in ogni punto di $\Omega$. (v. Teorema di Schwarz)
 
 \paragraph{Minori principali di Nord Ovest}
 I minori principali di Nord Ovest della matrice $A$ sono le sottomatrici quadrate della $A$ ottenute prendendo le prime $k$ righe dallŽalto e le prime $k$ colonne da sinistra di $A$.
@@ -135,11 +152,6 @@ Infatti le condizioni precedenti verificano nei vari casi la definizione stessa 
 \subsection{Ricorda}
 \subsection{Trucchetti}
 
-\paragraph{Coordinate polari}
-È spesso utile passare in coordinate polari: $$ x = \rho cos(\theta)$$ $$ y = \rho sin(\theta) $$
-In questo caso: $$ \lim_{|h,k| \to 0} f(h, k) = \lim_{\rho \to 0} f(\rho, \theta)$$
-Nota: il passaggio in coordinate polari non è biunivoco, e bisogna sempre controllare la semiretta $x\geq0, y=0$
-
 \section{Funzioni implicite}
 \subsection{Definizioni principali}
 \paragraph{Funzione implicita}
@@ -207,20 +219,21 @@ $\Omega$ insieme entro il quale integrare, $f:\mathbb{R}^2\rightarrow\mathbb{R}$
 Inoltre $m(\Omega) := m_{\mathrm{PJ}}(\Omega)$
 \begin{itemize}
  \item Controlla che $\Omega$ sia misurabile, $\mathcal{E}f$ integrabile (soprattutto: limitata, monotona). In caso negativo fermati.
+ \item Prega che le primitive siano semplici da trovare.
  \item 1: Puoi cercare un insieme semplice $D$, e trasformare $\Omega$ in $D$ tramite un diffeomorfismo.
  \begin{itemize}
-  \item ...
+  \item (vedi le note sopra su cambi di coordinate e prosegui)
  \end{itemize}
- \item 2: Puoi integrare sull'insieme $\Omega$
+ \item 2: Puoi integrare sull'insieme $\Omega$ direttamente
  \begin{itemize}
-  \item ...
+  \item Cerca di applicare il teorema di Fubini per ricondurti al calcolo di variabili in una dimensione
  \end{itemize}
  \item Nel caso di integrali impropri:
  \begin{itemize}
   \item Di prima specie: sia $f$ limitata, da integrare su $\Omega$ illimitato. Allora:
   \item Controlla se è integrabile:
   \begin{itemize}
-   \item $\mathcal{E}f|_{B_R} \in \Re, \forall R$
+   \item $\mathcal{E}f|_{B_R} \in \Re(B_R), \forall R$
    \item $\exists$ finito $\lim_{R \to +\infty} \int_{B_R}\mathcal{E}f$
   \end{itemize}
   
