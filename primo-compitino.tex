@@ -172,7 +172,9 @@ Sia $\Omega \subset \mathbb{R}^n$ un insieme limitato. $\Omega$ è misurabile $\
 In questo caso
 $$m(\Omega) = \int \mathbb{I}_\Omega$$
 \paragraph{Insieme semplice}
-Un insieme semplice è...
+Un insieme semplice (rispetto a $y$) è un insieme E del tipo:
+$$ E = \{(x, y) \in \mathbb{R}^2 : a<x<b, g(x)<y<h(x) \} $$
+Gli insiemi semplici sono particolarmente utili per semplificare gli esercizi di integrazione.
 
 \paragraph{Diffeomorfismi tra aperti}
 (se $\Omega$ non è aperto, considero $\Omega^\circ = \bar{\Omega}\setminus\partial\Omega$)\\
@@ -182,6 +184,22 @@ Da cui
 $$\int \mathbb{I}_\Omega = \int \mathbb{I}_{\Omega^\circ} $$
 Poi, sia $\Phi: A \subset \mathbb{R}^n \rightarrow \Omega^\circ$, se $det(J_\Phi) \neq 0$ e $\Phi$ biunivoca ?<testo incomprensibile di edo>? Allora $\Phi$ è un diffeomorfismo globale se $\Phi \in \mathbb{C}^1(\Omega^\circ)$, e
 $$\int_{\Omega^\circ} \mathbb{I} = \int_{\Phi(\Omega^\circ)} \mathbb{I} $$
+
+\paragraph{Teorema di Fubini (riduzione)}
+Sia $f(x, y)$ integrabile in $[a, b)\times[c,d)$ tale che $\forall x_0 \in [a,b), f(x_0, y) \in \Re[c,d)$, allora:
+$$\int_R f(x, y)dxdy = \int^b_a dx\int^d_c f(x, y) dy$$
+
+\subsection{Ricorda}
+\begin{itemize}
+ \item Se $G_f$ è grafico di una funzione, $m(G_f) = 0$.
+\end{itemize}
+\paragraph{Cambio di coordinate (diffeomorfismi)}
+Se per risolvere il tuo integrale devi effettuare un cambio di coordinate, devi procedere con cautela.
+
+Sia ad esempio $$(\rho, \theta) = \psi(x, y) = \left(\begin{matrix}\sqrt{x^2+y^2} \\ atan(y/x)\end{matrix}\right)^t$$
+e sia $J_\psi$ la matrice jacobiana associata.
+Allora, essendo $D=\psi(\Omega)$,\\ $\vec{x} = (x, y) \in \Omega$ e $\vec{p} = (\rho, \theta) \in D$.
+$$ \int_\Omega f(\vec{x}) d\vec{x} = \int_{\psi(\Omega)} |det(J_\psi)|\cdot f(\psi(\vec{x})) d\psi(x) = \int_D |det(J_\psi)|\cdot f(\vec{p})d\vec{p} $$
 
 \subsection{Come risolvere un esercizio}
 \paragraph{Notazione:}
@@ -208,18 +226,6 @@ Inoltre $m(\Omega) := m_{\mathrm{PJ}}(\Omega)$
   
  \end{itemize}
 \end{itemize}
-
-\subsection{Ricorda}
-\begin{itemize}
- \item Se $G_f$ è grafico di una funzione, $m(G_f) = 0$.
-\end{itemize}
-\paragraph{Cambio di coordinate (diffeomorfismi)}
-Se per risolvere il tuo integrale devi effettuare un cambio di coordinate, devi procedere con cautela.
-
-Sia ad esempio $$(\rho, \theta) = \psi(x, y) = \left(\begin{matrix}\sqrt{x^2+y^2} \\ atan(y/x)\end{matrix}\right)^t$$
-e sia $J_\psi$ la matrice jacobiana associata.
-Allora, essendo $D=\psi(\Omega)$,\\ $\vec{x} = (x, y) \in \Omega$ e $\vec{p} = (\rho, \theta) \in D$.
-$$ \int_\Omega f(\vec{x}) d\vec{x} = \int_{\psi(\Omega)} |J_\psi|\cdot f(\psi(\vec{x})) d\psi(x) = \int_D |J_\psi|\cdot f(\vec{p})d\vec{p} $$
 
 \subsection{Trucchetti}
 
