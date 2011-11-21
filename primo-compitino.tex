@@ -198,7 +198,7 @@ Sia $f: I \times J \rightarrow \mathbb{R}$
 
 \subsection{Ricorda che ...}
 \paragraph{Limiti della funzione implicita}
-Spesso la funzione implicita usa il trucco dello $0^-$. [Fra?]
+Spesso la funzione implicita usa il trucco dello $0^-$. [Fra? è per caso il trucco scritto sotto?]
 
 \subsection{Trucchetti}
 \paragraph{Utilizzo della forma della funzione $f(x, y)$ per semplificare l'espressione di $\phi'(x)$}
@@ -215,7 +215,7 @@ che in alcuni casi può semplificare molto le situazioni.
 \section{Integrali}
 \subsection{Nozioni principali}
 \paragraph{Misura di un insieme}
-Sia $\Omega \subset \mathbb{R}^n$ un insieme limitato. $\Omega$ è misurabile $\leftrightarrow m(\partial\Omega) = 0$, e in particolar modo questo è vero quando $\partial\Omega = \cup G_f$ (funzioni continue).
+Sia $\Omega \subset \mathbb{R}^n$ un insieme limitato. $\Omega$ è misurabile $\leftrightarrow m(\partial\Omega) = 0$, e in particolar modo questo è vero quando $\partial\Omega = \bigcup G_f$ (funzioni continue).
 In questo caso
 $$m(\Omega) = \int \mathbb{I}_\Omega$$
 \paragraph{Insieme semplice}
@@ -225,7 +225,7 @@ Gli insiemi semplici sono particolarmente utili per semplificare gli esercizi di
 
 \paragraph{Diffeomorfismi tra aperti}
 (se $\Omega$ non è aperto, considero $\Omega^\circ = \bar{\Omega}\setminus\partial\Omega$)\\
-$$\int \mathbb{I}_\Omega = \int \mathbb{I}_{\Omega^\circ} + \int \mathbb{I}_{\bar{\Omega}\setminus\partial\Omega} $$
+$$\int \mathbb{I}_\Omega = \int \mathbb{I}_{\Omega^\circ} + \int \mathbb{I}_{\partial\Omega}$$
 perché $\Omega\setminus\Omega^\circ \in \partial\Omega$. Siccome $\Omega$ è misurabile, $\Omega^\circ$ è misurable ($\partial\Omega = \partial\Omega^\circ, m(\partial\Omega) = 0$, ed inoltre $m(\Omega\setminus\Omega^\circ) \leq m(\partial\Omega) = 0$).
 Da cui
 $$\int \mathbb{I}_\Omega = \int \mathbb{I}_{\Omega^\circ} $$
@@ -278,7 +278,7 @@ Inoltre $m(\Omega) := m_{\mathrm{PJ}}(\Omega)$
   \end{itemize}
   \item 2: Di seconda specie, $f$ illimitata, $\Omega$ limitato. Verifica che:
   \begin{itemize}
-   \item $E_1 \in E_2 \in \cdots \in E_N \in \Omega$, tutti misurabili (secondo P-J).
+   \item $E_1 \subset E_2 \subset \cdots \subset E_N \subset \Omega$, tutti misurabili (secondo P-J).
    \item $f|_{E_J} \in \Re[E_j]$
    \item $m(\Omega\setminus E_j) \to 0$ (con $j \to +\infty$)
    \item Allora: $$\int_\Omega f = \lim_{J \to +\infty} \int_{E_J} |\mathcal{E}f|$$
