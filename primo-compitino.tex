@@ -10,13 +10,13 @@
 
 \begin{document}
 
-% \maketitle
+\maketitle
 
 \section{Continuità e differenziabilità}
 \subsection{Definizioni principali}
 \paragraph{Derivata direzionale}
 $$D_{\underbar{v}} \vec{f}(\underbar{x}_0) = \lim_{h \to 0}{\dfrac{\vec{f}(\underbar{x}_0+h\underbar{v})-\vec{f}(\underbar{x}_0)}{h}}$$
-ed è utile sapere che in basi canoniche:
+Oppure, solo se $f$ è differenziabile:
 $$D_{\vec{v}} \vec{f}(\underbar{x}_0) = d\vec{f}(\underbar{x}_0)\cdot\vec{v}$$
 
 \paragraph{Differenziale}
@@ -34,7 +34,7 @@ $$ d\vec{f}(\underbar{x}_0)= J_f(\underbar{x}_0) $$
 \paragraph{Continuità in un punto $(x_0, y_0)$}
 
 Bisogna ovviamente dimostrare che, $$\lim_{\ubar{x}\rightarrow\ubar{x}_0}\ubar{f}(\ubar{x}) = \ubar{f}(\ubar{x}_0)$$
-Puoi passare in coordinate polari, ricordando che questa trasformazione non è biunivoca (vedi sez. "Ricorda").
+Puoi passare in coordinate polari, ricordando che questa trasformazione non è biunivoca (vedi sez. "Ricorda"). Nota: le coordinate polari possono essere usate soprattutto per controesempi: se vogliamo usarle per dimostrare la continuità puntuale, dobbiamo assicurarci di arrivare sempre a funzioni in cui $\theta$ non compaia esplicitamente.
 
 \paragraph{Differenziabilità in un punto $(x_0, y_0)$}
 Per questo esercizio, in generale, si può procedere in due modi:
@@ -42,6 +42,7 @@ Per questo esercizio, in generale, si può procedere in due modi:
  \item Applicando la definizione, dunque calcolando direttamente $\nabla f(x_0, y_0)$, e verificando che vada a 0 il limite
  $$\lim_{|(h, k)| \to 0} \dfrac{f(\vec{x_0}+(h, k)) - f(\vec{x_0}) - \nabla f(\vec{x_0})(h, k)}{\sqrt{h^2+k^2}} = 0 $$
  \item Applicando il teorema del differenziale totale: bisogna dimostrare che, in un intorno di $(x_0, y_0)$ $f$ ammetta derivate parziali, e che queste siano continue in $(x_0, y_0)$. A questo punto $df(x_0, y_0) = \nabla f(x_0, y_0)$
+ \item Si può anche dimostrare che la funzione $f$ non è differenziabile: questo ad esempio se $\exists \underbar{v}: D_{\underbar{v}}(x_0, y_0)$ non è lineare.
 \end{itemize}
 
 \subsection{Ricorda}
@@ -91,6 +92,7 @@ a_{k,1} & \dots &a_{k,k} \\
 \end{displaymath}
 
 \subsection{Come risolvere un esercizio}
+Studieremo ora i punti nei quali $f$ è differenziabile. \textbf{I punti non differenziabili vanno valutati a parte}.
 \begin{itemize}
 \item Calcola le derivate parziali $\frac{\partial f}{\partial x}$, $\frac{\partial f}{\partial y}$, e risolvere il sistema (all'interno di D)
 \begin{displaymath}
@@ -102,15 +104,15 @@ a_{k,1} & \dots &a_{k,k} \\
 \end{displaymath}
 i punti $\boldsymbol{x_0}=(x_0,y_0)$ che risolvono tale sistema sono detti punti stazionari.
 
-\item Usa la matrice Hessiana per determinare il tipo di punto stazionario.
+\item Usa la matrice Hessiana per determinare il tipo di punto stazionario. (nota: se l'insieme di definizione è chiuso e limitato, allora sapiamo con certezza che esistono un massimo e un minimo assoluto, dal teorema di Weierstrass)
 \begin{itemize}
  \item Calcola gli autovalori della matrice [$A = H(f(\boldsymbol{x_0}))$; $det(A-\lambda I)$]
  \begin{itemize}
- \item Se sono tutti positivi, $A$ e'definita positiva.
- \item Se sono tutti negativi, $A$ e'definita negativa.
- \item Se tutti gli autovalori della matrice $A$ sono maggiori di $0$ e ne esiste almeno uno uguale a $0$, allora la forma quadratica è semidefinita positiva, ma non definita positiva.
- \item Se tutti gli autovalori della matrice $A$ sono minori di $0$ e ne esiste almeno uno uguale a $0$, allora la forma quadratica è semidefinita negativa, ma non definita negativa.
- \item Se sono in parte positivi, in parte negativi $A$ è indefinita.
+  \item Se sono tutti positivi, $A$ e'definita positiva.
+  \item Se sono tutti negativi, $A$ e'definita negativa.
+  \item Se tutti gli autovalori della matrice $A$ sono maggiori di $0$ e ne esiste almeno uno uguale a $0$, allora la forma quadratica è semidefinita positiva, ma non definita positiva.
+  \item Se tutti gli autovalori della matrice $A$ sono minori di $0$ e ne esiste almeno uno uguale a $0$, allora la forma quadratica è semidefinita negativa, ma non definita negativa.
+  \item Se sono in parte positivi, in parte negativi $A$ è indefinita.
  \end{itemize}
  \item Alternativamente, siano $A_k$ i minori principali di Nord-Ovest di dimensione $k$.
 Sia $\Delta_k=det(A_k)\ \forall k=1,\dots,n$ (cioe'il determinante del minore principale di NO di $dim=k$) allora:
@@ -119,7 +121,7 @@ Sia $\Delta_k=det(A_k)\ \forall k=1,\dots,n$ (cioe'il determinante del minore pr
   \item Se $(-1)^k\cdot\Delta_k > 0 \forall k$ $A$  è definita negativa.
   \item Se $\Delta_k \geq 0 \forall k$ $A$ è semidefinita positiva. 
   \item Se $(-1)^k\cdot\Delta_k \geq 0 \forall k$ $A$  è semidefinita negativa. 
-  \item Se non vale nessuna delle condizioni precedenti la matrice è indefinita 
+  \item Se non vale nessuna delle condizioni precedenti la matrice è indefinita. Puoi controllare ancora gli autovalori, in quanto la matrice potrebbe essere indefinita. 
  \end{itemize}
  \item a questo punto sappiamo che:
  \begin{itemize}
@@ -142,19 +144,22 @@ Sia $\Delta_k=det(A_k)\ \forall k=1,\dots,n$ (cioe'il determinante del minore pr
 \end{itemize}
 Infatti le condizioni precedenti verificano nei vari casi la definizione stessa di punto di massimo o di minimo di una funzione.
 \item se $f:\mathbb{R}^2\to\mathbb{R}$ si può considerare la restrizione di $f$ alle curve conosciute del piano (rette, parabole, cubiche..). Se risulta che la funzione ristretta a una di queste curve non ammette estremante ma solo punto stazionario (es: punto di flesso), sicuramente $f$ non avrà ne un massimo ne un minimo in $\boldsymbol {x_0}$, che sarà quindi punto di sella.
-\item ultima spiaggia: provare con la definizione di massimo e minimo a dimostrare che il punto è un massimo, un minimo, o che non può essere ne l'uno ne l'altro ed è quindi un punto di sella.
 \end{itemize}
 \item Possono esistere punti di minimo o massimo sul bordo:
 \begin{itemize}
  \item Restringi la funzione al bordo.
  \item Calcola la derivata e valuta i punti stazionari (nota: se la funzione era $f: \mathbb{R}^2 \rightarrow \mathbb{R}$, la restrizione sarà del tipo $h: \mathbb{R} \rightarrow \mathbb{R}$, dove $h(x) = f(x, g(x))$.
  \item In caso la derivata non sia banale, approssimare il valore del punto stazionario, dando almeno un intervallo entro il quale è compreso.
+ \item Se non ci sono punti stazionari, valuta i vertici, quando esistono.
 \end{itemize}
 \end{itemize}
-
-\subsection{Ricorda}
 \subsection{Trucchetti}
-
+\paragraph{Parametrizzare la quota della funzione}
+Alcune volte è possibile riscrivere una funzione utilizzando la quota della funzione, e in particolare in modo tale che una o più variabili dipendano da essa, possibilmente secondo una funzione conosciuta. Ad esempio, se
+$$ f(x, y) = \sqrt{y + x^2 - 2}\ \ (= k)$$
+Allora vorrà dire che
+$$ y = k^2 - x^2 +2 $$
+Ma questo implica che è possibile disegnare delle "linee di livello", in questo caso delle parabole rivolte verso il basso, che indichino i luoghi dove la funzione è costante (e in particolare, assume il valore $k$). Facendo variare di $k$ dunque, dovrebbe essere più facile dimostrare, almeno graficamente, quali sono i punti di massimo e quali di minimo in tutto l'insieme di definizione.
 \section{Funzioni implicite}
 \subsection{Definizioni principali}
 \paragraph{Funzione implicita}
@@ -165,20 +170,34 @@ Sia $\phi(x)$ tale che $f(x, \phi(x)) = 0$ $\forall x \in \mathbb{R}$. $\phi(x)$
 \subparagraph{In grande}
 Sia $f: I \times J \rightarrow \mathbb{R}$. Sia $J = (b_1, b_2)$
 \begin{itemize}
- \item $\forall x_0 \in I$, $f_{x_0}(y) $ continua e strettamente crescente in $J$.
- \item $\displaystyle\lim_{y \to b_1+}f_x(y) < 0$ e $\displaystyle\lim_{y \to b_2-} f_x(y) > 0$ $\forall x \in I$.
- \item Allora $\exists ! \phi(x): f(x, \phi(x)) = 0$ $\forall x \in I$ 
+ \item $\forall x_0 \in I$, $f_{x_0}(y) $ continua e strettamente crescente in $J$
+ \item $\displaystyle\lim_{y \to b_1+}f_x(y) < 0$ e $\displaystyle\lim_{y \to b_2-} f_x(y) > 0$ $\forall x \in I$
+ \item Allora $\exists ! \phi(x): f(x, \phi(x)) = 0$ $\forall x \in I$
 \end{itemize}
+Il viceversa è assolutamente simmetrico.
 \subparagraph{In piccolo}
 Sia $f: I \times J \rightarrow \mathbb{R}$
 \begin{itemize}
  \item $f(x_0, y_0) = 0$, e $f$ continua in un intorno di $(x_0, y_0) \in I\times J$
- \item $\partial_y f(x, y)$ esista e sia continua in un intorno $U$ di $(x_0, y_0)$
- \item Allora $\exists ! \phi(x): f(x, \phi(x)) = 0$ $	\forall x \in U$
+ \item $\partial_y f(x, y)$ esista, sia continua e non nulla in un intorno $U$ di $(x_0, y_0)$
+ \item Allora $\exists U'(x_0)$ ed $\exists ! \phi(x): U'(x_0) \mapsto J$ tale che
+ \begin{itemize}
+ \item $ \phi(x_0)= y_0$
+ \item $ (x, \phi(x)) \in U\times J $
+ \item $f(x, \phi(x)) = 0 \ \ \forall x \in U'(x_0)$
+ \end{itemize}
+ \item (rispetto a $x$ invece, $\exists ! \psi(y): f(\psi(x), x) = 0\ \forall y \in U$)
 \end{itemize}
+
+\paragraph{Regolarità della funzione implicita}
+Se $f\in C^{(i)} (I \times J)$, allora $\phi\in C^{(i)}(I)$. In altre parole, $\phi$ ha lo stesso grado di regolarità di $f$.
+
+\paragraph{Funzione implicita rispetto a $x$}
+Con le opportune variazioni, tutte queste conseguenze valgono anche per una funzione $x = \psi(y): f(\psi(y), y) = 0\ \forall y \in I$
 \subsection{Come risolvere un esercizio}
+Consideriamo il caso in cui si cerchi una funzione $y=\phi(x)$. Il caso $x=\psi(y)$ è del tutto analogo.
 \begin{itemize}
- \item Trova l'insieme di definizione $D$ della funzione implicita (es. primo quadrante)
+ \item Trova l'insieme di definizione $D$ della funzione implicita (es. primo quadrante) (quando non richiesto: "in un intorno")
  \item Calcola i limiti per gli estremi di $D$, e valutane il segno.
  \item Valuta se valgono o no le ipotesi del teorema di esistenza e unicità -in grande-
  \begin{itemize}
@@ -196,11 +215,9 @@ Sia $f: I \times J \rightarrow \mathbb{R}$
  	 $$\phi'(x) = -\displaystyle\frac{\partial_x f}{\partial_y f}$$
 \end{itemize}
 
-\subsection{Ricorda che ...}
-\paragraph{Limiti della funzione implicita}
-Spesso la funzione implicita usa il trucco dello $0^-$. [Fra? è per caso il trucco scritto sotto?]
-
 \subsection{Trucchetti}
+\paragraph{Limiti della funzione implicita}
+Spesso la funzione implicita usa il trucco dello $0^-$: in questo modo riesci a rendere negative parti di $f(x,y)$ e ad ottenere che $f(x,\phi(x))$ vada a 0.
 \paragraph{Utilizzo della forma della funzione $f(x, y)$ per semplificare l'espressione di $\phi'(x)$}
 Ogni tanto, studiando $\phi'(x)$, si possono ottenere espressioni non banali, e studiarne il segno può non essere semplice. Allora si può ricorrere alla definizione della funzione originale, ponendola uguale a 0. Supponiamo che
 $$ f(x,y) = g(x,y)+h(x,y) $$
@@ -220,8 +237,7 @@ In questo caso
 $$m(\Omega) = \int \mathbb{I}_\Omega$$
 \paragraph{Insieme semplice}
 Un insieme semplice (rispetto a $y$) è un insieme E del tipo:
-$$ E = \{(x, y) \in \mathbb{R}^2 : a<x<b, g(x)<y<h(x) \} $$
-Gli insiemi semplici sono particolarmente utili per semplificare gli esercizi di integrazione.
+$$ E = \{(x, y) \in \mathbb{R}^2 : a\leq x\leq b,\ g(x)\leq y\leq h(x) \} $$
 
 \paragraph{Diffeomorfismi tra aperti}
 (se $\Omega$ non è aperto, considero $\Omega^\circ = \bar{\Omega}\setminus\partial\Omega$)\\
@@ -229,7 +245,10 @@ $$\int \mathbb{I}_\Omega = \int \mathbb{I}_{\Omega^\circ} + \int \mathbb{I}_{\pa
 perché $\Omega\setminus\Omega^\circ \in \partial\Omega$. Siccome $\Omega$ è misurabile, $\Omega^\circ$ è misurable ($\partial\Omega = \partial\Omega^\circ, m(\partial\Omega) = 0$, ed inoltre $m(\Omega\setminus\Omega^\circ) \leq m(\partial\Omega) = 0$).
 Da cui
 $$\int \mathbb{I}_\Omega = \int \mathbb{I}_{\Omega^\circ} $$
-Poi, sia $\Phi: A \subset \mathbb{R}^n \rightarrow \Omega^\circ$, se $det(J_\Phi) \neq 0$ e $\Phi$ biunivoca ?<testo incomprensibile di edo>? Allora $\Phi$ è un diffeomorfismo globale se $\Phi \in \mathbb{C}^1(\Omega^\circ)$, e
+Poi, sia $\Phi: \Omega \mapsto \mathbb{R}^n$ (con $\Omega$ aperto). Sia $\Phi \in C^1(\Omega)$. Allora, il fatto che il differenziale sia invertibile ($det(J_\Phi) \neq 0$) $\forall \underbar{x} \in \Omega$ $\nRightarrow \Phi$ biunivoca. Inoltre se $\Phi: \mathbb{R}\rightarrow \mathbb{R}$ differenziabile con $\Phi '(x_0) \neq 0$ non è detto che $\exists U(x_0)$ t.c. la restrizione di $\Phi$ a $U$ sia invertibile.
+
+
+blablae $\Phi$ biunivoca ?<testo incomprensibile di edo>? Allora $\Phi$ è un diffeomorfismo globale se $\Phi \in \mathbb{C}^1(\Omega^\circ)$, e
 $$\int_{\Omega^\circ} \mathbb{I} = \int_{\Phi(\Omega^\circ)} \mathbb{I} $$
 
 \paragraph{Teorema di Fubini (riduzione)}
@@ -267,14 +286,14 @@ Inoltre $m(\Omega) := m_{\mathrm{PJ}}(\Omega)$
  \begin{itemize}
   \item 1: Di prima specie: sia $f$ limitata, da integrare su $\Omega$ illimitato. Verifica che:
   \begin{itemize}
-   \item $|\mathcal{E}f||_{B_R} \in \Re(B_R), \forall R$, ovvero:
+   \item $\mathcal{E}(|f|_{B_R\cap\Omega}) \in \Re(B_R), \forall R$, ovvero:
    \begin{itemize}
     \item $B_R$ misurabile $\forall R$
-    \item $B_R \cap \Omega \in B_R $ misurabile $\forall R$
-    \item $f \in C^0(B_R)$ ($\rightarrow |\mathcal{E}f||_{B_R\cap\Omega}$ è generalmente continua, limitata, quindi $|\mathcal{E}f| \in \Re[B_R]$)
+    \item $B_R\cap\Omega$ misurabile $\forall R$
+    \item Se $f \in C^0(B_R)$ allora $\mathcal{E}(|f||_{B_R\cap\Omega})$ è generalmente continua, limitata, quindi $\mathcal{E}(|f||_{B_R}) \in \Re[B_R]$)
    \end{itemize}
-   \item $\exists$ finito $$\lim_{R \to +\infty} \int_{B_R} |\mathcal{E}f| $$
-   \item Allora: $$\int_\Omega f = \lim_{R \to +\infty} \int_{B_R} |\mathcal{E}f| $$
+   \item $\exists$ finito $$\lim_{R \to +\infty} \int_{B_R} \mathcal{E}|f| $$
+   \item Allora: $$\int_\Omega f = \lim_{R \to +\infty} \int_{B_R} \mathcal{E}f_+ - \int_{B_R} \mathcal{E}f_- $$
   \end{itemize}
   \item 2: Di seconda specie, $f$ illimitata, $\Omega$ limitato. Verifica che:
   \begin{itemize}
@@ -303,6 +322,31 @@ ove $$t = tan\left(\frac{\alpha}{2}\right)$$
 \subparagraph{Piano tangente al grafico di una funzione}
 $$z = f(x_0, y_0) + \partial_x f(x_0, y_0) (x-x_0) + \partial_y f(x_0, y_0) (y - y_0) $$
 TAYLOR!!
+\paragraph{Norme}
+$$|\vec{x}|_1 = |x_1|+\cdots+|x_n|$$
+$$|\vec{x}|_\infty = max( |x_1|,\cdots,|x_n|) \leq |x|$$
+$$|||A||| = \sup_{|x|<1}|Ax|$$
+$$||A||_{HS} = \sqrt{tr(A\cdot A^t)} = \sqrt{\sum_{i,j=1}^n (a_{ij}^2)}$$
+
+\subsection{Maggiorazioni}
+\paragraph{1D}
+$$cos(\theta)sin(\theta) \leq \frac{1}{2}$$
+$$ log(1+x) \leq x, \forall x > -1$$
+$$ log(x) \leq x-1 $$
+$$ e^x > x+1 $$
+$$xe^{-x} \leq e$$
+$$x \geq arctg(x), \forall x \geq 0$$
+$$|a-b|\leq |a|+|b|$$
+\paragraph{2D}
+$$\dfrac{|x||y|}{\sqrt{x^2+y^2}} \leq |x|$$
+$$\dfrac{|x||y|}{\sqrt{x^2+y^2}} \leq |y|$$
+$$|x||y| \leq \dfrac{\sqrt{x^2+y^2}}{2}$$
+$$|x| \leq \sqrt{x^2+y^2+1} $$
+$$\dfrac{x^2y^2\cdots}{\sqrt{x^2+(y+\cdots)^2}} \leq |x|y^2\cdots $$
+\paragraph{nD}
+$$|(||a||-||b||)|\leq||a-b||$$
+\paragraph{Altri oggetti}
+$$|||A||| \leq ||A||_{HS}$$
 
 \end{document}
 
