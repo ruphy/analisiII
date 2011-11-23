@@ -30,6 +30,8 @@ $$df(\underbar{x}_0) = \nabla \cdot f(\underbar{x}_0)$$
 $$J_f = \begin{bmatrix} \dfrac{\partial f_1}{\partial x_1} & \cdots & \dfrac{\partial f_1}{\partial x_n} \\ \vdots & \ddots & \vdots \\ \dfrac{\partial f_m}{\partial x_1} & \cdots & \dfrac{\partial f_m}{\partial x_n}  \end{bmatrix}$$
 In basi canoniche:
 $$ d\vec{f}(\underbar{x}_0)= J_f(\underbar{x}_0) $$
+\paragraph{Teorema del differenziale totale}
+Sia $f$ funzione che ammetta derivate parziali in un punto $\underbar{x}_0$, e che queste siano ivi continue. Allora $f$ è differenziabile in $\underbar{x}_0$.
 \subsection{Come risolvere un esercizio}
 \paragraph{Continuità in un punto $(x_0, y_0)$}
 
@@ -239,17 +241,26 @@ $$m(\Omega) = \int \mathbb{I}_\Omega$$
 Un insieme semplice (rispetto a $y$) è un insieme E del tipo:
 $$ E = \{(x, y) \in \mathbb{R}^2 : a\leq x\leq b,\ g(x)\leq y\leq h(x) \} $$
 
+\paragraph{Teorema delle funzioni inverse}
+Sia $f$ definita in un aperto $\Omega$ e $f\in \mathbb{C}^1(\Omega)$. Sia $\underbar{x}_0 \in \Omega$ e $df(\underbar{x}_0)$ invertibile. Allora vale:
+\begin{itemize}
+ \item $\exists U(\underbar{x}_0)$, $\exists V$ aperto t.c. $f(\underbar{x}_0)\in V$ in cui f è biunivoca fra $U$ e $V$.
+ \item La funzione inversa $f^{-1}$ è di classe $\mathbb{C}^1(V)$ e si ha che $df^{-1}(f(\underbar{x})) = df(\underbar{x})^{-1}$ $\forall x \in U$
+\end{itemize}
+
 \paragraph{Diffeomorfismi tra aperti}
 (se $\Omega$ non è aperto, considero $\Omega^\circ = \bar{\Omega}\setminus\partial\Omega$)\\
 $$\int \mathbb{I}_\Omega = \int \mathbb{I}_{\Omega^\circ} + \int \mathbb{I}_{\partial\Omega}$$
 perché $\Omega\setminus\Omega^\circ \in \partial\Omega$. Siccome $\Omega$ è misurabile, $\Omega^\circ$ è misurable ($\partial\Omega = \partial\Omega^\circ, m(\partial\Omega) = 0$, ed inoltre $m(\Omega\setminus\Omega^\circ) \leq m(\partial\Omega) = 0$).
 Da cui
 $$\int \mathbb{I}_\Omega = \int \mathbb{I}_{\Omega^\circ} $$
+
+Se vale il teorema delle funzioni inverse allora $\Phi$ è un diffeomorfismo locale.
 Poi, sia $\Phi: \Omega \mapsto \mathbb{R}^n$ (con $\Omega$ aperto). Sia $\Phi \in C^1(\Omega)$. Allora, il fatto che il differenziale sia invertibile ($det(J_\Phi) \neq 0$) $\forall \underbar{x} \in \Omega$ $\nRightarrow \Phi$ biunivoca. Inoltre se $\Phi: \mathbb{R}\rightarrow \mathbb{R}$ differenziabile con $\Phi '(x_0) \neq 0$ non è detto che $\exists U(x_0)$ t.c. la restrizione di $\Phi$ a $U$ sia invertibile.
 
-
-blablae $\Phi$ biunivoca ?<testo incomprensibile di edo>? Allora $\Phi$ è un diffeomorfismo globale se $\Phi \in \mathbb{C}^1(\Omega^\circ)$, e
 $$\int_{\Omega^\circ} \mathbb{I} = \int_{\Phi(\Omega^\circ)} \mathbb{I} $$
+
+$\Phi$ è un diffeomorfismo globale se $\Phi \in \mathbb{C}^1(\Omega^\circ)$
 
 \paragraph{Teorema di Fubini (riduzione)}
 Sia $f(x, y)$ integrabile in $[a, b)\times[c,d)$ tale che $\forall x_0 \in [a,b), f(x_0, y) \in \Re[c,d)$, allora:
@@ -272,7 +283,13 @@ $$ \int_\Omega f(\vec{x}) d\vec{x} = \int_{\psi(\Omega)} |det(J_\psi)|\cdot f(\p
 $\Omega$ insieme entro il quale integrare, $f:\mathbb{R}^2\rightarrow\mathbb{R}$ funzione integranda.
 Inoltre $m(\Omega) := m_{\mathrm{PJ}}(\Omega)$
 \begin{itemize}
- \item Controlla che $\Omega$ sia misurabile, $\mathcal{E}f$ integrabile (soprattutto: o limitata, o monotona, o gen. continua). In caso negativo fermati.
+ \item Assicurati che $\Omega$ sia limitato (per decidere se usare la teoria degli integrali propri o impropri).
+ \item Controlla che $\Omega$ sia misurabile. In caso negativo fermati.
+ \item Controlla che $\mathcal{E}f$ sia integrabile. In caso negativo fermati.
+ \begin{itemize}
+  \item Se le funzioni sono limate e continue su $\Omega$ aperto e misurabile, sono integrabili in $\Omega$. Sono ammesse anche funzioni con discontinuità di prima specie, se discontinue su insiemi di misura nulla.
+  \item Se $\Omega$ è semplice (dunque compatto) e $f$ continua su $\Omega$, $f\in\Re[\Omega]$. ($\mathcal{E}f$ è generalmente continua)
+ \end{itemize}
  \item Prega che le primitive siano semplici da trovare.
  \item 1: Puoi cercare un insieme semplice $D$, e trasformare $\Omega$ in $D$ tramite un diffeomorfismo.
  \begin{itemize}
@@ -293,14 +310,14 @@ Inoltre $m(\Omega) := m_{\mathrm{PJ}}(\Omega)$
     \item Se $f \in C^0(B_R)$ allora $\mathcal{E}(|f||_{B_R\cap\Omega})$ è generalmente continua, limitata, quindi $\mathcal{E}(|f||_{B_R}) \in \Re[B_R]$)
    \end{itemize}
    \item $\exists$ finito $$\lim_{R \to +\infty} \int_{B_R} \mathcal{E}|f| $$
-   \item Allora: $$\int_\Omega f = \lim_{R \to +\infty} \int_{B_R} \mathcal{E}f_+ - \int_{B_R} \mathcal{E}f_- $$
+   \item Allora: $$\int_\Omega f = \lim_{R \to +\infty} \int_{B_R} \mathcal{E}f_+ - \int_{B_R} \mathcal{E}f_- = \lim_{R \to +\infty} \int_{B_R} \mathcal{E}|f|$$
   \end{itemize}
   \item 2: Di seconda specie, $f$ illimitata, $\Omega$ limitato. Verifica che:
   \begin{itemize}
    \item $E_1 \subset E_2 \subset \cdots \subset E_N \subset \Omega$, tutti misurabili (secondo P-J).
    \item $f|_{E_J} \in \Re[E_j]$
    \item $m(\Omega\setminus E_j) \to 0$ (con $j \to +\infty$)
-   \item Allora: $$\int_\Omega f = \lim_{J \to +\infty} \int_{E_J} |\mathcal{E}f|$$
+   \item Allora: $$\int_\Omega f = \lim_{J \to +\infty} \int_{E_J} |\mathcal{E}f|\ \ \ \mathrm{(se}\int_{E_j}|\mathcal{E}f| < +\infty\mathrm{)}$$
   \end{itemize}
  \end{itemize}
 \end{itemize}
@@ -308,6 +325,8 @@ Inoltre $m(\Omega) := m_{\mathrm{PJ}}(\Omega)$
 \subsection{Trucchetti}
 Ricorda che, data $f: \Omega \rightarrow \mathbb{R}$:
  $$\int_\Omega f = \int_{\mathbb{R}^n} \mathcal{E}f = \int \mathcal{E}f_+ - \int \mathcal{E}f_- $$
+
+Se $\Omega=E_1\cup E_2$ dove $E_1$ è simmetrico rispetto a $x$ (o a $y$) e $f$ è dispari rispetto a $y$ (o a $x$) allora $\int_{E_1} f = 0$
 
 \section{Altro}
 \subsection{Formulette}
@@ -321,7 +340,8 @@ ove $$t = tan\left(\frac{\alpha}{2}\right)$$
 \paragraph{Geometria analitica}
 \subparagraph{Piano tangente al grafico di una funzione}
 $$z = f(x_0, y_0) + \partial_x f(x_0, y_0) (x-x_0) + \partial_y f(x_0, y_0) (y - y_0) $$
-TAYLOR!!
+(calcolabile se e solo se $f$ è differenziabile in $(x_0, y_0)$
+
 \paragraph{Norme}
 $$|\vec{x}|_1 = |x_1|+\cdots+|x_n|$$
 $$|\vec{x}|_\infty = max( |x_1|,\cdots,|x_n|) \leq |x|$$
@@ -333,15 +353,16 @@ $$||A||_{HS} = \sqrt{tr(A\cdot A^t)} = \sqrt{\sum_{i,j=1}^n (a_{ij}^2)}$$
 $$cos(\theta)sin(\theta) \leq \frac{1}{2}$$
 $$ log(1+x) \leq x, \forall x > -1$$
 $$ log(x) \leq x-1 $$
-$$ e^x > x+1 $$
-$$xe^{-x} \leq e$$
+$$ e^x \geq x+1 $$
+$$xe^{-x} \leq e^{-1}$$
 $$x \geq arctg(x), \forall x \geq 0$$
-$$|a-b|\leq |a|+|b|$$
+$$|a+b|\leq |a|+|b|$$
 \paragraph{2D}
+$$x^2+y^2\geq |2xy|$$
 $$\dfrac{|x||y|}{\sqrt{x^2+y^2}} \leq |x|$$
 $$\dfrac{|x||y|}{\sqrt{x^2+y^2}} \leq |y|$$
 $$|x||y| \leq \dfrac{\sqrt{x^2+y^2}}{2}$$
-$$|x| \leq \sqrt{x^2+y^2+1} $$
+$$|x| \leq \sqrt{x^2+y^2} $$
 $$\dfrac{x^2y^2\cdots}{\sqrt{x^2+(y+\cdots)^2}} \leq |x|y^2\cdots $$
 \paragraph{nD}
 $$|(||a||-||b||)|\leq||a-b||$$
