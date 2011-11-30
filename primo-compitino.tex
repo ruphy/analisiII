@@ -1,16 +1,23 @@
-\documentclass[a4paper,12pt]{book}
+\documentclass[a4paper,12pt]{article}
 \usepackage[utf8x]{inputenc}
 \usepackage{amssymb, amsmath}
-\setcounter{chapter}{1}
 \newcommand{\ubar}{\underbar}
 \usepackage{fullpage}
 
-\author{Studenti vari}
-\title{Schema per il primo compitino}
-
 \begin{document}
-
+\begin{titlepage}
+\title{Dispensa per il primo compitino di Analisi II}
+\author{Studenti vari}
+% Remove command to get current date 
 \maketitle
+\end{titlepage}
+
+\begin{titlepage}
+\tableofcontents
+\end{titlepage}
+
+
+
 
 \section{Continuità e differenziabilità}
 \subsection{Definizioni principali}
@@ -68,7 +75,7 @@ $$ H(f) = \begin{bmatrix} \dfrac{\partial^2 f}{\partial x_1^2} & \dfrac{\partial
 Nota: se tutte le derivate seconde di f sono continue in una regione $\Omega$, allora l'hessiana di f è una matrice simmetrica in ogni punto di $\Omega$. (v. Teorema di Schwarz)
 
 \paragraph{Minori principali di Nord Ovest}
-I minori principali di Nord Ovest della matrice $A$ sono le sottomatrici quadrate della $A$ ottenute prendendo le prime $k$ righe dallŽalto e le prime $k$ colonne da sinistra di $A$.
+I minori principali di Nord Ovest della matrice $A$ sono le sottomatrici quadrate della $A$ ottenute prendendo le prime $k$ righe dall'alto e le prime $k$ colonne da sinistra di $A$.
 Data la matrice:
 \begin{displaymath}
 A=\left(\begin{array}{cccc}
@@ -110,20 +117,20 @@ i punti $\boldsymbol{x_0}=(x_0,y_0)$ che risolvono tale sistema sono detti punti
 \begin{itemize}
  \item Calcola gli autovalori della matrice [$A = H(f(\boldsymbol{x_0}))$; $det(A-\lambda I)$]
  \begin{itemize}
-  \item Se sono tutti positivi, $A$ e'definita positiva.
-  \item Se sono tutti negativi, $A$ e'definita negativa.
+  \item Se sono tutti positivi, $A$ è definita positiva.
+  \item Se sono tutti negativi, $A$ è definita negativa.
   \item Se tutti gli autovalori della matrice $A$ sono maggiori di $0$ e ne esiste almeno uno uguale a $0$, allora la forma quadratica è semidefinita positiva, ma non definita positiva.
   \item Se tutti gli autovalori della matrice $A$ sono minori di $0$ e ne esiste almeno uno uguale a $0$, allora la forma quadratica è semidefinita negativa, ma non definita negativa.
   \item Se sono in parte positivi, in parte negativi $A$ è indefinita.
  \end{itemize}
  \item Alternativamente, siano $A_k$ i minori principali di Nord-Ovest di dimensione $k$.
-Sia $\Delta_k=det(A_k)\ \forall k=1,\dots,n$ (cioe'il determinante del minore principale di NO di $dim=k$) allora:
+Sia $\Delta_k=det(A_k)\ \forall k=1,\dots,n$ (cioè il determinante del minore principale di NO di $dim=k$) allora:
  \begin{itemize}
-  \item Se $\Delta_k > 0 \forall k$ $A$ è definita positiva.
-  \item Se $(-1)^k\cdot\Delta_k > 0 \forall k$ $A$  è definita negativa.
-  \item Se $\Delta_k \geq 0 \forall k$ $A$ è semidefinita positiva. 
-  \item Se $(-1)^k\cdot\Delta_k \geq 0 \forall k$ $A$  è semidefinita negativa. 
-  \item Se non vale nessuna delle condizioni precedenti la matrice è indefinita. Puoi controllare ancora gli autovalori, in quanto la matrice potrebbe essere indefinita. 
+  \item Se $\Delta_k > 0,\ \forall k$, allora $A$ è definita positiva.
+  \item Se $(-1)^k\cdot\Delta_k > 0, \ \forall k$ $A$, allora  è definita negativa.
+  \item Se $\Delta_k \geq 0, \ \forall k$ e $\exists h, \ 1\le h \le n \ | \ \Delta_h> 0$, allora $A$ è semidefinita positiva. 
+  \item Se $(-1)^k\cdot\Delta_k \geq 0, \ \forall k$ e $\exists h, \ 1\le h \le n \ |\ (-1)^k\cdot\Delta_k > 0 $, allora $A$   è semidefinita negativa. 
+  \item Se non vale nessuna delle condizioni precedenti la matrice è indefinita.  
  \end{itemize}
  \item a questo punto sappiamo che:
  \begin{itemize}
@@ -175,6 +182,11 @@ Sia $f: I \times J \rightarrow \mathbb{R}$. Sia $J = (b_1, b_2)$
  \item $\forall x_0 \in I$, $f_{x_0}(y) $ continua e strettamente crescente in $J$
  \item $\displaystyle\lim_{y \to b_1+}f_x(y) < 0$ e $\displaystyle\lim_{y \to b_2-} f_x(y) > 0$ $\forall x \in I$
  \item Allora $\exists ! \phi(x): f(x, \phi(x)) = 0$ $\forall x \in I$
+ \item Se $f$ è continua in $I\times J$ allora $\phi(x)$ è continua in $I$
+ \item Se $f$ è differenziabile in $I\times J$ e $\partial_y f(x, \phi(x))\neq 0$, $\forall x\in I$, allora $\phi(x)$ è differenziabile con derivata 
+ \begin{displaymath}
+ \phi^{'}(x)=-\frac{\partial_x f(x, \phi(x))}{\partial_y f(x, \phi(x))}
+ \end{displaymath}
 \end{itemize}
 Il viceversa è assolutamente simmetrico.
 \subparagraph{In piccolo}
@@ -214,7 +226,7 @@ Consideriamo il caso in cui si cerchi una funzione $y=\phi(x)$. Il caso $x=\psi(
 	 che da sicuramente qualche informazione su
 	 $$ \lim_{x \to +\infty} \phi(x) $$
  \item Prova a studiare gli estremanti di $\phi(x)$, ricordando che
- 	 $$\phi'(x) = -\displaystyle\frac{\partial_x f}{\partial_y f}$$
+ 	 $$\phi'(x) = -\dfrac{\partial_x f(x, \phi(x))}{\partial_y f(x, \phi(x))}$$
 \end{itemize}
 
 \subsection{Trucchetti}
@@ -268,15 +280,17 @@ $$\int_R f(x, y)dxdy = \int^b_a dx\int^d_c f(x, y) dy$$
 
 \subsection{Ricorda}
 \begin{itemize}
- \item Se $G_f$ è grafico di una funzione, $m(G_f) = 0$.
+ \item Se $G_f$ è grafico di una funzione integrabile (e.g. una funzione limitata e continua), $m(G_f) = 0$.
 \end{itemize}
 \paragraph{Cambio di coordinate (diffeomorfismi)}
 Se per risolvere il tuo integrale devi effettuare un cambio di coordinate, devi procedere con cautela.
 
-Sia ad esempio $$(\rho, \theta) = \psi(x, y) = \left(\begin{matrix}\sqrt{x^2+y^2} \\ atan(y/x)\end{matrix}\right)^t$$
-e sia $J_\psi$ la matrice jacobiana associata.
-Allora, essendo $D=\psi(\Omega)$,\\ $\vec{x} = (x, y) \in \Omega$ e $\vec{p} = (\rho, \theta) \in D$.
-$$ \int_\Omega f(\vec{x}) d\vec{x} = \int_{\psi(\Omega)} |det(J_\psi)|\cdot f(\psi(\vec{x})) d\psi(x) = \int_D |det(J_\psi)|\cdot f(\vec{p})d\vec{p} $$
+Sia ad esempio $$(x, y) = \phi (\rho, \theta) = \left(\begin{matrix} \rho sen(\theta) \\  \rho sen(\theta)\end{matrix}\right)^t$$
+ sia $J_\phi$ la matrice jacobiana associata, e sia $\psi=\phi^{-1}$.
+Allora, essendo $D=\psi(\Omega)$,\\ $\boldsymbol{x} = (x, y) \in \Omega$ e $\boldsymbol{t} = (\rho, \theta) \in D$, si ha:
+$$ \int_\Omega f(\boldsymbol{x}) d\boldsymbol{x} = \int_{\psi(\Omega)= D} |det(J_\phi)|\cdot f(\phi(\boldsymbol{t})) d\boldsymbol{t}  $$
+nel caso dell'esempio di passaggio alle coordinate polari si ha che $|det(J_\phi)|=\rho$ e quindi
+$$ \int_\Omega f(\boldsymbol{x}) d\boldsymbol{x} = \int_{ D} \rho \cdot f(\phi(\rho,\theta)) d\rho d\theta  $$
 
 \subsection{Come risolvere un esercizio}
 \paragraph{Notazione:}
@@ -287,7 +301,7 @@ Inoltre $m(\Omega) := m_{\mathrm{PJ}}(\Omega)$
  \item Controlla che $\Omega$ sia misurabile. In caso negativo fermati.
  \item Controlla che $\mathcal{E}f$ sia integrabile. In caso negativo fermati.
  \begin{itemize}
-  \item Se le funzioni sono limate e continue su $\Omega$ aperto e misurabile, sono integrabili in $\Omega$. Sono ammesse anche funzioni con discontinuità di prima specie, se discontinue su insiemi di misura nulla.
+  \item Se le funzioni sono limitate e continue su $\Omega$ aperto e misurabile, sono integrabili in $\Omega$. Sono ammesse anche funzioni con discontinuità di prima specie, se discontinue su insiemi di misura nulla.
   \item Se $\Omega$ è semplice (dunque compatto) e $f$ continua su $\Omega$, $f\in\Re[\Omega]$. ($\mathcal{E}f$ è generalmente continua)
  \end{itemize}
  \item Prega che le primitive siano semplici da trovare.
@@ -336,6 +350,14 @@ $$sin(\alpha) = \frac{2t}{1+t^2}$$
 $$cos(\alpha) = \frac{1-t^2}{1+t^2}$$
 $$tan(\alpha) = \frac{2t}{1-t^2}$$
 ove $$t = tan\left(\frac{\alpha}{2}\right)$$
+
+In questi casi:
+$$ d\alpha = \frac{2}{1+t^2}\cdot dt$$
+
+\subparagraph{Formule di bisezione}
+$$sin(2\theta) = 2sin(\theta)cos(\theta)$$
+$$cos(2\theta)=cos^2(\theta)-sen^2(\theta)= 2cos^2(\theta)-1=1-2sen^2(\theta)$$
+
 \subsection{Nozioni utili}
 \paragraph{Geometria analitica}
 \subparagraph{Piano tangente al grafico di una funzione}
@@ -378,5 +400,4 @@ $$|(||a||-||b||)|\leq||a-b||$$
 $$|||A||| \leq ||A||_{HS}$$
 
 \end{document}
-
 
