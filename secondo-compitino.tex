@@ -32,40 +32,53 @@ Sia $\{M_n\}$ una successione (non negativa?) tale che, (definitivamente?), $\fo
 
 \section{Equazioni differenziali}
 
+\subsection{Tipi di equazioni}
+\subsubsection{LNOCC}
+\subsubsection{LNOCC}
+\subsubsection{LNOCC}
+
+$$y($$
+
+
+
+\subsubsection{LNOCC}
+\subsubsection{LNOCC}
+\subsubsection{LNOCC}
+\subsubsection{On heavens door...}
 \subsection{Equazioni particolari}
 \subsubsection{Equazioni lineari}
 Con un'equazione di forma:
-$$y'(x) = P(x)y+Q(x)$$
+$$y'(t) = P(t)y+Q(t)$$
 Allora
-$$y(x)=e^{- \displaystyle\int P(x)dx}\left(k + \int Qe^{-\displaystyle\int P(x)dx}dx\right)$$
+$$y(t)=e^{- \displaystyle\int P(t)dt}\left(k + \int Qe^{-\displaystyle\int P(t)dt}dt\right)$$
 \subsubsection{Equazione di Bernoulli}
 Con un'equazione di forma:
-$$y'(x) = P(x)y+Q(x)$$
+$$y'(t) = P(t)y+Q(t)$$
 con $\alpha \neq 0, 1$. Allora, si impone:
-$$ z(x)=y(x)^{1-\alpha} $$
-si risolve l'equazione lineare in $z$: $$z'(x)=(1-\alpha)P(x)z(x)+Q(x)$$ e, trovata $z(x)$ con la formula sopra, si ricava $y(x)$.
+$$ z(t)=y(t)^{1-\alpha} $$
+si risolve l'equazione lineare in $z$: $$z'(t)=(1-\alpha)P(t)z(t)+Q(t)$$ e, trovata $z(t)$ con la formula sopra, si ricava $y(t)$.
 
 \subsubsection{Equazione di Riccati}
-$$y'(x) = P(x)y^2+Q(x)y+R(x)$$
-Conoscendo una soluzione particolare $\Psi(x)$, allora applico la sostituzione
-$$y(x)=\Psi(x)+\dfrac{1}{z(x)}$$
+$$y'(t) = P(t)y^2+Q(t)y+R(t)$$
+Conoscendo una soluzione particolare $\Psi(t)$, allora applico la sostituzione
+$$y(t)=\Psi(t)+\dfrac{1}{z(t)}$$
 e con un po' di passaggi si dimostra che alla fine
-$$z'(x)= -\left[2\Psi(x)P(x)+Q(x)\right]z(x)-P(x)$$
+$$z'(t)= -\left[2\Psi(t)P(t)+Q(t)\right]z(t)-P(t)$$
 che è lineare.
 \subsection{Variabili separabili}
 Se invece
-$$y'(x) = f(x)g(y)$$
+$$y'(t) = f(t)g(y)$$
 Allora ovviamente si risolve ricordando che
-$$\int\dfrac{dy}{g(y)}=\int f(x)dx + c$$
+$$\int\dfrac{dy}{g(y)}=\int f(t)dt + c$$
 \subsection{Equazioni omogenee}
-$$y'(x) = f\left(\dfrac{y(x)}{x}\right)$$
+$$y'(t) = f\left(\dfrac{y(t)}{t}\right)$$
 Allora si sostituisce
 $$z=\dfrac{y}{x}$$
-da cui $$z'(x) = \dfrac{dz}{dx} = \dfrac{f(z)-z}{x}$$
+da cui $$z'(t) = \dfrac{dz}{dt} = \dfrac{f(z)-z}{t}$$
 e dunque
-$$\int\dfrac{dz}{f(z)-z}=\int \dfrac{dx}{x} + c$$
+$$\int\dfrac{dz}{f(z)-z}=\int \dfrac{dt}{t} + c$$
 sicché
-$$\int\dfrac{dz}{f(z)-z} = \log|x| + c$$
+$$\int\dfrac{dz}{f(z)-z} = \log|t| + c$$
 \subsubsection{Equazioni lineari di ordine $n$}
 ...
 
