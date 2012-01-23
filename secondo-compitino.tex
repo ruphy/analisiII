@@ -89,6 +89,15 @@ Allora $\phi$ ha un unico punto fisso.
 L'integrale generale è una soluzione di una equazione differenziale.\\
 Ad esempio, l'integrale generale, o soluzione generale, di un'equazione differenziale lineare non omogenea è data dalla somma tra una funzione soluzione dell'omogenea associata e una soluzione dell'equazione non omogenea. La soluzione particolare dell'equazione non omogenea è anche detta \textbf{integrale particolare}. Parlare di integrare un'equazione differenziale è equivalente a parlare di risolvere un'equazione differenziale.
 
+\paragraph{Matrice wronskiana}
+Siano $\phi_1,...,\phi_n$ funzioni a valori su $\mathbb{R}^n$ definite in $I\subset \mathbb{R}$.
+Si chiama \textbf{matrice wronskiana} di $\phi_1,...,\phi_n$ la matrice:
+$$W(t):=[\phi_1(t)\ ...\ \phi_n(t)]$$
+Si chiama altresì \textbf{wronskiano} di $\phi_1,...,\phi_n$:
+$$w(t):=\text{det } W(t)$$
+Nota: l'annullarsi del wronskiano è condizione necessaria (ma non sufficiente) per la dipendenza lineare di $\phi_1,...,\phi_n$. Tuttavia, se si parla di un sistema lineare omogeneo, l'annullarsi del wronskiano ($\forall t \in I$) diventa anche condizione necessaria.
+
+
 \subsection{Tipi di equazioni}
 \subsubsection{LO}
 Un sistema lineare omogeneo (LO) di equazioni differenziali è un sistema:
@@ -99,11 +108,25 @@ ove $$A(t)\in M_n(\mathbb{R})\ \ \ \forall t\in I\subset R$$ e $\underbar{y}$ ha
  \item Lo spazio delle soluzioni di (LO) è uno spazio vettoriale di dimensione $n$.
  \item Il (PC) associato a (LO) ha una e una sola soluzione definita su tutto $I$.
  \item $A(t)\underbar{x}$ ha crescita al più lineare.
+ \item Se $\phi_1,...,\phi_n$ sono soluzioni di (LO), queste sono linearmente indipendenti se e solo se $w(t)\neq0$ $\forall t \in I$.
 \end{itemize}
 
 \subsubsection{LNO}
+Un sistema lineare non omogeneo (LNO) di equazioni differenziali è un sistema:
+$$\underbar{y}' = A(t)\underbar{y} + \underbar{b}(t)$$
+\paragraph{Osservazioni}
+\begin{itemize}
+ \item Lo spazio delle soluzioni di (LNO) non è uno spazio vettoriale, se $\underbar{b}\neq\underbar{0}$.
+ \item Sia $\Psi^*$ un soluzione di (LNO). Tutte e sole le soluzioni di (LNO) sono allora del tipo
+       $$ \Psi(t) = \phi(t) + \Psi^*(t)\ \ \forall t \in I$$
+       dove $\phi$ è una soluzione qualunque dell'(LO) associato ($\underbar{b}=\underbar{0}$).
+ \item Se $A(t)$ è continua, allora $\underbar{b}\in C(I)$ e il (PC) associato ha una e una sola soluzione.
+ \item Se $\phi_1,...,\phi_n$ sono soluzioni di (LO), queste sono linearmente indipendenti se e solo se $w(t)\neq0$ $\forall t \in I$.
+\end{itemize}
 
 \subsubsection{LOCC}
+Un sistema lineare omogeneo a coefficienti costanti (LOCC) di equazioni differenziali è un sistema molto simile a un (LO), tranne per il fatto che gli elementi della matrice $A$ sono costanti. In altre parole, $A$ non è funzione di $t$:
+$$\underbar{y}' = A\underbar{y}$$
 
 \subsubsection{LNOCC}
 Un sistema lineare non omogeneo (a coefficienti costanti) di equazioni differenziali è un sistema del tipo
@@ -116,15 +139,17 @@ $$\underbar{y}(t_0)=\underbar{y}_0$$
 Allora si ha che
 $$\phi(t)=e^{(t-t_0)A}\underbar{y}_0+\Psi^*(t)$$
 ovvero si somma alla soluzione generale del sistema omogeneo associato la soluzione particolare trovata in precedenza.
-\subsubsection{Metodo di variazione delle costanti arbitrarie}
-
-
 
 
 \paragraph{LNOCC}
 \paragraph{LNOCC}
 \paragraph{On heavens door...}
-\subsection{Equazioni particolari}
+\subsection{Risolvere un esercizio}
+In generale, risolvere (integrare) un'equazione differenziale consiste principalmente nel riconoscere un tipo di equazione, ed applicare procedimenti noti. Vediamone qualcuno.
+
+\subsubsection{Metodo di variazione delle costanti arbitrarie}
+
+
 \subsubsection{Equazioni lineari}
 Con un'equazione di forma:
 $$y'(t) = P(t)y+Q(t)$$
