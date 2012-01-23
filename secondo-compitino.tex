@@ -87,6 +87,28 @@ Allora $\phi$ ha un unico punto fisso.
 \paragraph{Il problema di Cauchy}
 Siano $f:\Omega \subseteq \mathbb{R}^2 \longrightarrow $ e $ \left(t_0,x_0\right) \in \Omega.$ Una soluzione del problema di Cauchy:
 
+è una coppia $\left( \phi , I \right)$ costituita da una funzione $\phi: I \longleftrightarrow \mathbb{R}$ differenziabile in $I$ tale che:
+\begin{itemize}
+\item $t_0 \in I$ e $ \phi\left(t_0\right)=x_0$
+\item $ \left(t,\phi\left(t\right)\right) \in \Omega \ \forall t \in I$
+\item $ \phi^{'}\left(t \right) = f\left(t,\phi\left(t\right)\right)\ \forall t \in I$
+\end{itemize}
+
+Se $\left(\phi,I\right)$ risolve il problema di Cauchy, allora è una soluzione continua dell'equazione di Volterra:
+$$ x\left(t\right) = x_0 + \displaystyle\int^t_{t_0} f\left(s,x\left(s\right)\right) ds $$
+
+\paragraph{Teorema di esistenza e unicità in piccolo o locale}
+Se $f \in C\left(\Omega\right)$ allora PC ha almeno una soluzione. \\
+Se $f \in C\left(\Omega\right) \cap Lip^{loc}_x\left(\Omega\right)$, allora PC ha un'unica soluzione in un opportuno intorno di $t_0$.\\
+Una funzione di classe $C^1$ è localmente lipschitziana. 
+
+\paragraph{Teorema di esistenza e unicità in grande o globale}
+Siano $-\infty < \tau_1 < \tau_2 < +\infty$ e $\S:=\left[\tau_1,\tau_2\right]\times\mathbb{R}$. Sia $f \in C\left(\Omega\right) \cap Lip^{loc}_x\left(\Omega\right)$ con crescita al più lineare in x, cioè $\exists A\,B$ t.c 
+$$ \|f \left(t,x\right)\|\leq A + B\|x\|$$
+allora l'unica soluzione di
+dove $\left(t_0,x_0\right)$ è un punto qualunque in S, è definita in $\left[\tau_1,\tau_2\right]$.
+
+
 \paragraph{Integrale generale}
 L'integrale generale è una soluzione di una equazione differenziale.\\
 Ad esempio, l'integrale generale, o soluzione generale, di un'equazione differenziale lineare non omogenea è data dalla somma tra una funzione soluzione dell'omogenea associata e una soluzione dell'equazione non omogenea. La soluzione particolare dell'equazione non omogenea è anche detta \textbf{integrale particolare}. Parlare di integrare un'equazione differenziale è equivalente a parlare di risolvere un'equazione differenziale.
