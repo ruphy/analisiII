@@ -22,15 +22,38 @@ Sia $\{f_n\}$ una successione di funzioni a valori reali o complessi su $E$.
 $\{f_n\}$ converge \textbf{puntualmente} se: $$\forall \varepsilon>0, \forall x \in E\ \ \exists N=N(\varepsilon, x):\ \forall n \geq N\ \forall x\in E\ \ |f_n(x) - f(x)| < \varepsilon$$ ove $$f(x):=\lim_{n\to+\infty} f_n(x)$$
 \subsection{Criteri di convergenza}
 
-\paragraph{Successioni}
+\subsubsection{Successioni}
 $\{f_n\}$ converge uniformemente se e solo se $\forall \varepsilon>0\ \ \exists N=N(\varepsilon):\ \forall n,m \geq N\ \forall x\in E$ si ha che $|f_n(x) - f_m(x)| < \varepsilon$.
 
-\paragraph{Serie}
-Sia $\{M_n\}$ una successione (non negativa?) tale che, (definitivamente?), $\forall x$ $|f_n(x)|\leq M_n$. Allora se $\sum M_n$ converge $\Rightarrow\sum f_n$ converge uniformemente.
+La convergenza uniforme di una successione è condizione \textbf{necessaria e sufficiente} per verificare il criterio di Cauchy.
+
+\subsubsection{Serie}
+
+\paragraph{Condizione sufficiente 1}
+Sia $\{f_n\}$ una successione di funzioni su $E$. Sia $$M_n:= \displaystyle\sup_{x\in E}|f_n(x)|$$ e $$\sum_{n=1}^{+\infty}M_n<+\infty$$
+allora $\displaystyle\sum_{n=1}^{+\infty}f_n$ converge uniformemente.
+
+\subsection{Come risolvere gli esercizi}
+\subsubsection{Successioni}
+\paragraph{Punto 0}
+Cerca dominio, etc...
+\paragraph{Convergenza puntuale}
+Calcola limite...
+\paragraph{Convergenza uniforme}
+Sup di fn...
+
+\subsubsection{Serie}
+
+\section{Altri teoremini interessanti}
+\paragraph{Successioni, continuità}
+Sia $\{f_n\}$ una successione di funzioni continue definite in $E$ uniformemente convergenti a $f$. Allora $f$ è continua.
+\paragraph{Convergenza uniforme e integrazione}
+...
 
 
 
 \section{Equazioni differenziali}
+
 
 \subsection{Tipi di equazioni}
 \subsubsection{LNOCC}
@@ -81,7 +104,7 @@ $$\int\dfrac{dy}{g(y)}=\int f(t)dt + c$$
 \subsection{Equazioni omogenee}
 $$y'(t) = f\left(\dfrac{y(t)}{t}\right)$$
 Allora si sostituisce
-$$z=\dfrac{y}{x}$$
+$$z=\dfrac{y}{t}$$
 da cui $$z'(t) = \dfrac{dz}{dt} = \dfrac{f(z)-z}{t}$$
 e dunque
 $$\int\dfrac{dz}{f(z)-z}=\int \dfrac{dt}{t} + c$$
@@ -90,6 +113,11 @@ $$\int\dfrac{dz}{f(z)-z} = \log|t| + c$$
 \subsubsection{Equazioni lineari di ordine $n$}
 ...
 
+\section{Altro}
+\subsection{Norme}
+\paragraph{Norma 1}
+La norma 1 è definita come:
+$$||f||_1 := \int_a^b|f|$$y
 
 \end{document}
 
