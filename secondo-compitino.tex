@@ -45,12 +45,41 @@ Sup di fn...
 \subsubsection{Serie}
 
 \section{Teoria in qualche modo correlata}
+
+\subsection{Serie e successioni}
 \paragraph{Successioni, continuità}
 Sia $\{f_n\}$ una successione di funzioni continue definite in $E$ uniformemente convergenti a $f$. Allora $f$ è continua.
 \paragraph{Convergenza uniforme e integrazione}
 ...
 
+\subsection{Contrazioni in spazi metrici}
+\subsubsection{Definizioni}
+Sia $(X, d)$ uno spazio metrico, sia $\phi : X\rightarrow X$.
+\paragraph{Contrazione}
+Si dice che $\phi$ è una contrazione di $X$ in sé quando:
+$$\exists c < 1:\ \ d(\phi(x_1), \phi(x_2)) \leq cd(x_1, x_2)\ \ \forall x_1, x_2 \in X$$
+\paragraph{Punto fisso}
+Si dice che $\bar{x}\in X$ è punto fisso per $\phi$ se:
+$$\phi(\bar{x})=\bar{x}$$
 
+\subsection{Lipschitzianità}
+Sia $f:\Omega\rightarrow\mathbb{R}$ ove $\Omega\subset\mathbb{R}^n$, aperto.
+\paragraph{Lipschitzianità semplice}
+
+\paragraph{Lipschitzianità uniforme}
+Si dice che $f(t, v)$ è lipschitziana rispetto a $v$, uniformemente rispetto a $t$, su $\Omega$ se $\exists L>0$ t.c.
+$$|f(t, v) - f(t, w)| \leq L|v-w|\ \ \forall (t,v), (t, w) \in \Omega$$
+
+\paragraph{Lipschitzianità locale}
+Si dice che $f(t, v)$ è localmente lipschitziana rispetto a $v$, uniformemente rispetto a $t$, se
+$$\forall(t, v)\in \Omega\ \ \exists U((t, v), r)$$
+t.c. $f|_U$ è lipschitziana rispetto a $v$, uniformemente rispetto a $t$.
+
+
+\subsubsection{Teoremi}
+\paragraph{Teorema di Banach-Cacioppoli}
+Sia $(X, d)$ uno spazio metrico, sia $\phi : X\rightarrow X$ una contrazione.
+Allora $\phi$ ha un unico punto fisso.
 
 \section{Equazioni differenziali}
 
@@ -61,10 +90,23 @@ L'integrale generale è una soluzione di una equazione differenziale.\\
 Ad esempio, l'integrale generale, o soluzione generale, di un'equazione differenziale lineare non omogenea è data dalla somma tra una funzione soluzione dell'omogenea associata e una soluzione dell'equazione non omogenea. La soluzione particolare dell'equazione non omogenea è anche detta \textbf{integrale particolare}. Parlare di integrare un'equazione differenziale è equivalente a parlare di risolvere un'equazione differenziale.
 
 \subsection{Tipi di equazioni}
-\subsubsection{LNOCC}
-\subsubsection{LNOCC}
-\subsubsection{LNOCC}
+\subsubsection{LO}
+Un sistema lineare omogeneo (LO) di equazioni differenziali è un sistema:
+$$\underbar{y}' = A(t)\underbar{y}$$
+ove $$A(t)\in M_n(\mathbb{R})\ \ \ \forall t\in I\subset R$$ e $\underbar{y}$ ha dimensione $n$.
+\paragraph{Osservazioni}
+\begin{itemize}
+ \item Lo spazio delle soluzioni di (LO) è uno spazio vettoriale di dimensione $n$.
+ \item Il (PC) associato a (LO) ha una e una sola soluzione definita su tutto $I$.
+ \item $A(t)\underbar{x}$ ha crescita al più lineare.
+\end{itemize}
 
+\subsubsection{LNO}
+
+\subsubsection{LOCC}
+
+\subsubsection{LNOCC}
+Un sistema lineare non omogeneo (a coefficienti costanti) di equazioni differenziali è un sistema del tipo
 $$\underbar{y}'=A\underbar{y}+\underbar{b}(t)$$
 Ove $A\in M_n(\mathbb{R})$ e $b$ continua, allora
 $$\Psi^*(t)= \int_{t_0}^t e^{(t-s)A} \underbar{b}(s)ds$$
@@ -77,7 +119,8 @@ ovvero si somma alla soluzione generale del sistema omogeneo associato la soluzi
 \subsubsection{Metodo di variazione delle costanti arbitrarie}
 
 
-\subsubsection{LNOCC}
+
+
 \subsubsection{LNOCC}
 \subsubsection{LNOCC}
 \subsubsection{On heavens door...}
@@ -123,6 +166,28 @@ $$\int\dfrac{dz}{f(z)-z} = \log|t| + c$$
 \paragraph{Norma 1}
 La norma 1 è definita come:
 $$||f||_1 := \int_a^b|f|$$y
+\subsection{Formule varie}
+\paragraph{Esponenziale di una matrice}
+Ricordiamo la definizione di esponenziale di una matrice.
+$$e^{tA} := \sum_{k=0}^{+\infty} \dfrac{(tA)^k}{k!}$$
+Questa scrittura ci da però pochi metodi pratici per il calcolo dell'esponenziale.
+
+Sia allora $D$ una matrice diagonale:
+$$D=\text{diag}(\lambda_1,...,\lambda_n)$$
+Si può mostrare facilmente che
+$$e^{tD} = \text{diag}(e^{t\lambda_1}, ..., e^{t\lambda_n})$$
+
+Analizziamo ora il caso generale.
+Sia $A$ una matrice di dimensione $n$ con un sistema completo di autovettori (colonna) $\underbar{h}_1, ..., \underbar{h}_n$ riferiti a $n$ autovalori $\lambda_1, ..., \lambda_n$. Definiamo $S$ come
+$$S:=[\underbar{h}_1 ... \underbar{h}_n]$$
+
+$A$ è ora ovviamente diagonalizzabile tramite $S$:
+$$S^{-1}AS=\text{diag}(\lambda_1,...,\lambda_n)$$
+e
+$$A = SDS^{-1}$$
+Allora, con dei semplici passaggi si verifica che
+$$e^{tA} = Se^{tD}S^{-1}$$
+e dunque il calcolo di esponenziale di una matrice qualunque viene ricondotto al calclolo di una matrice diagonale, appena risolto.
 
 \end{document}
 
