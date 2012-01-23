@@ -164,7 +164,7 @@ $$\Psi^*(t)= W(t)\int_{t_0}^t V(t)\underbar{b}(s) ds$$
 Con un'equazione di forma:
 $$y'(t) = P(t)y+Q(t)$$
 Allora
-$$y(t)=e^{- \displaystyle\int P(t)dt}\left(k + \int Qe^{-\displaystyle\int P(t)dt}dt\right)$$
+$$y(t)=e^{- \displaystyle\int P(t)dt}\left(k + \int Q(t)e^{-\displaystyle\int P(t)dt}dt\right)$$
 \subsubsection{Equazione di Bernoulli}
 Con un'equazione di forma:
 $$y'(t) = P(t)y+Q(t)$$
@@ -202,7 +202,7 @@ $$y^{(n)} + a_1(t)y^{(n-1)} + a_2y^{(n-2)} + ... + a_n(t)y = 0$$
 ove le funzioni $a_j \in C(I)$
 Allora il sistema è equivalente al sistema:
 $$\underbar{Y}' = A(t)\underbar{Y}$$
-ove $\underbar{Y}=(y_1...y_n)$ ?(controlla il senso di questo vettore)? e
+ove $\underbar{Y}=(y, y', y^{(2)}, ..., y^{(n)})$ (ogni componente è trattata come componente a sé stante, e non esplicitamente come derivata) e
 $$A(t) =
 \begin{bmatrix}
 0 & 1 & 0 & ... & 0\\
@@ -225,7 +225,7 @@ oppure
 $$\psi(t) = c'_1\sin(\omega t) + c'_2\cos(\omega t)$$
 a seconda della base scelta.
 
-\paragraph{Risonanza}
+\paragraph{Risonanza??}
 Invece, data un'equazione di forma
 $$x''-\omega^2 x=0$$
 questa ha soluzioni reali, più precisamente del tipo
