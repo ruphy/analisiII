@@ -55,9 +55,12 @@ Utilizzando un'altra scrittura, la definizione di convergenza uniforme diviene:
 \subsection{Criteri di convergenza}
 
 \subsubsection{Successioni}
-$\{f_n\}$ converge uniformemente se e solo se $\forall \varepsilon>0\ \ \exists N=N(\varepsilon):\ \forall n,m \geq N\ \forall x\in E$ si ha che $|f_n(x) - f_m(x)| < \varepsilon$.
-
-La convergenza uniforme di una successione è condizione \textbf{necessaria e sufficiente} per verificare il criterio di Cauchy.
+\begin{teo}[Condizione di Cauchy]
+Sia $\{f_n\}$ una successione di funzioni a valori reali (o complessi). Allora $\{f_n\}$ converge uniformemente in $E$ se e solo se $\forall \varepsilon>0\ \ \exists N=N(\varepsilon):\ \forall n,m \geq N\ \forall x\in E$ si ha che 
+$$|f_n(x) - f_m(x)| < \varepsilon$$.
+\end{teo}
+\subparagraph*{Osservazione}
+La convergenza uniforme di una successione è quindi condizione \textbf{necessaria e sufficiente} per verificare il criterio di Cauchy.
 
 \subsubsection{Serie}
 
