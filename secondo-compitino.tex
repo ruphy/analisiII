@@ -280,6 +280,17 @@ Il suo sostegno è l'immagine di $[a,b]$ tramite $\gamma$. Viene anche detto ``p
 Sia $\gamma$ una curva in $\mathbb{R}^n$. Allora la velocità vettoriale $\underbar{v}(t)$ è definita come
 $$\underbar{v}(t) := \lim_{t\to t_0} \dfrac{\gamma(t)-\gamma(t_0)}{t-t_0}$$
 
+\paragraph{Regolarità}
+Una curva $\gamma:[a,b]\rightarrow\mathbb{R}^n$ si dice regolare se è di classe $C^1$. Si dice invece regolare a tratti se esiste una partizione $\{x_j\}$ di $[a,b]$ tale che $\gamma|_{[x_j, x_{j+1}]}$ è regolare.
+\paragraph{Equivalenza}
+Due curve regolari $\gamma :[a,b]\rightarrow\mathbb{R}^n$ e $\delta :[c,d]\rightarrow\mathbb{R}^n$ si dicono equivalenti se esiste una funzione 
+$f:[a,b]\rightarrow[c,d], f \in C^1([a,b])$, suriettiva, tale che $\forall x: f'(\underbar{x}) \neq 0$, e tale che
+$$\gamma(t) = \delta(f(t))$$
+\paragraph{Lunghezza}
+In modo simile a quanto si farebbe in Fisica, si ottiene la lunghezza di una curva integrando il modulo della sua velocità vettoriale. Essendo $\gamma$ una curva definita su $[a, b]$:
+$$L= \int_a^b ||\gamma'(t)|| dt = \int_a^b\sqrt{\gamma'_1(t)^2+\gamma'_2(t)^2+...+\gamma'_n(t)^2}dt$$
+
+
 \section{Uno-forme differenziali}
 \subsubsection{Definizioni}
 Una 1-forma differenziale è una funzione del tipo
