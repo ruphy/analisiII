@@ -38,14 +38,14 @@ si dirà somma puntuale della serie $\sum_{n=1}^{\infty} f_n$
 
 \subparagraph*{Osservazione}
 Utilizzando un'altra scrittura, la definizione di convergenza puntuale diviene:
- $$\forall \varepsilon>0, \forall x \in E\ \ \exists N=N(\varepsilon, x):\ \forall n \geq N\ \forall x\in E\ \ |f_n(x) - f(x)| < \varepsilon$$ 
+ $$\forall \varepsilon>0\qquad \forall x \in E\qquad\exists N=N(\varepsilon, x): \forall n \geq N\qquad |f_n(x) - f(x)| < \varepsilon$$ 
 \begin{defi}
 Sia $\{ f_n\} $ come sopra. Essa \textbf{ converge uniformente} su $E \subseteq \mathbb{R} $ alla funzione limite $f$ se:
  
 $$ \lim_{n\to+\infty} \displaystyle \sup_{x \in E} |f_n\left(x\right)-f\left(x\right)| = 0$$
 
 
-Similmente diciamo che la serie $\sum_{n=1}^{\infty} f_n$ converge uniformemente su $E \subseteq \mathbb{R} $ alla funzione limite $s$ se
+Similmente diciamo che la serie $\sum_{n=1}^{\infty} f_n$ converge uniformemente su $E \subseteq \mathbb{R} $ alla funzione limite $s(x)$ se e solo se
 
 $$ \lim_{n\to+\infty}  \sup_{x \in E} \displaystyle \left|\sum_{n=1}^{\infty} f_n(x)-s(x)\right| = 0 $$
 
@@ -53,7 +53,7 @@ $$ \lim_{n\to+\infty}  \sup_{x \in E} \displaystyle \left|\sum_{n=1}^{\infty} f_
 \subparagraph*{Osservazione}
  
 Utilizzando un'altra scrittura, la definizione di convergenza uniforme diviene:
- $$\forall \varepsilon>0, \forall x \in E\ \ \exists N=N(\varepsilon):\ \forall n \geq N\ \forall x\in E\ \ |f_n(x) - f(x)| < \varepsilon$$ 
+ $$\forall \varepsilon>0\qquad \exists N=N(\varepsilon):\ \forall n \geq N\qquad |f_n(x) - f(x)| < \varepsilon\qquad \forall x\in E$$ 
 
 \subsection{Criteri di convergenza}
 
@@ -142,16 +142,13 @@ Allora $\phi$ ha un unico punto fisso.
 Una serie di potenze è una serie di funzioni della forma
 $$\label{seriepotenza} \displaystyle \sum_{n=0}^\infty c_n\left(x-x_0\right)^n$$
 con $x_0 \in \mathbb{R}$ fissato, ${c_n}$ è successione di numeri reali e $x$ una variabile reale. 
-
-\subparagraph*{Osservazione}
-E' sempre possibile ricondursi al caso $x_0 = 0$ con una opportuna traslazione.
-
-L'insieme di convergenza di \ref{seriepotenza} è l'insieme degli $x \in \mathbb{R}$ tali che \ref{seriepotenza} converge. 
-\subparagraph*{Osservazione} L'insieme di convergenza di una serie di potenze è sempre un \textbf{intervallo.}
-
+E' sempre possibile ricondursi al caso $x_0 = 0$ con una opportuna traslazione. L'insieme di convergenza di \ref{seriepotenza} è l'insieme degli $x \in \mathbb{R}$ tali che \ref{seriepotenza} converge. L'insieme di convergenza di una serie di potenze è sempre un \textbf{intervallo.}
+\paragraph{Teorema della convergenza}
 Data la serie di potenze 
 $$ \displaystyle \sum_{n=0}^\infty c_n\left(x\right)^n$$
 poniamo $$ \alpha:=\limsup_{n\to \infty} \sqrt[n]{|c_n x^n|} \ e \ R:=\frac{1}{\alpha}$$
+(se $\alpha = +\infty$, allora $R=0$ e se $\alpha=0$, allora $R=+\infty$)
+La serie di potenze converge se $|x|<R$ e non converge se $|x|>R$.
 
 \subsection{Esercizi}
 
@@ -180,7 +177,8 @@ Una funzione di classe $\cont^n$ con $ n \geq 1 $ è localmente lipschitziana.
 \paragraph{Teorema di esistenza e unicità in grande o globale}
 Siano $-\infty < \tau_1 < \tau_2 < +\infty$ e $\S:=\left[\tau_1,\tau_2\right]\times\mathbb{R}$. Sia $f \in C\left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\right)$ con crescita al più lineare in x, cioè
 $$\exists a,b: \|f \left(t,x\right)\|\leq a + b\|x\|$$
-allora l'unica soluzione di ???MARCO??
+allora l'unica soluzione di 
+$$\begin{cases} x'=f\left(t,x\right) \\ y\left(t_0\right)=x_0 \end{cases}$$
 dove $\left(t_0,x_0\right)$ è un punto qualunque in S, è definita in $\left[\tau_1,\tau_2\right]$.
 
 \paragraph{Teorema di prolungamento}
