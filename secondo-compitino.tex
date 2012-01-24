@@ -3,6 +3,7 @@
 \usepackage{amssymb, amsmath, amsthm, mathrsfs}
 \newcommand{\ubar}{\underbar}
 \newcommand{\cont}{\mathscr{C}}
+\newcommand{\Rint}{\mathcal{R}}
 %\newtheorem{d}{Definizione}
 \usepackage{fullpage}
 
@@ -64,7 +65,12 @@ $$|f_n(x) - f_m(x)| < \varepsilon$$.
 \subparagraph*{Osservazione}
 La convergenza uniforme di una successione è quindi condizione \textbf{necessaria e sufficiente} per verificare il criterio di Cauchy.
 \begin{teo}
-Sia ${f_n}$ una successioni di funzioni definite su $K$ compatto, $f_n \in \mathscr{C}(K)$, $f_n$ con
+Sia ${f_n}$ una successioni di funzioni definite su $K$ compatto, $f_n \in \cont(K)$; sia $f_n$ convergente puntualmente a $f$,   $f \in \cont(K)$ . Se
+\begin{displaymath}
+f_1 \geq f_2 \geq f_3 \geq \dots
+\end{displaymath}
+
+allora $f_n$ converge a $f$ uniformemente.
 \end{teo}
 \subsubsection{Serie}
 
@@ -77,7 +83,15 @@ allora $\displaystyle\sum_{n=1}^{+\infty}f_n$ converge uniformemente.
 Sia $\{f_n\}$ una successione di funzioni continue definite in $E$ uniformemente convergenti a $f$. Allora $f$ è continua.
 \end{teo}
 \subsection{Convergenza Uniforme e Integrabilità}
+\begin{teo}
+Sia ${f_n}$ una successione di funzioni R-integrabili in $[a,b]\subseteq \mathbb{R}$, uniformemente convergente a $f$ in $[a,b]$. Allora $f\in \Rint([a,b])$ e
+$$\lim_{n\to\infty}\int_{a}^{b} f_n=\int_{a}^{b}f$$
+\end{teo}
 \subsection{Convergenza Uniforme e Differenziabilità}
+\begin{teo}
+Sia $f_n$ una successione di funzioni differenziabili in  $[a,b]\subseteq \mathbb{R}$. Supponiamo che esista un $x_{0} \in [a,b] $ per il quale la successione numerica ${f_n(x_0)}$ converga e che ${f^{'}(x)}$ converga uniformemente in $[a,b]$. Allora ${f_n}$ converge uniformemente in $[a,b]$ a una funzione $f$ e
+$$\lim_{n\to\infty} f^{'}_n (x)=f^{'}(x) \qquad \qquad \forall x \in [1,b]$$
+\end{teo}
 
 \subsection{Come risolvere gli esercizi}
 \subsubsection{Successioni}
