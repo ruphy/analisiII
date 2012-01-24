@@ -1,10 +1,12 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage[utf8x]{inputenc}
-\usepackage{amssymb, amsmath}
+\usepackage{amssymb, amsmath, amsthm}
 \newcommand{\ubar}{\underbar}
-
+%\newtheorem{d}{Definizione}
 \usepackage{fullpage}
 
+\newtheorem{teo}{Teorema}
+\newtheorem{defi}{Definizione}
 \begin{document}
 \begin{titlepage}
 \title{Dispensa per il secondo compitino di Analisi II}
@@ -17,10 +19,24 @@
 \tableofcontents
 \end{titlepage}
 
-\section{Successioni e serie}
 
+
+\section{Successioni e serie}
+\begin{defi}
 Sia $\{f_n\}$ una successione di funzioni a valori reali o complessi su $E$.
-$\{f_n\}$ converge \textbf{puntualmente} se: $$\forall \varepsilon>0, \forall x \in E\ \ \exists N=N(\varepsilon, x):\ \forall n \geq N\ \forall x\in E\ \ |f_n(x) - f(x)| < \varepsilon$$ ove $$f(x):=\lim_{n\to+\infty} f_n(x)$$
+$\{f_n\}$  \textbf{converge puntualmente} in $E$ se $\forall x \in E$ la successione numerica ${f_n(x)}$ converge in $\mathbb{R} $. Posto 
+\begin{displaymath}
+f(x):=\lim_{n\to\infty} f_{n}(x) \qquad \qquad \forall x \in E
+\end{displaymath}
+la funzione $f$ viene detta limite puntale di ${f_n}$
+
+Similmente, se $\forall x \in E$ la serie numerica $\sum_{n=1}^{\infty} f_n(x)$ converge in $\mathbb{R}$ allora diremo che la serie  $\sum_{n=1}^{\infty} f_n$ converge puntualmente in E. La funzione
+\begin{displaymath}
+s(x):= \sum_{n=1}^{\infty} f_n(x) \qquad \qquad \forall x \in E
+\end{displaymath}
+si dirà somma puntuale della serie $\sum_{n=1}^{\infty} f_n$
+\end{defi}
+% $\forall \varepsilon>0, \forall x \in E\ \ \exists N=N(\varepsilon, x):\ \forall n \geq N\ \forall x\in E\ \ |f_n(x) - f(x)| < \varepsilon$$ ove $$f(x):=\lim_{n\to+\infty} f_n(x)$$%
 \subsection{Criteri di convergenza}
 
 \subsubsection{Successioni}
