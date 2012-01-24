@@ -108,6 +108,8 @@ $$ \|f \left(t,x\right)\|\leq A + B\|x\|$$
 allora l'unica soluzione di
 dove $\left(t_0,x_0\right)$ è un punto qualunque in S, è definita in $\left[\tau_1,\tau_2\right]$.
 
+\paragraph{Teorema di prolungamento}
+Siano  $f \in C\left(\Omega\right) \cap Lip^{loc}_x\left(\Omega\right)$ e $\left(t_0,x_0\right) \in \Omega$. Siano $\left(\phi,I\right)$ la soluzione massimale di PC e $K$ cpt $\subset \Omega$. Allora il grafico di $\phi$ esce definitivamente da $K$ per $t\rightarrow t^+_{min}$ e $t\rightarrow t^-_{max}$, con $I:=(t_{min},t_{max})$.
 
 \paragraph{Integrale generale}
 L'integrale generale è una soluzione di una equazione differenziale.\\
@@ -119,7 +121,9 @@ Si chiama \textbf{matrice wronskiana} di $\phi_1,...,\phi_n$ la matrice:
 $$W(t):=[\phi_1(t)\ ...\ \phi_n(t)]$$
 Si chiama altresì \textbf{wronskiano} di $\phi_1,...,\phi_n$:
 $$w(t):=\text{det } W(t)$$
-Nota: l'annullarsi del wronskiano è condizione necessaria (ma non sufficiente) per la dipendenza lineare di $\phi_1,...,\phi_n$. Tuttavia, se si parla di un sistema lineare omogeneo, l'annullarsi del wronskiano ($\forall t \in I$) diventa anche condizione necessaria.
+Nota: l'annullarsi del wronskiano è condizione necessaria (ma non sufficiente) per la dipendenza lineare di $\phi_1,...,\phi_n$. 
+Condizione necessaria e sufficiente affinchè $n$ soluzioni su $I$ di una medesima equazione lineare omogenea siano linearmente indipendenti è che:
+$$ w(t)\neq0 \ \forall t \in I$$
 
 
 \subsection{Tipi di equazioni}
@@ -271,7 +275,7 @@ $$\phi(t) = c'_1\sin(\omega t) + c'_2\cos(\omega t) + \frac{1}{\omega^2}t$$
 o equivalentemente scegliendo una base complessa, la soluzione particolare da sommare è $\psi^*(t) = \frac{1}{\omega^2}t$.
 
 \section{Curve in $\mathbb{R}^n$}
-\subsection{Definzioni principali}
+\subsection{Definizioni principali}
 \paragraph{Curva, sostegno}
 Una curva in $\mathbb{R}^n$ è una funzione continua $\gamma:[a,b]\rightarrow\mathbb{R}^n$.
 Il suo sostegno è l'immagine di $[a,b]$ tramite $\gamma$. Viene anche detto ``parametrizzazione''.
