@@ -90,7 +90,6 @@ Sup di fn...
 
 \subsubsection{Serie}
 
-\section{Teoria in qualche modo correlata}
 
 \subsection{Contrazioni in spazi metrici}
 \subsubsection{Definizioni}
@@ -119,7 +118,7 @@ $$\exists U((t, v), r) : f(t, v)|_U \in \text{Lip}_t(v)\qquad\qquad\forall(t, v)
 (esiste un intorno $U$ di $(t, v)$ tale che la funzione ristretta a quell'intorno sia lipschitziana rispetto a $v$, uniformemente rispetto a $t$).
 
 \subsubsection{Teoremi}
-\paragraph{Teorema di Banach-Cacioppoli}
+\paragraph{Teorema di Banach-Caccioppoli}
 Sia $(X, d)$ uno spazio metrico, sia $\phi : X\rightarrow X$ una contrazione.
 Allora $\phi$ ha un unico punto fisso.
 
@@ -129,13 +128,21 @@ Una serie di potenze è una serie di funzioni della forma
 $$\label{seriepotenza} \displaystyle \sum_{n=0}^\infty c_n\left(x-x_0\right)^n$$
 con $x_0 \in \mathbb{R}$ fissato, ${c_n}$ è successione di numeri reali e $x$ una variabile reale. 
 E' sempre possibile ricondursi al caso $x_0 = 0$ con una opportuna traslazione. L'insieme di convergenza di \ref{seriepotenza} è l'insieme degli $x \in \mathbb{R}$ tali che \ref{seriepotenza} converge. L'insieme di convergenza di una serie di potenze è sempre un \textbf{intervallo.}
-\paragraph{Teorema della convergenza}
+\paragraph{Teorema della convergenza semplice}
 Data la serie di potenze 
 $$ \displaystyle \sum_{n=0}^\infty c_n\left(x\right)^n$$
 poniamo $$ \alpha:=\limsup_{n\to \infty} \sqrt[n]{|c_n x^n|} \ e \ R:=\frac{1}{\alpha}$$
 (se $\alpha = +\infty$, allora $R=0$ e se $\alpha=0$, allora $R=+\infty$)
 La serie di potenze converge se $|x|<R$ e non converge se $|x|>R$.
+R è il raggio di convergenza della serie.
+\paragraph{Teorema della convergenza uniforme delle serie di potenza}
+Supponiamo che $ \displaystyle \sum_{n=0}^\infty c_n\left(x\right)^n$ converga per $|x|<r$. Poniamo:
+$$ f(x):= \displaystyle \sum_{n=0}^\infty c_n\left(x\right)^n \ \ \forall t \in (-r,r) \forall \varepsilon > 0 $$
+Allora $$ \displaystyle \sum_{n=0}^\infty c_n\left(x\right)^n$$ converge uniformente a $f(x)$ in $[-r+\varepsilon,r-\varepsilon]$ Inoltre: $f \in \cont^\infty((-r,r))$ $$f^{(k)}(x) = \displaystyle \sum_{n=0}^\infty n(n-1)\dots(n-k+1)c_n x^{n-k} \ \ \forall x \in (-r,r)$$  $$f^{(k)}(0) = k!\ c_k \ \ k=0,1,2,3 \dots $$ 
 
+\paragraph{Serie di Taylor}
+La serie:
+$\displaystyle \sum_{n=0}^\infty \frac{f^{n}(0)}{n!} x^n$ si chiama serie di Taylor di $f$. Condizione necessaria affinchè la serie di Taylor di $f$ converga in  $x$ è che $$\lim_{n \to \infty}\displaystyle \left[ f(x) - \displaystyle  \sum_{k=0}^\infty \frac{f^{k}(0)}{k!}x^k \right] = 0 $$
 \subsection{Esercizi}
 
 \section{Equazioni differenziali}
@@ -184,24 +191,20 @@ Nota: l'annullarsi del wronskiano è condizione necessaria (ma non sufficiente) 
 Condizione necessaria e sufficiente affinchè $n$ soluzioni su $I$ di una medesima equazione lineare omogenea siano linearmente indipendenti è che:
 $$ w(t)\neq0 \qquad\qquad \forall t \in I$$
 
-\subsection{Grafici}
-
-
-\subsection{Tipi di equazioni}
-\subsubsection{LO}
-Un sistema lineare omogeneo (LO) di equazioni differenziali è un sistema:
+\subsection{Sistemi lineari omeogeni}
+Un sistema lineare omogeneo (LO) di equazioni differenziali è un sistema della forma:
 $$\underbar{y}' = A(t)\underbar{y}$$
 ove $$A(t)\in M_n(\mathbb{R})\qquad \qquad \forall t\in I\subset R$$ e $\underbar{y}$ ha dimensione $n$.
 \paragraph{Osservazioni}
 \begin{itemize}
- \item Lo spazio delle soluzioni di (LO) è uno spazio vettoriale di dimensione $n$.
- \item Il (PC) associato a (LO) ha una e una sola soluzione definita su tutto $I$.
+ \item Lo spazio delle soluzioni di LO è uno spazio vettoriale di dimensione $n$.
+ \item Il PC associato a LO ha una e una sola soluzione definita su tutto $I$.
  \item $A(t)\underbar{x}$ ha crescita al più lineare.
- \item Se $\phi_1,...,\phi_n$ sono soluzioni di (LO), queste sono linearmente indipendenti se e solo se $w(t)\neq0$ $\forall t \in I$.
+ \item Se $\phi_1,...,\phi_n$ sono soluzioni di LO, queste sono linearmente indipendenti se e solo se $w(t)\neq0$ $\forall t \in I$.
 \end{itemize}
 
-\subsubsection{LNO}
-Un sistema lineare non omogeneo (LNO) di equazioni differenziali è un sistema:
+\subsection{Sistemi lineari non omogenei}
+Un sistema lineare non omogeneo (LNO) di equazioni differenziali è un sistema della forma:
 $$\underbar{y}' = A(t)\underbar{y} + \underbar{b}(t)$$
 \paragraph{Osservazioni}
 \begin{itemize}
@@ -213,11 +216,11 @@ $$\underbar{y}' = A(t)\underbar{y} + \underbar{b}(t)$$
  \item Se $\phi_1,...,\phi_n$ sono soluzioni di (LO), queste sono linearmente indipendenti se e solo se $w(t)\neq0$ $\forall t \in I$.
 \end{itemize}
 
-\subsubsection{LOCC}
+\subsection{Sistemi lineari omogeni a coefficienti costanti}
 Un sistema lineare omogeneo a coefficienti costanti (LOCC) di equazioni differenziali è un sistema molto simile a un (LO), tranne per il fatto che gli elementi della matrice $A$ sono costanti. In altre parole, $A$ non è funzione di $t$:
 $$\underbar{y}' = A\underbar{y}$$
 
-\subsubsection{LNOCC}
+\subsection{Sistemi lineari non omogenei a coefficienti costanti}
 Un sistema lineare non omogeneo (a coefficienti costanti) di equazioni differenziali è un sistema del tipo
 $$\underbar{y}'=A\underbar{y}+\underbar{b}(t)$$
 Ove $A\in M_n(\mathbb{R})$ e $b$ continua, allora, per ogni punto $t_0 \in \mathbb{R}$:
@@ -230,10 +233,6 @@ $$\phi(t)=e^{(t-t_0)A}\underbar{y}_0+\Psi^*(t)$$
 ovvero si somma alla soluzione generale del sistema omogeneo associato la soluzione particolare trovata in precedenza.
 Vedi anche il metodo di variazione delle costanti arbitrarie.
 
-\paragraph{LNOCC}
-\paragraph{LNOCC}
-\paragraph{LNOCC}
-\paragraph{On heavens door...}
 \subsection{Risolvere un esercizio}
 In generale, risolvere (integrare) un'equazione differenziale consiste principalmente nel riconoscere un tipo di equazione, ed applicare procedimenti noti. Vediamone qualcuno.
 
@@ -249,31 +248,31 @@ $$\frac{dW(t)}{dt} = A(t)W(t)$$
 si trova l'integrale particolare cercato:
 $$\Psi^*(t)= W(t)\int_{t_0}^t V(t)\underbar{b}(s) ds$$
 
-\subsubsection{Equazioni lineari}
+\subsection{Equazioni lineari}
 Con un'equazione di forma:
 $$y'(t) = P(t)y+Q(t)$$
 Allora
 $$y(t)=e^{- \displaystyle\int P(t)dt}\left(k + \int Q(t)e^{-\displaystyle\int P(t)dt}dt\right)$$
-\subsubsection{Equazione di Bernoulli}
+\subsection{Equazione di Bernoulli}
 Con un'equazione di forma:
 $$y'(t) = P(t)y+Q(t)$$
 con $\alpha \neq 0, 1$. Allora, si impone:
 $$ z(t)=y(t)^{1-\alpha} $$
 si risolve l'equazione lineare in $z$: $$z'(t)=(1-\alpha)P(t)z(t)+Q(t)$$ e, trovata $z(t)$ con la formula sopra, si ricava $y(t)$.
 
-\subsubsection{Equazione di Riccati}
+\subsection{Equazione di Riccati}
 $$y'(t) = P(t)y^2+Q(t)y+R(t)$$
 Conoscendo una soluzione particolare $\Psi(t)$, allora applico la sostituzione
 $$y(t)=\Psi(t)+\dfrac{1}{z(t)}$$
 e con un po' di passaggi si dimostra che alla fine
 $$z'(t)= -\left[2\Psi(t)P(t)+Q(t)\right]z(t)-P(t)$$
 che è lineare.
-\subsubsection{Variabili separabili}
+\subsection{Variabili separabili}
 Se invece
 $$y'(t) = f(t)g(y)$$
 Allora ovviamente si risolve ricordando che
 $$\int\dfrac{dy}{g(y)}=\int f(t)dt + c$$
-\subsubsection{Un'altro tipo di equazioni omogenee}
+\subsection{Un'altro tipo di equazioni omogenee}
 $$y'(t) = f\left(\dfrac{y(t)}{t}\right)$$
 Allora si sostituisce
 $$z=\dfrac{y}{t}$$
@@ -285,7 +284,7 @@ $$\int\dfrac{dz}{f(z)-z} = \log|t| + c$$
 
 Risostituendo e risolvendo rispetto a $y$ si ottiene la soluzione cercata.
 
-\subsubsection{Equazioni lineari di ordine $n$}
+\subsection{Equazioni lineari di ordine $n$}
 Sia
 $$y^{(n)} + a_1(t)y^{(n-1)} + a_2y^{(n-2)} + ... + a_n(t)y = 0$$
 ove le funzioni $a_j \in C(I)$
