@@ -90,29 +90,61 @@ $$\lim_{n\to\infty}\int_{a}^{b} f_n=\int_{a}^{b}f$$
 \subsection{Convergenza Uniforme e Differenziabilità}
 \begin{teo}
 Sia $f_n$ una successione di funzioni differenziabili in  $[a,b]\subseteq \mathbb{R}$. Supponiamo che esista un $x_{0} \in [a,b] $ per il quale la successione numerica ${f_n(x_0)}$ converga e che ${f^{'}(x)}$ converga uniformemente in $[a,b]$. Allora ${f_n}$ converge uniformemente in $[a,b]$ a una funzione $f$ e
-$$\lim_{n\to\infty} f^{'}_n (x)=f^{'}(x) \qquad \qquad \forall x \in [1,b]$$
+$$\lim_{n\to\infty} f^{'}_n (x)=f^{'}(x) \qquad \qquad \forall x \in [a,b]$$
 \end{teo}
 
 \subsection{Come risolvere gli esercizi}
 
 \subsubsection{Successioni}
-Solitamente gli esercizi sulle successioni di funzioni richiedono, data la successione ${f_n}$ di studiarne la convergenza (puntuale e uniforme) in un insieme $E\subseteq \mathbb{R}$ e, nel caso $f_n$ non converga uniformemente in $E$, di trovarne gli intervalli di convergenza. Vediamo come procedere.
+Solitamente gli esercizi sulle successioni di funzioni richiedono, data la successione ${f_n}$, di studiarne la convergenza (puntuale e uniforme) in un insieme $E\subseteq \mathbb{R}$ e, nel caso $f_n$ non converga uniformemente in $E$, di trovarne gli intervalli di convergenza. Vediamo come procedere.
 \paragraph*{Dominio}
 Data la successione ${f_n}$ la prima cosa da fare è studiarne il dominio. Questo aiuterà poi a restringere l'insieme di convergenza uniforme. Ovviamente poiché le $f_n$ dipendono anche dalla $n$ si potranno avere diversi domini $Dn$ in dipendenza da $n$. Ma poiché il dominio deve valere per tutte le funzioni $f_n$, $\forall n\in\mathbb{N}$, si avrà
 $$D=\displaystyle\bigcap_{n=1}^{\infty} D_n$$
 \paragraph*{Casi costanti}
-Può succedere che per alcuni valori particolari di $x\in E$ si trovino dei casi costanti rispetto a $n$. Siano essi ad esempio $x_i \in E$, per i quali quindi si ha che $f_n(x_i)=k \quad \forall n$  ove $k\in \mathbb{R}$. In tal caso allora 
+Può succedere che per alcuni valori particolari di $x\in D\subseteq E$ si trovino dei casi costanti rispetto a $n$. Siano essi ad esempio $x_i \in D$, per i quali quindi si ha che $f_n(x_i)=k \quad \forall n$  ove $k\in \mathbb{R}$. In tal caso allora 
 $$\lim_{n\to\infty} f_n(x_i)=\lim_{n\to\infty} k = k $$
 allora ovviamente $f_n$ converge puntualmente a $k$ in $x_i$.
 \paragraph*{Convergenza puntuale}
 Per studiare la convergenza puntuale è sufficiente eseguire il limite
 $$\lim_{n\to\infty} f_n(x)$$.
-Eseguendo questo limite si potrà eventualmente notare come ${f_n}$ converga puntualmente solo per alcuni valori di $x\in E$, restringendo così l'intervallo di convergenza a un insieme $D\subseteq E$ in cui $f_n$ converge puntualmente alla funzione $f$.
+Eseguendo questo limite si potrà eventualmente notare come ${f_n}$ converga puntualmente solo per alcuni valori di $x\in D$, restringendo così l'intervallo di convergenza a un insieme $B\subseteq D$ in cui $f_n$ converge puntualmente alla funzione $f$.
 \paragraph{Convergenza uniforme}
-Per studiare la convergenza uniforme si procede applicando la definizione all'insieme $D$ di convergenza puntuale, ossia si procede calcolando
-$$lim_{n\to\infty} \sup_{x\in D} |f_n(x)- f(x)|$$.
-Il calcolo dell'estremo superiore può non essere facile. Tuttavia se $D$ è chiuso, e $f_n, f \in\cont(D)$,   per il teorema di Weierstrass la funzione $\varphi:=|f_n-f|$ avrà un minimo e in particolare un massimo in $D$. Ovviamente questo massimo coincide con l'estremo superiore della medesima funzione. Sarà quindi sufficiente trovare il massimo di tale funzione, che potrà essere facilmente studiato il segno della derivata prima.
+Per studiare la convergenza uniforme si procede applicando la definizione di convergenza uniforme sull'insieme $B$ di convergenza puntuale, ossia si procede verificando la seguente uguaglianza
+$$\lim_{n\to\infty} \sup_{x\in B} |f_n(x)- f(x)|=0$$.
+Il calcolo dell'estremo superiore può non essere facile. Tuttavia se $B$ è chiuso, e $f_n, f \in\cont(B)$,   per il teorema di Weierstrass la funzione $\varphi:=|f_n-f|$ avrà un minimo e in particolare un massimo in $B$. Ovviamente questo massimo coincide con l'estremo superiore della medesima funzione. Sarà quindi sufficiente trovare il massimo di tale funzione, che potrà essere facilmente trovato studiando il segno della derivata prima.
+\paragraph*{Restrizione dell'insieme di convergenza uniforme}
+Può accadere che $f_n$ non converga uniformemente a $f$ in $B$, insieme di convergenza puntuale, ossia che 
+$$\lim_{n\to\infty} \sup_{x\in B} |f_n(x)- f(x)|\neq 0$$.
+Sia ora $x_m:= \sup_{x\in B} |f_n(x)- f(x)|=\sup_{x\in B} \varphi(x)$. Allora è possibile che restringendo anche di poco l'insieme $B$ a un insieme $\overline{B}\subseteq B$, questo $x_m$ non sia più contenuto in $\overline{B}$, e si abbia un nuovo massimo $\overline{x_m}$ di $\overline{B}$ per cui 
+$$ \sup_{x\in \overline{B}} |f_n(x)- f(x)|=\varphi(\overline{x_m})\to 0 $$.
+Allora si avrà che $f_n$ converge uniformemente in $\underline{B}$.
+\paragraph*{Esempio}
+Facciamo un piccolo esempio pratico:
+Sia $$f_n(x)= nx(1-x^2)^n \qquad \qquad \forall x\in I:=[0,1]$$.
+Studiamo prima di tutto la convergenza puntuale.
+Si ha che $f_n(0)=f_n(1)=0 \\ \forall n$, mentre se $0<x<1$ allora 
+$$\lim_{n\to\infty}nx(1-x^2)^n=0$$
+poiché prevale l'esponenziale $(1-x^2)^n:=k^n$ ove $k<1$.
+Quindi $f_n $ converge puntualmente alla funzione $f$ tale che $f(x)=0 \\ \forall x \in[0,1]$.
+Studiamo la la convergenza uniforme.
+Dobbiamo calcolare la quantità
+$$\sup_{x\in[0,1]}|fn(x)-f(x)|=\sup_{x\in[0,1]}fn(x)$$, poiché $f(x)=0 \ \forall x \in [0,1]$ e $f_n(x)\geq0 \ \forall x \in [0,1]$.
+Studiamo la derivata prima $f^{'}_n$ per trovare il massimo in I.
+\begin{displaymath}
+f^{'}_n(x)=n(1-x^2)^{n-1}(1-(1+2n)x^2)\geq 0 \qquad x\in I
+\end{displaymath}
+$$ \Updownarrow$$
+$$0\leq x\leq \frac{1}{\sqrt{1+2n}}$$
+posto $$x_m=\frac{1}{\sqrt{1+2n}}$$ avremo
+$$\sup_{x\in[0,1]}f_n(x)=f(x_m)\to + \infty$$
+Quindi $f_n$ non convergerà uniformemente in $I$.
+Tuttavia possiamo notare come $x_m\to 0$ per $n\to + \infty$, e come $f_n(x)$ sia decrescente in $[x_m,1]$.
+Poiché $x_m\to 0$, $\forall \delta>0, \ \exists n_0: \ \forall n>n_0 \ x_m<\delta$, quindi nell'insieme $[\delta,1]:=\overline{I}\subseteq I$ il massimo di $f_n$ non sarà più $x_m$. Inoltre poiché $f_n(x)$ è decrescente in $[x_m,1]$, a maggior ragione $f_n(x)$ decresce in $\overline{I}$.
 
+Quindi si avrà che 
+$$\sup_{x\in[\delta,1]}f_n(x)=f_n(\delta)\to 0 \qquad \qquad per n\to\infty$$.
+Quindi $f_n$ convergerà uniformemente in $\overline{I}=[\delta,1]$
+ 
 \subsubsection{Serie}
 
 
