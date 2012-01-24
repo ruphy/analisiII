@@ -89,7 +89,7 @@ Sia $\{f_n\}$ una successione di funzioni continue definite in $E$ uniformemente
 Sia $(X, d)$ uno spazio metrico, sia $\phi : X\rightarrow X$.
 \paragraph{Contrazione}
 Si dice che $\phi$ è una contrazione di $X$ in sé quando:
-$$\exists c < 1:\ \ d(\phi(x_1), \phi(x_2)) \leq cd(x_1, x_2)\ \ \forall x_1, x_2 \in X$$
+$$\exists c < 1:\ \ d(\phi(x_1), \phi(x_2)) \leq cd(x_1, x_2)\qquad\qquad\forall x_1, x_2 \in X$$
 \paragraph{Punto fisso}
 Si dice che $\bar{x}\in X$ è punto fisso per $\phi$ se:
 $$\phi(\bar{x})=\bar{x}$$
@@ -98,18 +98,17 @@ $$\phi(\bar{x})=\bar{x}$$
 Sia $f:\Omega\rightarrow\mathbb{R}$ ove $\Omega\subset\mathbb{R}^n$, aperto.
 \paragraph{Lipschitzianità semplice}
 Si dice $f\left(x\right)$ lipschitziana se $\exists L>0$ t.c
-$$ |f\left(x\right)- f\left(y\right)| \leq L|x-y| \ \ \forall x,y \in \Omega $$
+$$ |f\left(x\right)- f\left(y\right)| \leq L|x-y|\qquad\qquad\forall x,y \in \Omega $$
 
 \paragraph{Lipschitzianità uniforme}
 Si dice che $f(t, v)$ è lipschitziana rispetto a $v$, uniformemente rispetto a $t$, su $\Omega$ se $\exists L>0$ t.c.
-$$|f(t, v) - f(t, w)| \leq L|v-w|\ \ \forall (t,v), (t, w) \in \Omega$$
+$$|f(t, v) - f(t, w)| \leq L|v-w|\qquad\qquad\forall (t,v), (t, w) \in \Omega$$
 In altre parole, fissata la variabile $t$, $f_t(v)$ è lipschitziana.
 
 \paragraph{Lipschitzianità locale}
 Si dice che $f(t, v)$ è localmente lipschitziana rispetto a $v$, uniformemente rispetto a $t$, se
-$$\forall(t, v)\in \Omega\ \ \exists U((t, v), r)$$
-t.c. $f|_U$ è lipschitziana rispetto a $v$, uniformemente rispetto a $t$.
-
+$$\exists U((t, v), r) : f(t, v)|_U \in \text{Lip}_t(v)\qquad\qquad\forall(t, v)\in \Omega$$
+(esiste un intorno $U$ di $(t, v)$ tale che la funzione ristretta a quell'intorno sia lipschitziana rispetto a $v$, uniformemente rispetto a $t$).
 
 \subsubsection{Teoremi}
 \paragraph{Teorema di Banach-Cacioppoli}
