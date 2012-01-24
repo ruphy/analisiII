@@ -1,7 +1,8 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage[utf8x]{inputenc}
-\usepackage{amssymb, amsmath, amsthm}
+\usepackage{amssymb, amsmath, amsthm,mathrsfs}
 \newcommand{\ubar}{\underbar}
+\newcommand{\cont}{\mathscr{C}}
 %\newtheorem{d}{Definizione}
 \usepackage{fullpage}
 
@@ -116,12 +117,32 @@ t.c. $f|_U$ è lipschitziana rispetto a $v$, uniformemente rispetto a $t$.
 Sia $(X, d)$ uno spazio metrico, sia $\phi : X\rightarrow X$ una contrazione.
 Allora $\phi$ ha un unico punto fisso.
 
+\section{Serie di potenze}
+\subsection{Definizioni}
+Una serie di potenze è una serie di funzioni della forma
+$$\label{seriepotenza} \displaystyle \sum_{n=0}^\infty c_n\left(x-x_0\right)^n$$
+con $x_0 \in \mathbb{R}$ fissato, ${c_n}$ è successione di numeri reali e $x$ una variabile reale. 
+
+\subparagraph*{Osservazione}
+E' sempre possibile ricondursi al caso $x_0 = 0$ con una opportuna traslazione.
+
+L'insieme di convergenza di \ref{seriepotenza} è l'insieme degli $x \in \mathbb{R}$ tali che \ref{seriepotenza} converge. 
+\subparagraph*{Osservazione} L'insieme di convergenza di una serie di potenze è sempre un \textbf{intervallo.}
+
+Data la serie di potenze 
+$$ \displaystyle \sum_{n=0}^\infty c_n\left(x\right)^n$$
+poniamo $$ \alpha:=\limsup_{n\to \infty} \sqrt[n]{|c_n x^n|} \ e \ R:=\frac{1}{\alpha}$$
+
+\subsection{Esercizi}
 
 \section{Equazioni differenziali}
 
 \subsection{Definizioni}
 \paragraph{Il problema di Cauchy}
-Siano $f:\Omega \subseteq \mathbb{R}^2 \longrightarrow $ e $ \left(t_0,x_0\right) \in \Omega.$ Una soluzione del problema di Cauchy è una coppia $\left( \phi , I \right)$ costituita da una funzione $\phi: I \longleftrightarrow \mathbb{R}$ differenziabile in $I$ tale che:
+Siano $f:\Omega \subseteq \mathbb{R}^2 \longrightarrow $ e $ \left(t_0,x_0\right) \in \Omega.$ 
+$$\label{PC}\begin{cases} x'=f\left(t,x\right) \\ y\left(t_0\right)=x_0 \end{cases}$$
+
+Una soluzione del problema di Cauchy è una coppia $\left( \phi , I \right)$ costituita da una funzione $\phi: I \longrightarrow \mathbb{R}$ differenziabile in $I$ tale che:
 \begin{itemize}
 \item $t_0 \in I$ e $ \phi\left(t_0\right)=x_0$
 \item $ \left(t,\phi\left(t\right)\right) \in \Omega \ \forall t \in I$
@@ -132,9 +153,9 @@ Se $\left(\phi,I\right)$ risolve il problema di Cauchy, allora è una soluzione 
 $$ x\left(t\right) = x_0 + \displaystyle\int^t_{t_0} f\left(s,x\left(s\right)\right) ds $$
 
 \paragraph{Teorema di esistenza e unicità in piccolo o locale}
-Se $f \in C\left(\Omega\right)$ allora PC ha almeno una soluzione. \\
-Se $f \in C\left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\right)$, allora PC ha un'unica soluzione in un opportuno intorno di $t_0$.\\
-Una funzione di classe $C^1$ è localmente lipschitziana. 
+Se $f \in \cont \left(\Omega\right)$ allora PC ha almeno una soluzione. \\
+Se $f \in \cont \left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\right)$, allora PC ha un'unica soluzione in un opportuno intorno di $t_0$.\\
+Una funzione di classe $\cont^n$ con $ n \geq 1 $ è localmente lipschitziana. 
 
 \paragraph{Teorema di esistenza e unicità in grande o globale}
 Siano $-\infty < \tau_1 < \tau_2 < +\infty$ e $\S:=\left[\tau_1,\tau_2\right]\times\mathbb{R}$. Sia $f \in C\left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\right)$ con crescita al più lineare in x, cioè $\exists A\,B$ t.c 
@@ -158,6 +179,8 @@ $$w(t):=\text{det } W(t)$$
 Nota: l'annullarsi del wronskiano è condizione necessaria (ma non sufficiente) per la dipendenza lineare di $\phi_1,...,\phi_n$. 
 Condizione necessaria e sufficiente affinchè $n$ soluzioni su $I$ di una medesima equazione lineare omogenea siano linearmente indipendenti è che:
 $$ w(t)\neq0 \ \forall t \in I$$
+
+\subsection{Grafici}
 
 
 \subsection{Tipi di equazioni}
@@ -328,10 +351,10 @@ In modo simile a quanto si farebbe in Fisica, si ottiene la lunghezza di una cur
 $$L= \int_a^b ||\gamma'(t)|| dt = \int_a^b\sqrt{\gamma'_1(t)^2+\gamma'_2(t)^2+...+\gamma'_n(t)^2}dt$$
 
 
-\section{Uno-forme differenziali}
+\section{1-forme differenziali}
 \subsubsection{Definizioni}
 Una 1-forma differenziale è una funzione del tipo
-$$\omega = \sum_{j=1}^n a_j(x)dx_j$$
+$$\omega := \sum_{j=1}^n a_j(x)dx_j$$
 In questo esempio, i vari $a_j(x)$ si chiamano coefficienti della 1-forma differenziale.
 Una nota 1-forma differenziale è ad esempio il differenziale di una funzione.
 \paragraph{Integrale di una 1-forma differenziale}
