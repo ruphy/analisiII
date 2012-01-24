@@ -19,6 +19,21 @@
 \tableofcontents
 \end{titlepage}
 
+Sia $\{ f_n\} $  una successione di funzioni a valori reali o complessi definite su un medesimo $D \subseteq \mathbb{R}$.
+ $\{ f_n\} $ converge \textbf{puntualmente} o semplicemente su $ E \subseteq D $ se $\{f_n\}$ converge in ogni punto $x \in E.$ Chiamiamo funzione limite puntuale la funzione definita su $E$ nel modo seguente: 
+ $$f(x):=\lim_{n\to+\infty} f_n(x)$$
+Utilizzando un'altra scrittura, la definizione di convergenza puntuale diviene:
+ $$\forall \varepsilon>0, \forall x \in E\ \ \exists N=N(\varepsilon, x):\ \forall n \geq N\ \forall x\in E\ \ |f_n(x) - f(x)| < \varepsilon$$ 
+ 
+ Sia $\{ f_n\} $ come sopra. Essa converge \textbf{uniformente} su $E \subseteq \mathbb{R} $ alla funzione limite $f$ se:
+ \begin{itemize}
+ \item $\{ f_n\} $ converge puntualmente a $f$ su $E$.
+ \item si ha:
+ $$ \lim_{n\to+\infty} \displaystyle \sup_{x \in E} \|f_n\left(x\right)-f\left(x\right)\| = 0$$
+ \end{itemize}
+
+Utilizzando un'altra scrittura, la definizione di convergenza uniforme diviene:
+ $$\forall \varepsilon>0, \forall x \in E\ \ \exists N=N(\varepsilon):\ \forall n \geq N\ \forall x\in E\ \ |f_n(x) - f(x)| < \varepsilon$$ 
 
 
 \section{Successioni e serie}
@@ -82,6 +97,8 @@ $$\phi(\bar{x})=\bar{x}$$
 \subsection{Lipschitzianità}
 Sia $f:\Omega\rightarrow\mathbb{R}$ ove $\Omega\subset\mathbb{R}^n$, aperto.
 \paragraph{Lipschitzianità semplice}
+Si dice $f\left(x\right)$ lipschitziana se $\exists L>0$ t.c
+$$ |f\left(x\right)- f\left(y\right)| \leq L|x-y| \ \ \forall x,y \in \Omega $$
 
 \paragraph{Lipschitzianità uniforme}
 Si dice che $f(t, v)$ è lipschitziana rispetto a $v$, uniformemente rispetto a $t$, su $\Omega$ se $\exists L>0$ t.c.
