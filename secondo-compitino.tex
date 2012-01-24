@@ -1,6 +1,6 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage[utf8x]{inputenc}
-\usepackage{amssymb, amsmath, amsthm}
+\usepackage{amssymb, amsmath, amsthm, mathrsfs}
 \newcommand{\ubar}{\underbar}
 %\newtheorem{d}{Definizione}
 \usepackage{fullpage}
@@ -19,7 +19,8 @@
 \tableofcontents
 \end{titlepage}
 
-\section{Successioni e serie}
+\section{Successioni e Serie di Funzioni}
+\subsection{Definizioni}
 \begin{defi}
 Sia $\{ f_n\} $  una successione di funzioni a valori reali o complessi definite su un medesimo $D \subseteq \mathbb{R}$.
  $\{ f_n\} $ \textbf{converge puntualmente} o semplicemente su $ E \subseteq D $ se $\forall x \in E$, $\{f_n(x)\}$ converge in $\mathbb{R}$ (o nel caso complesso $\mathbb{C}$). Chiamiamo funzione limite puntuale la funzione definita su $E$ nel modo seguente: 
@@ -61,12 +62,21 @@ $$|f_n(x) - f_m(x)| < \varepsilon$$.
 \end{teo}
 \subparagraph*{Osservazione}
 La convergenza uniforme di una successione è quindi condizione \textbf{necessaria e sufficiente} per verificare il criterio di Cauchy.
-
+\begin{teo}
+Sia ${f_n}$ una successioni di funzioni definite su $K$ compatto, $f_n \in \mathscr{C}(K)$, $f_n$ con
+\end{teo}
 \subsubsection{Serie}
 
-\paragraph{Condizione sufficiente 1}
+\begin{teo}[Criterio di Weierstrass]
 Sia $\{f_n\}$ una successione di funzioni su $E$. Sia $$M_n:= \displaystyle\sup_{x\in E}|f_n(x)|$$ e $$\sum_{n=1}^{+\infty}M_n<+\infty$$
 allora $\displaystyle\sum_{n=1}^{+\infty}f_n$ converge uniformemente.
+\end{teo}
+\subsection{Convergenza Uniforme e Continuità}
+\begin{teo}[Successioni di funzioni continue]
+Sia $\{f_n\}$ una successione di funzioni continue definite in $E$ uniformemente convergenti a $f$. Allora $f$ è continua.
+\end{teo}
+\subsection{Convergenza Uniforme e Integrabilità}
+\subsection{Convergenza Uniforme e Differenziabilità}
 
 \subsection{Come risolvere gli esercizi}
 \subsubsection{Successioni}
@@ -80,12 +90,6 @@ Sup di fn...
 \subsubsection{Serie}
 
 \section{Teoria in qualche modo correlata}
-
-\subsection{Serie e successioni}
-\paragraph{Successioni, continuità}
-Sia $\{f_n\}$ una successione di funzioni continue definite in $E$ uniformemente convergenti a $f$. Allora $f$ è continua.
-\paragraph{Convergenza uniforme e integrazione}
-...
 
 \subsection{Contrazioni in spazi metrici}
 \subsubsection{Definizioni}
