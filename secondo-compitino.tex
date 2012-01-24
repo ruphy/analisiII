@@ -1,6 +1,10 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage[utf8x]{inputenc}
+<<<<<<< HEAD
 \usepackage{amssymb, amsmath, amsthm,mathrsfs}
+=======
+\usepackage{amssymb, amsmath, amsthm, mathrsfs}
+>>>>>>> 6a502f06d03beb31d1cb171d032df691ebd3c839
 \newcommand{\ubar}{\underbar}
 \newcommand{\cont}{\mathscr{C}}
 %\newtheorem{d}{Definizione}
@@ -20,7 +24,8 @@
 \tableofcontents
 \end{titlepage}
 
-\section{Successioni e serie}
+\section{Successioni e Serie di Funzioni}
+\subsection{Definizioni}
 \begin{defi}
 Sia $\{ f_n\} $  una successione di funzioni a valori reali o complessi definite su un medesimo $D \subseteq \mathbb{R}$.
  $\{ f_n\} $ \textbf{converge puntualmente} o semplicemente su $ E \subseteq D $ se $\forall x \in E$, $\{f_n(x)\}$ converge in $\mathbb{R}$ (o nel caso complesso $\mathbb{C}$). Chiamiamo funzione limite puntuale la funzione definita su $E$ nel modo seguente: 
@@ -56,15 +61,27 @@ Utilizzando un'altra scrittura, la definizione di convergenza uniforme diviene:
 \subsection{Criteri di convergenza}
 
 \subsubsection{Successioni}
-$\{f_n\}$ converge uniformemente se e solo se $\forall \varepsilon>0\ \ \exists N=N(\varepsilon):\ \forall n,m \geq N\ \forall x\in E$ si ha che $|f_n(x) - f_m(x)| < \varepsilon$.
-
-La convergenza uniforme di una successione è condizione \textbf{necessaria e sufficiente} per verificare il criterio di Cauchy.
-
+\begin{teo}[Condizione di Cauchy]
+Sia $\{f_n\}$ una successione di funzioni a valori reali (o complessi). Allora $\{f_n\}$ converge uniformemente in $E$ se e solo se $\forall \varepsilon>0\ \ \exists N=N(\varepsilon):\ \forall n,m \geq N\ \forall x\in E$ si ha che 
+$$|f_n(x) - f_m(x)| < \varepsilon$$.
+\end{teo}
+\subparagraph*{Osservazione}
+La convergenza uniforme di una successione è quindi condizione \textbf{necessaria e sufficiente} per verificare il criterio di Cauchy.
+\begin{teo}
+Sia ${f_n}$ una successioni di funzioni definite su $K$ compatto, $f_n \in \mathscr{C}(K)$, $f_n$ con
+\end{teo}
 \subsubsection{Serie}
 
-\paragraph{Condizione sufficiente 1}
+\begin{teo}[Criterio di Weierstrass]
 Sia $\{f_n\}$ una successione di funzioni su $E$. Sia $$M_n:= \displaystyle\sup_{x\in E}|f_n(x)|$$ e $$\sum_{n=1}^{+\infty}M_n<+\infty$$
 allora $\displaystyle\sum_{n=1}^{+\infty}f_n$ converge uniformemente.
+\end{teo}
+\subsection{Convergenza Uniforme e Continuità}
+\begin{teo}[Successioni di funzioni continue]
+Sia $\{f_n\}$ una successione di funzioni continue definite in $E$ uniformemente convergenti a $f$. Allora $f$ è continua.
+\end{teo}
+\subsection{Convergenza Uniforme e Integrabilità}
+\subsection{Convergenza Uniforme e Differenziabilità}
 
 \subsection{Come risolvere gli esercizi}
 \subsubsection{Successioni}
@@ -79,18 +96,12 @@ Sup di fn...
 
 \section{Teoria in qualche modo correlata}
 
-\subsection{Serie e successioni}
-\paragraph{Successioni, continuità}
-Sia $\{f_n\}$ una successione di funzioni continue definite in $E$ uniformemente convergenti a $f$. Allora $f$ è continua.
-\paragraph{Convergenza uniforme e integrazione}
-...
-
 \subsection{Contrazioni in spazi metrici}
 \subsubsection{Definizioni}
 Sia $(X, d)$ uno spazio metrico, sia $\phi : X\rightarrow X$.
 \paragraph{Contrazione}
 Si dice che $\phi$ è una contrazione di $X$ in sé quando:
-$$\exists c < 1:\ \ d(\phi(x_1), \phi(x_2)) \leq cd(x_1, x_2)\ \ \forall x_1, x_2 \in X$$
+$$\exists c < 1:\ \ d(\phi(x_1), \phi(x_2)) \leq cd(x_1, x_2)\qquad\qquad\forall x_1, x_2 \in X$$
 \paragraph{Punto fisso}
 Si dice che $\bar{x}\in X$ è punto fisso per $\phi$ se:
 $$\phi(\bar{x})=\bar{x}$$
@@ -99,18 +110,17 @@ $$\phi(\bar{x})=\bar{x}$$
 Sia $f:\Omega\rightarrow\mathbb{R}$ ove $\Omega\subset\mathbb{R}^n$, aperto.
 \paragraph{Lipschitzianità semplice}
 Si dice $f\left(x\right)$ lipschitziana se $\exists L>0$ t.c
-$$ |f\left(x\right)- f\left(y\right)| \leq L|x-y| \ \ \forall x,y \in \Omega $$
+$$ |f\left(x\right)- f\left(y\right)| \leq L|x-y|\qquad\qquad\forall x,y \in \Omega $$
 
 \paragraph{Lipschitzianità uniforme}
 Si dice che $f(t, v)$ è lipschitziana rispetto a $v$, uniformemente rispetto a $t$, su $\Omega$ se $\exists L>0$ t.c.
-$$|f(t, v) - f(t, w)| \leq L|v-w|\ \ \forall (t,v), (t, w) \in \Omega$$
+$$|f(t, v) - f(t, w)| \leq L|v-w|\qquad\qquad\forall (t,v), (t, w) \in \Omega$$
 In altre parole, fissata la variabile $t$, $f_t(v)$ è lipschitziana.
 
 \paragraph{Lipschitzianità locale}
 Si dice che $f(t, v)$ è localmente lipschitziana rispetto a $v$, uniformemente rispetto a $t$, se
-$$\forall(t, v)\in \Omega\ \ \exists U((t, v), r)$$
-t.c. $f|_U$ è lipschitziana rispetto a $v$, uniformemente rispetto a $t$.
-
+$$\exists U((t, v), r) : f(t, v)|_U \in \text{Lip}_t(v)\qquad\qquad\forall(t, v)\in \Omega$$
+(esiste un intorno $U$ di $(t, v)$ tale che la funzione ristretta a quell'intorno sia lipschitziana rispetto a $v$, uniformemente rispetto a $t$).
 
 \subsubsection{Teoremi}
 \paragraph{Teorema di Banach-Cacioppoli}
@@ -158,9 +168,9 @@ Se $f \in \cont \left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\r
 Una funzione di classe $\cont^n$ con $ n \geq 1 $ è localmente lipschitziana. 
 
 \paragraph{Teorema di esistenza e unicità in grande o globale}
-Siano $-\infty < \tau_1 < \tau_2 < +\infty$ e $\S:=\left[\tau_1,\tau_2\right]\times\mathbb{R}$. Sia $f \in C\left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\right)$ con crescita al più lineare in x, cioè $\exists A\,B$ t.c 
-$$ \|f \left(t,x\right)\|\leq A + B\|x\|$$
-allora l'unica soluzione di
+Siano $-\infty < \tau_1 < \tau_2 < +\infty$ e $\S:=\left[\tau_1,\tau_2\right]\times\mathbb{R}$. Sia $f \in C\left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\right)$ con crescita al più lineare in x, cioè
+$$\exists a,b: \|f \left(t,x\right)\|\leq a + b\|x\|$$
+allora l'unica soluzione di ???MARCO??
 dove $\left(t_0,x_0\right)$ è un punto qualunque in S, è definita in $\left[\tau_1,\tau_2\right]$.
 
 \paragraph{Teorema di prolungamento}
@@ -178,7 +188,7 @@ Si chiama altresì \textbf{wronskiano} di $\phi_1,...,\phi_n$:
 $$w(t):=\text{det } W(t)$$
 Nota: l'annullarsi del wronskiano è condizione necessaria (ma non sufficiente) per la dipendenza lineare di $\phi_1,...,\phi_n$. 
 Condizione necessaria e sufficiente affinchè $n$ soluzioni su $I$ di una medesima equazione lineare omogenea siano linearmente indipendenti è che:
-$$ w(t)\neq0 \ \forall t \in I$$
+$$ w(t)\neq0 \qquad\qquad \forall t \in I$$
 
 \subsection{Grafici}
 
@@ -187,7 +197,7 @@ $$ w(t)\neq0 \ \forall t \in I$$
 \subsubsection{LO}
 Un sistema lineare omogeneo (LO) di equazioni differenziali è un sistema:
 $$\underbar{y}' = A(t)\underbar{y}$$
-ove $$A(t)\in M_n(\mathbb{R})\ \ \ \forall t\in I\subset R$$ e $\underbar{y}$ ha dimensione $n$.
+ove $$A(t)\in M_n(\mathbb{R})\qquad \qquad \forall t\in I\subset R$$ e $\underbar{y}$ ha dimensione $n$.
 \paragraph{Osservazioni}
 \begin{itemize}
  \item Lo spazio delle soluzioni di (LO) è uno spazio vettoriale di dimensione $n$.
@@ -203,7 +213,7 @@ $$\underbar{y}' = A(t)\underbar{y} + \underbar{b}(t)$$
 \begin{itemize}
  \item Lo spazio delle soluzioni di (LNO) non è uno spazio vettoriale, se $\underbar{b}\neq\underbar{0}$.
  \item Sia $\Psi^*$ un soluzione di (LNO). Tutte e sole le soluzioni di (LNO) sono allora del tipo
-       $$ \Psi(t) = \phi(t) + \Psi^*(t)\ \ \forall t \in I$$
+       $$ \Psi(t) = \phi(t) + \Psi^*(t)\qquad \qquad \forall t \in I$$
        dove $\phi$ è una soluzione qualunque dell'(LO) associato ($\underbar{b}=\underbar{0}$).
  \item Se $A(t)$ è continua, allora $\underbar{b}\in C(I)$ e il (PC) associato ha una e una sola soluzione.
  \item Se $\phi_1,...,\phi_n$ sono soluzioni di (LO), queste sono linearmente indipendenti se e solo se $w(t)\neq0$ $\forall t \in I$.
