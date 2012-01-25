@@ -94,6 +94,29 @@ Sia $f_n$ una successione di funzioni differenziabili in  $[a,b]\subseteq \mathb
 $$\lim_{n\to\infty} f^{'}_n (x)=f^{'}(x) \qquad \qquad \forall x \in [a,b]$$
 \end{teo}
 
+\subsection{Serie di potenze}
+\subsubsection{Definizioni}
+Una serie di potenze è una serie di funzioni della forma
+$$\label{seriepotenza} \displaystyle \sum_{n=0}^\infty c_n\left(x-x_0\right)^n$$
+con $x_0 \in \mathbb{R}$ fissato, ${c_n}$ è successione di numeri reali e $x$ una variabile reale. 
+E' sempre possibile ricondursi al caso $x_0 = 0$ con una opportuna traslazione. L'insieme di convergenza di \ref{seriepotenza} è l'insieme degli $x \in \mathbb{R}$ tali che \ref{seriepotenza} converge. L'insieme di convergenza di una serie di potenze è sempre un \textbf{intervallo.}
+\paragraph{Teorema della convergenza semplice}
+Data la serie di potenze 
+$$ \displaystyle \sum_{n=0}^\infty c_n\left(x\right)^n$$
+poniamo $$ \alpha:=\limsup_{n\to \infty} \sqrt[n]{|c_n x^n|} \ e \ R:=\frac{1}{\alpha}$$
+(se $\alpha = +\infty$, allora $R=0$ e se $\alpha=0$, allora $R=+\infty$)
+La serie di potenze converge se $|x|<R$ e non converge se $|x|>R$.
+R è il raggio di convergenza della serie.
+\paragraph{Teorema della convergenza uniforme delle serie di potenza}
+Supponiamo che $ \displaystyle \sum_{n=0}^\infty c_n\left(x\right)^n$ converga per $|x|<r$. Poniamo:
+$$ f(x):= \displaystyle \sum_{n=0}^\infty c_n\left(x\right)^n \ \ \forall t \in (-r,r) \forall \varepsilon > 0 $$
+Allora $$ \displaystyle \sum_{n=0}^\infty c_n\left(x\right)^n$$ converge uniformente a $f(x)$ in $[-r+\varepsilon,r-\varepsilon]$ Inoltre: $f \in \cont^\infty((-r,r))$ $$f^{(k)}(x) = \displaystyle \sum_{n=0}^\infty n(n-1)\dots(n-k+1)c_n x^{n-k} \ \ \forall x \in (-r,r)$$  $$f^{(k)}(0) = k!\ c_k \ \ k=0,1,2,3 \dots $$ 
+
+\paragraph{Serie di Taylor}
+La serie:
+$\displaystyle \sum_{n=0}^\infty \frac{f^{n}(0)}{n!} x^n$ si chiama serie di Taylor di $f$. Condizione necessaria affinchè la serie di Taylor di $f$ converga in  $x$ è che $$\lim_{n \to \infty}\displaystyle \left[ f(x) - \displaystyle  \sum_{k=0}^\infty \frac{f^{k}(0)}{k!}x^k \right] = 0 $$
+
+
 \subsection{Come risolvere gli esercizi}
 
 \subsubsection{Successioni}
@@ -215,9 +238,11 @@ Per studiare la convergenza uniforme può essere vantaggioso procedere applicand
 $$\sup_{x\in B}\left|s- \sum (-1)^n f_n(x)  \right|\leq f_{n+1}(x)$$
 Ma poiché è applicabile il criterio di Leibniz $f_{n+1}(x)\to0$ per $n\to\infty$ e, di conseguenza, la serie converge uniformemente poiché
 $$\lim_{n\to\infty}\sup_{x\in B}\left|s- \sum (-1)^n f_n(x)  \right|\leq \lim_{n\to\infty} f_{n+1}(x)=0$$
+\subsubsection{Serie di potenze}
 
-\subsection{Contrazioni in spazi metrici}
-\subsubsection{Definizioni}
+
+\section{Contrazioni in spazi metrici}
+\subsection{Definizioni}
 Sia $(X, d)$ uno spazio metrico, sia $\phi : X\rightarrow X$.
 \paragraph{Contrazione}
 Si dice che $\phi$ è una contrazione di $X$ in sé quando:
@@ -242,33 +267,11 @@ Si dice che $f(t, v)$ è localmente lipschitziana rispetto a $v$, uniformemente 
 $$\exists U((t, v), r) : f(t, v)|_U \in \text{Lip}_t(v)\qquad\qquad\forall(t, v)\in \Omega$$
 (esiste un intorno $U$ di $(t, v)$ tale che la funzione ristretta a quell'intorno sia lipschitziana rispetto a $v$, uniformemente rispetto a $t$).
 
-\subsubsection{Teoremi}
+\subsection{Teoremi}
 \paragraph{Teorema di Banach-Caccioppoli}
 Sia $(X, d)$ uno spazio metrico, sia $\phi : X\rightarrow X$ una contrazione.
 Allora $\phi$ ha un unico punto fisso.
 
-\section{Serie di potenze}
-\subsection{Definizioni}
-Una serie di potenze è una serie di funzioni della forma
-$$\label{seriepotenza} \displaystyle \sum_{n=0}^\infty c_n\left(x-x_0\right)^n$$
-con $x_0 \in \mathbb{R}$ fissato, ${c_n}$ è successione di numeri reali e $x$ una variabile reale. 
-E' sempre possibile ricondursi al caso $x_0 = 0$ con una opportuna traslazione. L'insieme di convergenza di \ref{seriepotenza} è l'insieme degli $x \in \mathbb{R}$ tali che \ref{seriepotenza} converge. L'insieme di convergenza di una serie di potenze è sempre un \textbf{intervallo.}
-\paragraph{Teorema della convergenza semplice}
-Data la serie di potenze 
-$$ \displaystyle \sum_{n=0}^\infty c_n\left(x\right)^n$$
-poniamo $$ \alpha:=\limsup_{n\to \infty} \sqrt[n]{|c_n x^n|} \ e \ R:=\frac{1}{\alpha}$$
-(se $\alpha = +\infty$, allora $R=0$ e se $\alpha=0$, allora $R=+\infty$)
-La serie di potenze converge se $|x|<R$ e non converge se $|x|>R$.
-R è il raggio di convergenza della serie.
-\paragraph{Teorema della convergenza uniforme delle serie di potenza}
-Supponiamo che $ \displaystyle \sum_{n=0}^\infty c_n\left(x\right)^n$ converga per $|x|<r$. Poniamo:
-$$ f(x):= \displaystyle \sum_{n=0}^\infty c_n\left(x\right)^n \ \ \forall t \in (-r,r) \forall \varepsilon > 0 $$
-Allora $$ \displaystyle \sum_{n=0}^\infty c_n\left(x\right)^n$$ converge uniformente a $f(x)$ in $[-r+\varepsilon,r-\varepsilon]$ Inoltre: $f \in \cont^\infty((-r,r))$ $$f^{(k)}(x) = \displaystyle \sum_{n=0}^\infty n(n-1)\dots(n-k+1)c_n x^{n-k} \ \ \forall x \in (-r,r)$$  $$f^{(k)}(0) = k!\ c_k \ \ k=0,1,2,3 \dots $$ 
-
-\paragraph{Serie di Taylor}
-La serie:
-$\displaystyle \sum_{n=0}^\infty \frac{f^{n}(0)}{n!} x^n$ si chiama serie di Taylor di $f$. Condizione necessaria affinchè la serie di Taylor di $f$ converga in  $x$ è che $$\lim_{n \to \infty}\displaystyle \left[ f(x) - \displaystyle  \sum_{k=0}^\infty \frac{f^{k}(0)}{k!}x^k \right] = 0 $$
-\subsection{Esercizi}
 
 \section{Equazioni differenziali}
 
