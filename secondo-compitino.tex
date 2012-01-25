@@ -234,7 +234,11 @@ Se $a_n$ verifica le ipotesi del teorema di Leibniz, sia $\sum_{n=1}^{\infty} (-
 $$E_n=\left|s- \sum (-1)^n a_n  \right|\leq a_{n+1}$$
 \end{cor}
 \paragraph*{Convergenza Uniforme}
-Per studiare la convergenza uniforme può essere vantaggioso procedere applicando prima di tutto il Criterio di Wierstrass. In tal modo si riduce lo studio della convergenza uniforme allo studio della convergenza di una serie numerica (vedi Criterio di Weierstrass), risolvibile per mezzo dei criteri prima enunciati. In alternativa si può applicare il Criterio di Cauchy, o, in alternativa, cercare di verificare la convergenza dalla definizione, così come si faceva per le successioni. La verifica attraverso la definizione risulta molto utile per serie a segni alteri convergenti puntualmente per il criterio di Leibniz. Infatti applicando il corollario del criterio e la definizione di convergenza assoluta si ha che si ha che:
+Per studiare la convergenza uniforme può essere vantaggioso procedere applicando prima di tutto il Criterio di Wierstrass. In tal modo si riduce lo studio della convergenza uniforme allo studio della convergenza di una serie numerica (vedi Criterio di Weierstrass), risolvibile per mezzo dei criteri prima enunciati. In alternativa si può applicare il Criterio di Cauchy, o, in alternativa, cercare di verificare la convergenza dalla definizione, così come si faceva per le successioni. 
+
+La verifica attraverso la definizione risulta molto utile per serie a segni alterni del tipo
+$$\sum_{n=1}^{\infty}(-1)^n f_n$$
+convergenti puntualmente a una funzione $s$ per il criterio di Leibniz. Infatti applicando il corollario del criterio e la definizione di convergenza assoluta si ha che:
 $$\sup_{x\in B}\left|s- \sum (-1)^n f_n(x)  \right|\leq f_{n+1}(x)$$
 Ma poiché è applicabile il criterio di Leibniz $f_{n+1}(x)\to0$ per $n\to\infty$ e, di conseguenza, la serie converge uniformemente poiché
 $$\lim_{n\to\infty}\sup_{x\in B}\left|s- \sum (-1)^n f_n(x)  \right|\leq \lim_{n\to\infty} f_{n+1}(x)=0$$
