@@ -450,7 +450,7 @@ $$\Psi^*(t)= W(t)\int_{t_0}^t V(t)\underbar{b}(s) ds$$
 Con un'equazione di forma:
 $$y'(t) = P(t)y+Q(t)$$
 Allora
-$$y(t)=e^{+\displaystyle\int P(t)dt}\left(c_1 + \int Q(t)e^{-\displaystyle\int P(t)dt}dt\right)$$
+$$y(t)=e^{\ \displaystyle\int P(t)dt}\left(c_1 + \int Q(t)e^{-\displaystyle\int P(t)dt}dt\right)$$
 \subsubsection{Equazione di Bernoulli}
 Con un'equazione di forma:
 $$y'(t) = P(t)y+Q(t)$$
@@ -534,13 +534,13 @@ o equivalentemente scegliendo una base complessa, la soluzione particolare da so
 
 \subsection{Equazioni differenziali esatte}
 
-Un'equazione differenziale esatta è una forma del tipo
+Un'equazione differenziale esatta è una equazione del tipo
 
 \begin{equation}\label{eq-diff-esatte}
 y'(t)=\frac{P(t, y)}{Q(t,y)} 
 \end{equation}
 
-bisogna trovare una 1-forma differenziale $\omega$ esatta. Chiamando $F$ la funzione di cui $\omega$ è differenziale, si trova che:
+Per risolvere questa equazione bisogna trovare una 1-forma differenziale $\omega$ esatta. Chiamando $F$ la funzione di cui $\omega$ è differenziale, si trova che:
 
 $$\omega = Q(t,y)dy - P(t,y)dt = \frac{\partial F}{\partial y}dy+\frac{\partial F}{\partial t}dt = dF$$
 che è vero se e solo se
@@ -604,16 +604,33 @@ Una 1-forma differenziale è una funzione del tipo
 $$\omega := \sum_{j=1}^n a_j(x)dx_j$$
 In questo esempio, i vari $a_j(x)$ si chiamano coefficienti della 1-forma differenziale.
 Una nota 1-forma differenziale è ad esempio il differenziale di una funzione.
-\paragraph{Integrale di una 1-forma differenziale}
+\begin{defi}[integrale di una 1-forma differenziale]
 Sia $\gamma$ una curva regolare, di estremi $a$ e $b$.
-Si definisce l'integrale di una 1-forma differenziale su $\gamma$ in questo modo:
+Si definisce l'integrale di una 1-forma differenziale su $\gamma$
 $$\int_\gamma \omega:=\int_a^b \sum_{j=1}^n <a_j(\gamma(t)), \gamma'(t)> dt$$
+\end{defi}
 ove l'operatore $<,>$ sia il prodotto scalare standard.
-\paragraph{Forme esatte}
-Una forma differenziale $\omega$, definita in un aperto $A\subset\mathbb{R}^n$ si dice esatta se è il differenziale di un'altra funzione.
-Esplicitamente, la forma è esatta se esiste $f$ tale che:
+
+\begin{defi}[esattezza]
+Una forma differenziale $\omega$, definita in un aperto $A\subset\mathbb{R}^n$, si dice \textbf{esatta} se è il differenziale di un'altra funzione.
+\end{defi}
+Più esplicitamente, la forma è esatta se esiste $f$ tale che:
 $$\forall j\in\{1 ... n\}: a_j(x) = \frac{\partial f(\underbar{x})}{\partial x_j}$$
 \subsubsection{Relazione tra 1-forme differenziali e campi vettoriali}
+
+Forme 1-differenziali e campi vettoriali hanno molto in comune.
+Ogni 1-forma definisce implicitamente un campo vettoriale, e viceversa. Infatti un campo vettoriale è una n-upla di funzioni $V_i:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}^n$.
+Se abbiamo ad esempio una 1-forma $\omega$
+$$\omega(x) = \sum_{j=1}^n a_j(x)dx_j$$
+a questa associamo il campo
+$$\underbar{V}(\underbar{x}) = (a_1(\underbar{x}), \dots, a_n(\underbar{x}))$$
+e viceversa.
+
+Valgono poi altre analogie, ad esempio il seguente teorema.
+\begin{teo}
+Un campo vettoriale è conservativo se e solo se la 1-forma differenziale associata è esatta.
+\end{teo}
+
 
 ADD MOAR.
 
