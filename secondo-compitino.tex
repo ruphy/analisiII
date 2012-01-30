@@ -378,7 +378,7 @@ ovvero si somma alla soluzione generale del sistema omogeneo associato la soluzi
 Vedi anche il metodo di variazione delle costanti arbitrarie.
 
 \subsection{Equazioni di ordine n a coefficienti costanti}
-Sia $\lambda \in \mathbb{C}$: la funzione $e^\lambda t$ è soluzione di (ELOCC) se e solo se $\lambda$ è uno zero del polinomio caratteristico di (ELOCC) definito da: $$ p(\lambda) := \lambda^n + a_1\lambda^{(n-1)}+ \dots +a_{n-1}\lambda+a_n$$. 
+Sia $\lambda \in \mathbb{C}$: la funzione $e^\lambda t$ è soluzione di (ELOCC) se e solo se $\lambda$ è uno zero del polinomio caratteristico di (ELOCC) definito da: $$ p({Contrazioni in spazi metrici}\lambda) := \lambda^n + a_1\lambda^{(n-1)}+ \dots +a_{n-1}\lambda+a_n$$. 
 \paragraph*{Osservazione}
 Se  $\lambda_1,\dots,\lambda_n$ sono complessi a due a due distinti, allora 
 $$ e^{\lambda_1 t}, \dots ,e^{\lambda_n t}$$ sono funzioni linearmente indipendenti. 
@@ -487,6 +487,28 @@ bisogna sommare una soluzione particolare. Si scopre facilmente che tutte e sole
 $$\phi(t) = c'_1\sin(\omega t) + c'_2\cos(\omega t) + \frac{1}{\omega^2}t$$
 
 o equivalentemente scegliendo una base complessa, la soluzione particolare da sommare è $\psi^*(t) = \frac{1}{\omega^2}t$.
+
+\subsection{Equazioni differenziali esatte}
+
+Un'equazione differenziale esatta è una forma del tipo
+
+\begin{equation}\label{eq-diff-esatte}
+y'(t)=\frac{P(t, y)}{Q(t,y)} 
+\end{equation}
+
+bisogna trovare una 1-forma differenziale $\omega$ esatta. Chiamando $F$ la funzione di cui $\omega$ è differenziale, si trova che:
+
+$$\omega = Q(t,y)dy - P(t,y)dt = \frac{\partial F}{\partial y}dy+\frac{\partial F}{\partial t}dt = dF$$
+che è vero se e solo se
+$$\frac{\partial F}{\partial t}=-P(t,y)$$
+$$\frac{\partial F}{\partial y}=Q(t,y)$$
+a questo punto l'equazione
+$$F(t, y(t)) = \text{costante}$$
+definisce in maniera implicita tutte e sole le soluzioni dell'equazione differenziale (\ref{eq-diff-esatte}).
+
+Nota: condizione necessaria per cui (\ref{eq-diff-esatte}) abbia soluzione è che
+$$\frac{\partial P}{\partial y}=-\frac{\partial Q}{\partial t}$$
+
 
 \section{Curve in $\mathbb{R}^n$}
 \subsection{Definizioni principali}
