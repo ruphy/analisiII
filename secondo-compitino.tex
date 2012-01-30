@@ -509,6 +509,30 @@ definisce in maniera implicita tutte e sole le soluzioni dell'equazione differen
 Nota: condizione necessaria per cui (\ref{eq-diff-esatte}) abbia soluzione è che
 $$\frac{\partial P}{\partial y}=-\frac{\partial Q}{\partial t}$$
 
+\subsubsection{Altre cose da trovare}
+A volte capita che bisogni trovare una funzione $g(x,y)$ tale che $g\cdot\omega$ (ove il punto indica la moltiplicazione semplice) sia ancora una forma esatta. In questo caso:
+$$P\frac{\partial g}{\partial y} + Q\frac{\partial g}{\partial t} = -g\left(\frac{\partial P}{\partial y} + \frac{\partial Q}{\partial t}\right)$$
+che è molto complicato.
+Se $g=g(t)$, allora si può riscrivere come:
+$$\frac{\partial_tg}{g} = -\frac{1}{Q}(\partial_yP+\partial_tQ)$$
+e se $g=g(y)$
+$$\frac{\partial_yg}{g} = -\frac{1}{P}(\partial_yP+\partial_tQ)$$
+
+\paragraph{Esempio}
+Sia ad esempio
+$$y'=-\frac{y+2xy^3}{x+3x^2y^2}$$
+In questo caso
+$$Q_x=1+6xy^2\qquad P_y=-1-6xy^2$$
+Se
+$$\frac{\partial F}{\partial x}=-P = y+2xy^3$$
+allora
+$$F(x,y(x)) = \int (y+2xy^3)dx = yx+y^2x^2 + g(y)$$
+e derivando $F$ rispetto a $y$, questa deve soddisfare la relazione
+$$\frac{\partial F}{\partial y}=Q(x,y)=x+3x^2y^2$$
+Dunque
+$$x+3x^2y^2+g'(y)=x+3x^2y^2$$
+Quindi in particolare $g'(x) = 0$ e dunque $g(x)$ è una costante. L'integrale generale è dunque
+$$F(x, y(x)) = yx+x^2 + c$$
 
 \section{Curve in $\mathbb{R}^n$}
 \subsection{Definizioni principali}
