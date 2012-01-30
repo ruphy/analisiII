@@ -352,17 +352,18 @@ $$\underbar{x}' = A(t)\underbar{x} + \underbar{b}(t)$$
 L'integrale generale è una soluzione di una equazione differenziale.\\
 Ad esempio, l'integrale generale, o soluzione generale, di un'equazione differenziale lineare non omogenea è data dalla somma tra una funzione soluzione dell'omogenea associata e una soluzione dell'equazione non omogenea. La soluzione particolare dell'equazione non omogenea è anche detta \textbf{integrale particolare}. Parlare di integrare un'equazione differenziale è equivalente a parlare di risolvere un'equazione differenziale.
 
-\subsection{Sistemi lineari omogeni a coefficienti costanti}:
+\subsection{Sistemi lineari omogeni a coefficienti costanti}
+Un sistema lineare omogeneo a coefficiente costante (LOCC) è un sistema
 $$\underbar{x}' = A\underbar{x}$$
-dove $A \in M_n(\mathbb{R})$. Possiamo esprimere le soluzioni di questo sistema mediante l'esponenziale di $tA$.
+dove $A \in M_n(\mathbb{R})$ e $x,x'\in\mathbb{R}^n$. Possiamo esprimere le soluzioni di questo sistema mediante l'esponenziale di $tA$.
 L'esponenziale gode delle seguenti proprietà:
 \begin{itemize}
 \item $e^{(s+t)A} = e^{sA}e^{tA} \ \ \forall s,t \in \mathbb{R} $
-\item $det e^{tA}=e^{ttrA} \ \forall t \in \mathbb{R} $
-\item $	\frac{d}{dt} e^{tA} = A e^{tA} = e^{tA}A$
+\item $\det e^{tA}=e^{t\cdot\text{tr}(A)} \ \forall t \in \mathbb{R} $
+\item $\dfrac{d}{dt} e^{tA} = A e^{tA} = e^{tA}A$
 \end{itemize}
 
-\paragraph{Teorema} Per ogni (vettore colonna) $\underbar{c} \in \mathbb{R}^n $, la funzione $$ \underbar{ $\varphi$ }(t) = e^{tA} \underbar{c} $$è soluzione dell'eq (LOCC) su tutto $\mathbb{R}$.
+\paragraph{Teorema} Per ogni (vettore colonna) $\underbar{c} \in \mathbb{R}^n $, la funzione $$ \underbar{$\varphi$}(t) = e^{tA} \underbar{c} $$è soluzione dell'eq (LOCC) su tutto $\mathbb{R}$.
 
 \subsection{Sistemi lineari non omogenei a coefficienti costanti}
 Un sistema lineare non omogeneo (a coefficienti costanti) di equazioni differenziali è un sistema del tipo
@@ -378,7 +379,7 @@ ovvero si somma alla soluzione generale del sistema omogeneo associato la soluzi
 Vedi anche il metodo di variazione delle costanti arbitrarie.
 
 \subsection{Equazioni di ordine n a coefficienti costanti}
-Sia $\lambda \in \mathbb{C}$: la funzione $e^\lambda t$ è soluzione di (ELOCC) se e solo se $\lambda$ è uno zero del polinomio caratteristico di (ELOCC) definito da: $$ p(\lambda) := \lambda^n + a_1\lambda^{(n-1)}+ \dots +a_{n-1}\lambda+a_n$$. 
+Sia $\lambda \in \mathbb{C}$: la funzione $e^\lambda t$ è soluzione di (ELOCC) se e solo se $\lambda$ è uno zero del polinomio caratteristico di (ELOCC) definito da: $$ p(\lambda) := \lambda^n + a_1\lambda^{(n-1)}+ \dots +a_{n-1}\lambda+a_n$$
 \paragraph*{Osservazione}
 Se  $\lambda_1,\dots,\lambda_n$ sono complessi a due a due distinti, allora 
 $$ e^{\lambda_1 t}, \dots ,e^{\lambda_n t}$$ sono funzioni linearmente indipendenti. 
