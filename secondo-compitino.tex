@@ -303,9 +303,10 @@ $$\exists U((t, v), r) : f(t, v)|_U \in \text{Lip}_t(v)\qquad\qquad\forall(t, v)
 
 \subsection{Teoria}
 \paragraph{Il problema di Cauchy}
+\begin{defi}[problema di Cauchy]
 Siano $f:\Omega \subseteq \mathbb{R}^2 \rightarrow \mathbb{R}$ e $ \left(t_0,y_0\right) \in \Omega$. Il problema di Cauchy (PC) è il sistema
 $$\label{PC}\begin{cases} y'=f\left(t,y\right) \\ y\left(t_0\right)=y_0 \end{cases}$$
-
+\end{defi}
 Una soluzione del problema di Cauchy è una coppia $\left( \phi , I \right)$ costituita da una funzione $\phi: I \rightarrow \mathbb{R}$ differenziabile in $I$ tale che:
 \begin{itemize}
 \item $t_0 \in I\qquad\text{e}\qquad \phi\left(t_0\right)=y_0$
@@ -316,11 +317,15 @@ Una soluzione del problema di Cauchy è una coppia $\left( \phi , I \right)$ cos
 Se $\left(\phi,I\right)$ risolve il problema di Cauchy, allora è una soluzione continua dell'equazione di Volterra:
 $$ y\left(t\right) = y_0 + \displaystyle\int^t_{t_0} f\left(s,y\left(s\right)\right) ds $$
 
-\subsubsection{Teoremi}
+\subsubsection{Esistenza, unicità e prolungabilità delle soluzioni}
 
-\paragraph{Teorema di esistenza e unicità in piccolo o locale}
-Siano date le definizioni come in precedenza. Se $f \in \cont \left(\Omega\right)$ allora il (PC) associato ha almeno una soluzione. \\
-Se $f \in \cont \left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\right)$, allora il (PC) associato ha un'unica soluzione in un opportuno intorno di $t_0$.\\
+\begin{teo}[di esistenza e unicità in piccolo o locale]
+Siano date le definizioni come in precedenza. Allora:
+\begin{itemize}
+ \item Se $f \in \cont \left(\Omega\right)$ allora il (PC) associato ha almeno una soluzione.
+ \item Se $f \in \cont \left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\right)$, allora il (PC) associato ha un'unica soluzione in un opportuno intorno di $t_0$.\\
+\end{itemize}
+\end{teo}
 Ricorda: una funzione di classe $\cont^n$ con $ n \geq 1 $ è localmente lipschitziana. 
 
 \paragraph{Teorema di esistenza e unicità in grande (o globale)}
