@@ -1,6 +1,8 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage[utf8x]{inputenc}
 \usepackage{amssymb, amsmath, amsthm, mathrsfs}
+\usepackage[italian]{babel}
+
 \newcommand{\ubar}{\underbar}
 \newcommand{\cont}{\mathscr{C}}
 \newcommand{\Rint}{\mathcal{R}}
@@ -86,12 +88,12 @@ Sia $\{f_n\}$ una successione di funzioni continue definite in $E$ uniformemente
 \subsection{Convergenza Uniforme e Integrabilità}
 \begin{teo}
 Sia ${f_n}$ una successione di funzioni R-integrabili in $[a,b]\subseteq \mathbb{R}$, uniformemente convergente a $f$ in $[a,b]$. Allora $f\in \Rint([a,b])$ e
-$$\lim_{n\to\infty}\int_{a}^{b} f_n=\int_{a}^{b}f$$
+$$\lim_{n\to+\infty}\int_{a}^{b} f_n=\int_{a}^{b}\lim_{n\to+\infty} f_n=\int_{a}^{b}f$$
 \end{teo}
 \subsection{Convergenza Uniforme e Differenziabilità}
 \begin{teo}
 Sia $f_n$ una successione di funzioni differenziabili in  $[a,b]\subseteq \mathbb{R}$. Supponiamo che esista un $x_{0} \in [a,b] $ per il quale la successione numerica ${f_n(x_0)}$ converga e che ${f^{'}(x)}$ converga uniformemente in $[a,b]$. Allora ${f_n}$ converge uniformemente in $[a,b]$ a una funzione $f$ e
-$$\lim_{n\to\infty} f^{'}_n (x)=f^{'}(x) \qquad \qquad \forall x \in [a,b]$$
+$$\lim_{n\to+\infty} f^{'}_n (x)=f^{'}(x) \qquad \qquad \forall x \in [a,b]$$
 \end{teo}
 
 \subsection{Serie di potenze}
@@ -398,10 +400,6 @@ In generale, risolvere (integrare) un'equazione differenziale consiste principal
 \subsubsection{Grafici delle soluzioni}
 todo marco
 
-\subsubsection{Sistemi lineari omogenei (LO)}
-Per risolvere un sistema del tipo
-$$\underbar{y}'=A(t)\underbar{y}$$
-
 \subsubsection{Metodo di variazione delle costanti arbitrarie}
 Questo metodo (alternativo, e un pochino più semplice) viene utilizzato se conosciamo un sistema fondamentale di soluzioni di un (LO), e cerchiamo almeno una soluzione di un (LNO).
 Siano $\phi_1,...,\phi_n$ soluzioni di un (LO) $y'= A(t)y$, e sia $W(t)$ la corrispondente matrice wronskiana.
@@ -418,7 +416,7 @@ $$\Psi^*(t)= W(t)\int_{t_0}^t V(t)\underbar{b}(s) ds$$
 Con un'equazione di forma:
 $$y'(t) = P(t)y+Q(t)$$
 Allora
-$$y(t)=e^{- \displaystyle\int P(t)dt}\left(k + \int Q(t)e^{-\displaystyle\int P(t)dt}dt\right)$$
+$$y(t)=e^{+\displaystyle\int P(t)dt}\left(c_1 + \int Q(t)e^{-\displaystyle\int P(t)dt}dt\right)$$
 \subsubsection{Equazione di Bernoulli}
 Con un'equazione di forma:
 $$y'(t) = P(t)y+Q(t)$$
@@ -479,7 +477,7 @@ oppure
 $$\psi(t) = c'_1\sin(\omega t) + c'_2\cos(\omega t)$$
 a seconda della base scelta.
 
-\paragraph{Risonanza??}
+\paragraph{Caso 2}
 Invece, data un'equazione di forma
 $$x''-\omega^2 x=0$$
 questa ha soluzioni reali, più precisamente del tipo
@@ -487,18 +485,18 @@ $$\psi(t) = c_1 e^{\omega t} + c_2 e^{-\omega t}$$
 
 \paragraph{Oscillazioni smorzate}
 Nel terzo caso, abbiamo un'equazione del tipo
-$$x''-2x +x=0$$
+$$x''-2x' +x=0$$
 la cui soluzione è del tipo
-$$\phi(t) = c_1e^t +c_2 t + e^t$$
+$$\varphi(t) = c_1e^t +c_2 t + e^t$$
 (check)
 
 \paragraph{Casi non omogenei}
 In un caso del tipo
 $$x''+\omega^2 x=b(t)$$
 bisogna sommare una soluzione particolare. Si scopre facilmente che tutte e sole le soluzioni sono fatte
-$$\phi(t) = c'_1\sin(\omega t) + c'_2\cos(\omega t) + \frac{1}{\omega^2}t$$
+$$\varphi(t) = c'_1\sin(\omega t) + c'_2\cos(\omega t) + \frac{1}{\omega^2}t$$
 
-o equivalentemente scegliendo una base complessa, la soluzione particolare da sommare è $\psi^*(t) = \frac{1}{\omega^2}t$.
+o equivalentemente scegliendo una base complessa, la soluzione particolare da sommare è $\Psi^*(t) = \frac{1}{\omega^2}t$.
 
 \subsection{Equazioni differenziali esatte}
 
@@ -583,12 +581,19 @@ Esplicitamente, la forma è esatta se esiste $f$ tale che:
 $$\forall j\in\{1 ... n\}: a_j(x) = \frac{\partial f(\underbar{x})}{\partial x_j}$$
 \subsubsection{Relazione tra 1-forme differenziali e campi vettoriali}
 
+ADD MOAR.
+
 \section{Altro}
 \subsection{Norme}
 \paragraph{Norma 1}
 La norma 1 è definita come:
 $$||f||_1 := \int_a^b|f|$$
-\subsection{Formule varie}
+\paragraph{Norma $\infty$}
+La norma $\infty$ sull'insieme $E$ è definita come:
+$$||f(\underbar{x})||_{E,\infty} := \sup_{\underbar{x}\in E} |f(\underbar{x})|$$
+
+
+\subsection{Calcoli vari}
 \paragraph{Esponenziale di una matrice}
 Ricordiamo la definizione di esponenziale di una matrice.
 $$e^{tA} := \sum_{k=0}^{+\infty} \dfrac{(tA)^k}{k!}$$
@@ -610,6 +615,8 @@ $$A = SDS^{-1}$$
 Allora, con dei semplici passaggi si verifica che
 $$e^{tA} = Se^{tD}S^{-1}$$
 e dunque il calcolo di esponenziale di una matrice qualunque viene ricondotto al calclolo di una matrice diagonale, appena risolto.
+\paragraph{Caso particolare: matrice non diagonalizzabile}
+write me.
 
 \end{document}
 
