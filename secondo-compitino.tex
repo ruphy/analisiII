@@ -63,7 +63,7 @@ Utilizzando un'altra scrittura, la definizione di convergenza uniforme diviene:
 \subsubsection{Successioni}
 \begin{teo}[Condizione di Cauchy]
 Sia $\{f_n\}$ una successione di funzioni a valori reali (o complessi). Allora $\{f_n\}$ converge uniformemente in $E$ se e solo se $\forall \varepsilon>0\ \ \exists N=N(\varepsilon):\ \forall n,m \geq N\ \forall x\in E$ si ha che 
-$$|f_n(x) - f_m(x)| < \varepsilon$$.
+$$|f_n(x) - f_m(x)| < \varepsilon$$
 \end{teo}
 \subparagraph*{Osservazione}
 La convergenza uniforme di una successione è quindi condizione \textbf{necessaria e sufficiente} per verificare il criterio di Cauchy.
@@ -97,26 +97,41 @@ $$\lim_{n\to+\infty} f^{'}_n (x)=f^{'}(x) \qquad \qquad \forall x \in [a,b]$$
 \end{teo}
 
 \subsection{Serie di potenze}
-\subsubsection{Definizioni}
+\subsubsection{Teoria}
+\begin{defi}[Serie di potenze]
 Una serie di potenze è una serie di funzioni della forma
-$$\label{seriepotenza} \displaystyle \sum_{n=0}^\infty c_n\left(x-x_0\right)^n$$
-con $x_0 \in \mathbb{R}$ fissato, ${c_n}$ è successione di numeri reali e $x$ una variabile reale. 
-E' sempre possibile ricondursi al caso $x_0 = 0$ con una opportuna traslazione. L'insieme di convergenza di \ref{seriepotenza} è l'insieme degli $x \in \mathbb{R}$ tali che \ref{seriepotenza} converge. L'insieme di convergenza di una serie di potenze è sempre un \textbf{intervallo.}
-\paragraph{Teorema della convergenza semplice}
+$$\displaystyle \sum_{n=0}^\infty c_n\left(x-x_0\right)^n$$
+con $x_0 \in \mathbb{R}$ fissato, ${c_n}$ è una successione di numeri reali e $x$ una variabile reale.
+\end{defi}
+E' sempre possibile ricondursi al caso $x_0 = 0$ con una opportuno cambio di variabili. L'insieme di convergenza di una serie è l'insieme degli $x \in \mathbb{R}$ tali che la serie converge. L'insieme di convergenza di una serie di potenze è sempre un \textbf{intervallo.}
+\begin{teo}[della convergenza semplice]
 Data la serie di potenze 
-$$ \displaystyle \sum_{n=0}^\infty c_n\left(x\right)^n$$
-poniamo $$ \alpha:=\limsup_{n\to \infty} \sqrt[n]{|c_n x^n|} \ e \ R:=\frac{1}{\alpha}$$
-(se $\alpha = +\infty$, allora $R=0$ e se $\alpha=0$, allora $R=+\infty$)
+$$ \displaystyle \sum_{n=0}^\infty c_nx^n$$
+poniamo $$ \alpha:=\limsup_{n\to \infty} \sqrt[n]{|c_n x^n|}\qquad \text{e}\qquad R:=\frac{1}{\alpha}$$
 La serie di potenze converge se $|x|<R$ e non converge se $|x|>R$.
-R è il raggio di convergenza della serie.
-\paragraph{Teorema della convergenza uniforme delle serie di potenza}
+\end{teo}
+La definizione si può banalmente estendere in casi particolari:
+$$\text{Se}\qquad \alpha = +\infty\qquad \text{allora}\qquad R:=0$$
+$$\text{Se}\qquad \alpha=0\qquad\text{allora}\qquad R=+\infty$$
+\begin{defi}[Raggio di convergenza]
+$R$ definito come sopra viene anche detto raggio di convergenza della serie.
+\end{defi}
+\begin{teo}[della convergenza uniforme]
 Supponiamo che $ \displaystyle \sum_{n=0}^\infty c_n\left(x\right)^n$ converga per $|x|<r$. Poniamo:
-$$ f(x):= \displaystyle \sum_{n=0}^\infty c_n\left(x\right)^n \ \ \forall t \in (-r,r) \forall \varepsilon > 0 $$
-Allora $$ \displaystyle \sum_{n=0}^\infty c_n\left(x\right)^n$$ converge uniformente a $f(x)$ in $[-r+\varepsilon,r-\varepsilon]$ Inoltre: $f \in \cont^\infty((-r,r))$ $$f^{(k)}(x) = \displaystyle \sum_{n=0}^\infty n(n-1)\dots(n-k+1)c_n x^{n-k} \ \ \forall x \in (-r,r)$$  $$f^{(k)}(0) = k!\ c_k \ \ k=0,1,2,3 \dots $$ 
+$$ \forall t \in (-r,r)\qquad \forall \varepsilon > 0 \qquad f(x):= \displaystyle \sum_{n=0}^{+\infty} c_n x^n$$
+Allora $\displaystyle \sum_{n=0}^{+\infty} c_n x^n$ converge uniformente a $f(x)$ in $[-r+\varepsilon,r-\varepsilon]$.
+Inoltre $f \in \cont^\infty((-r,r))$
+\end{teo}
+Si trova un'utile forma per il calcolo di ogni derivata di questa funzione (in $(-r, r)$). In particolare, la derivata di ordine $k$ di $f$ è uguale a
+$$\forall x \in (-r,r)\qquad f^{(k)}(x) = \displaystyle \sum_{n=0}^{+\infty}\frac{n!c_n}{(n-k)!}x^{n-k}$$
+E ovviamente, in 0
+$$f^{(k)}(0) = c_kk!$$ 
 
-\paragraph{Serie di Taylor}
+\begin{defi}[Serie di Taylor]
 La serie:
-$\displaystyle \sum_{n=0}^\infty \frac{f^{n}(0)}{n!} x^n$ si chiama serie di Taylor di $f$. Condizione necessaria affinchè la serie di Taylor di $f$ converga in  $x$ è che $$\lim_{n \to \infty}\displaystyle \left[ f(x) - \displaystyle  \sum_{k=0}^\infty \frac{f^{k}(0)}{k!}x^k \right] = 0 $$
+$\displaystyle \sum_{n=0}^\infty \frac{f^{(n)}(0)}{n!} x^n$ si chiama serie di Taylor di $f$.
+\end{defi}
+Condizione necessaria affinchè la serie di Taylor di $f$ converga in  $x$ è che $$\lim_{n \to +\infty}\displaystyle \left[ f(x) - \displaystyle  \sum_{k=0}^\infty \frac{f^{(k)}(0)}{k!}x^k \right] = 0 $$
 
 
 \subsection{Come risolvere gli esercizi}
@@ -136,7 +151,7 @@ $$\lim_{n\to\infty} f_n(x_i)=\lim_{n\to\infty} k = k $$
 allora ovviamente $f_n$ converge puntualmente a $k$ in $x_i$.
 \paragraph*{Convergenza uniforme}
 Per studiare la convergenza uniforme si procede applicando la definizione di convergenza uniforme sull'insieme $B$ di convergenza puntuale, ossia si procede verificando la seguente uguaglianza
-$$\lim_{n\to\infty} \sup_{x\in B} |f_n(x)- f(x)|=0$$.
+$$\lim_{n\to\infty} \sup_{x\in B} |f_n(x)- f(x)|=0$$
 Il calcolo dell'estremo superiore può non essere facile. Tuttavia se $B$ è chiuso, e $f_n, f \in\cont(B)$,   per il teorema di Weierstrass la funzione $\varphi:=|f_n-f|$ avrà un minimo e in particolare un massimo in $B$. Ovviamente questo massimo coincide con l'estremo superiore della medesima funzione. Sarà quindi sufficiente trovare il massimo di tale funzione, che potrà essere facilmente trovato studiando il segno della derivata prima.
 \paragraph*{Restrizione dell'insieme di convergenza uniforme}
 Può accadere che $f_n$ non converga uniformemente a $f$ in $B$, insieme di convergenza puntuale, ossia che 
