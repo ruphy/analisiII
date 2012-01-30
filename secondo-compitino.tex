@@ -279,7 +279,7 @@ Allora $\phi$ ha un unico punto fisso.
 
 \section{Equazioni differenziali}
 
-\subsection{Definizioni}
+\subsection{Teoria}
 \paragraph{Il problema di Cauchy}
 Siano $f:\Omega \subseteq \mathbb{R}^2 \rightarrow \mathbb{R}$ e $ \left(t_0,y_0\right) \in \Omega$. Il problema di Cauchy (PC) è il sistema
 $$\label{PC}\begin{cases} y'=f\left(t,y\right) \\ y\left(t_0\right)=y_0 \end{cases}$$
@@ -313,9 +313,19 @@ Sia $I=(t_{min},t_{max})$ un intervallo tale che la coppia $\left(\phi,I\right)$
 
 Allora il grafico di $\phi$ esce definitivamente da $K$ per $t\rightarrow t^+_{min}$ e $t\rightarrow t^-_{max}$, con 
 
+\paragraph{Matrice wronskiana}
+Siano $\phi_1,...,\phi_n$ funzioni a valori su $\mathbb{R}^n$ definite in $I\subset \mathbb{R}$.
+Si chiama \textbf{matrice wronskiana} di $\phi_1,...,\phi_n$ la matrice:
+$$W(t):=[\phi_1(t)\ ...\ \phi_n(t)]$$
+Si chiama altresì \textbf{wronskiano} di $\phi_1,...,\phi_n$:
+$$w(t):=\text{det } W(t)$$
+\subparagraph*{Osservazione} l'annullarsi del wronskiano è condizione necessaria (ma non sufficiente) per la dipendenza lineare di $\phi_1,...,\phi_n$. 
+Condizione necessaria e sufficiente affinchè $n$ soluzioni su $I$ di una medesima equazione lineare omogenea siano linearmente indipendenti è che:
+$$ w(t)\neq0 \qquad\qquad \forall t \in I$$
 
 
-\subsection{Sistemi lineari omogenei}
+\subsection{Principali tipi di equazioni differenziali}
+\subsubsection{Sistemi lineari omogenei}
 Un sistema lineare omogeneo (LO) di equazioni differenziali è un sistema della forma:
 $$\underbar{x}' = A(t)\underbar{x}$$ 
 ove $$A(t)\in M_n(\mathbb{R})\qquad \qquad \forall t\in I\subset R$$ e $\underbar{x} = (x_1,x_2,x_3 \dots x_n)^t$
@@ -328,17 +338,7 @@ ove $$A(t)\in M_n(\mathbb{R})\qquad \qquad \forall t\in I\subset R$$ e $\underba
 \end{itemize}
 
 
-\paragraph{Matrice wronskiana}
-Siano $\phi_1,...,\phi_n$ funzioni a valori su $\mathbb{R}^n$ definite in $I\subset \mathbb{R}$.
-Si chiama \textbf{matrice wronskiana} di $\phi_1,...,\phi_n$ la matrice:
-$$W(t):=[\phi_1(t)\ ...\ \phi_n(t)]$$
-Si chiama altresì \textbf{wronskiano} di $\phi_1,...,\phi_n$:
-$$w(t):=\text{det } W(t)$$
-\subparagraph*{Osservazione} l'annullarsi del wronskiano è condizione necessaria (ma non sufficiente) per la dipendenza lineare di $\phi_1,...,\phi_n$. 
-Condizione necessaria e sufficiente affinchè $n$ soluzioni su $I$ di una medesima equazione lineare omogenea siano linearmente indipendenti è che:
-$$ w(t)\neq0 \qquad\qquad \forall t \in I$$
-
-\subsection{Sistemi lineari non omogenei}
+\subsubsection{Sistemi lineari non omogenei}
 Un sistema lineare non omogeneo (LNO) di equazioni differenziali è un sistema della forma:
 $$\underbar{x}' = A(t)\underbar{x} + \underbar{b}(t)$$
 \paragraph{Osservazioni}
@@ -356,7 +356,7 @@ $$\underbar{x}' = A(t)\underbar{x} + \underbar{b}(t)$$
 L'integrale generale è una soluzione di una equazione differenziale.\\
 Ad esempio, l'integrale generale, o soluzione generale, di un'equazione differenziale lineare non omogenea è data dalla somma tra una funzione soluzione dell'omogenea associata e una soluzione dell'equazione non omogenea. La soluzione particolare dell'equazione non omogenea è anche detta \textbf{integrale particolare}. Parlare di integrare un'equazione differenziale è equivalente a parlare di risolvere un'equazione differenziale.
 
-\subsection{Sistemi lineari omogeni a coefficienti costanti}
+\subsubsection{Sistemi lineari omogeni a coefficienti costanti}
 Un sistema lineare omogeneo a coefficiente costante (LOCC) è un sistema
 $$\underbar{x}' = A\underbar{x}$$
 dove $A \in M_n(\mathbb{R})$ e $x,x'\in\mathbb{R}^n$. Possiamo esprimere le soluzioni di questo sistema mediante l'esponenziale della matrice $tA$, ove $t$ è uno scalare.
@@ -369,7 +369,7 @@ L'esponenziale di matrici gode delle seguenti proprietà:
 
 \paragraph{Teorema} Per ogni (vettore colonna) $\underbar{c} \in \mathbb{R}^n $, la funzione $$ \underbar{$\varphi$}(t) = e^{tA} \underbar{c} $$è soluzione dell'eq (LOCC) su tutto $\mathbb{R}$.
 
-\subsection{Sistemi lineari non omogenei a coefficienti costanti}
+\subsubsection{Sistemi lineari non omogenei a coefficienti costanti}
 Un sistema lineare non omogeneo (a coefficienti costanti) di equazioni differenziali è un sistema del tipo
 $$\underbar{x}'=A\underbar{x}+\underbar{b}(t)$$
 Ove $A\in M_n(\mathbb{R})$ e $b$ continua, allora, per ogni punto $t_0 \in \mathbb{R}$:
@@ -382,7 +382,7 @@ $$\phi(t)=e^{(t-t_0)A}\underbar{x}_0+\Psi^*(t)$$
 ovvero si somma alla soluzione generale del sistema omogeneo associato la soluzione particolare trovata in precedenza.
 Vedi anche il metodo di variazione delle costanti arbitrarie.
 
-\subsection{Equazioni di ordine n a coefficienti costanti}
+\subsubsection{Equazioni di ordine n a coefficienti costanti}
 Sia $\lambda \in \mathbb{C}$: la funzione $e^\lambda t$ è soluzione di (ELOCC) se e solo se $\lambda$ è uno zero del polinomio caratteristico di (ELOCC) definito da: $$ p(\lambda) := \lambda^n + a_1\lambda^{(n-1)}+ \dots +a_{n-1}\lambda+a_n$$
 \paragraph*{Osservazione}
 Se  $\lambda_1,\dots,\lambda_n$ sono complessi a due a due distinti, allora 
@@ -407,31 +407,31 @@ $$\frac{dW(t)}{dt} = A(t)W(t)$$
 si trova l'integrale particolare cercato:
 $$\Psi^*(t)= W(t)\int_{t_0}^t V(t)\underbar{b}(s) ds$$
 
-\subsection{Equazioni lineari}
+\subsubsection{Equazioni lineari}
 Con un'equazione di forma:
 $$y'(t) = P(t)y+Q(t)$$
 Allora
 $$y(t)=e^{- \displaystyle\int P(t)dt}\left(k + \int Q(t)e^{-\displaystyle\int P(t)dt}dt\right)$$
-\subsection{Equazione di Bernoulli}
+\subsubsection{Equazione di Bernoulli}
 Con un'equazione di forma:
 $$y'(t) = P(t)y+Q(t)$$
 con $\alpha \neq 0, 1$. Allora, si impone:
 $$ z(t)=y(t)^{1-\alpha} $$
 si risolve l'equazione lineare in $z$: $$z'(t)=(1-\alpha)P(t)z(t)+Q(t)$$ e, trovata $z(t)$ con la formula sopra, si ricava $y(t)$.
 
-\subsection{Equazione di Riccati}
+\subsubsection{Equazione di Riccati}
 $$y'(t) = P(t)y^2+Q(t)y+R(t)$$
 Conoscendo una soluzione particolare $\Psi(t)$, allora applico la sostituzione
 $$y(t)=\Psi(t)+\dfrac{1}{z(t)}$$
 e con un po' di passaggi si dimostra che alla fine
 $$z'(t)= -\left[2\Psi(t)P(t)+Q(t)\right]z(t)-P(t)$$
 che è lineare.
-\subsection{Variabili separabili}
+\subsubsection{Variabili separabili}
 Se invece
 $$y'(t) = f(t)g(y)$$
 Allora ovviamente si risolve ricordando che
 $$\int\dfrac{dy}{g(y)}=\int f(t)dt + c$$
-\subsection{Un'altro tipo di equazioni omogenee}
+\subsubsection{Un'altro tipo di equazioni omogenee}
 $$y'(t) = f\left(\dfrac{y(t)}{t}\right)$$
 Allora si sostituisce
 $$z=\dfrac{y}{t}$$
@@ -443,7 +443,7 @@ $$\int\dfrac{dz}{f(z)-z} = \log|t| + c$$
 
 Risostituendo e risolvendo rispetto a $y$ si ottiene la soluzione cercata.
 
-\subsection{Equazioni lineari di ordine $n$}
+\subsubsection{Equazioni lineari di ordine $n$}
 Sia
 $$y^{(n)} + a_1(t)y^{(n-1)} + a_2y^{(n-2)} + ... + a_n(t)y = 0$$
 ove le funzioni $a_j \in C(I)$
