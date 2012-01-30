@@ -616,6 +616,57 @@ Una forma differenziale $\omega$, definita in un aperto $A\subset\mathbb{R}^n$, 
 \end{defi}
 Più esplicitamente, la forma è esatta se esiste $f$ tale che:
 $$\forall j\in\{1 ... n\}: a_j(x) = \frac{\partial f(\underbar{x})}{\partial x_j}$$
+
+\subsubsection{Forme chiuse, forme esatte}
+Altre proprietà delle 1-forme differenziali:
+\begin{teo}
+ Sia $\omega$ una 1-forma differenziale. Se $\gamma$ e $\varphi$ sono curve equivalenti, allora
+ $$\int_\gamma \omega = \int_\varphi \omega$$
+ se $\alpha$ e $\omega$ hanno lo stesso verso. Altrimenti
+ $$\int_\gamma \omega = -\int_\varphi \omega$$
+ se hanno versi opposti.
+\end{teo}
+
+\begin{defi}
+ Siano $\underbar{x}_1, \underbar{x}_2\in A$ connesso.
+ Definiamo $\Gamma(\underbar{x}_1, \underbar{x}_2)$ come l'insieme delle curve regolari a tratti che congiungono $\underbar{x}_1$ e $\underbar{x}_2$ regolari a tratti, tutte contenute in $A$.
+\end{defi}
+
+\paragraph{Osservazione}
+È equivalente dire che:
+\begin{itemize}
+ \item Una 1-forma diffferenziale $\omega$ è esatta su $A$
+ \item $\forall \underbar{x}_1, \underbar{x}_2 \in A\qquad \forall\gamma_1,\gamma_2\in\Gamma(\underbar{x}_1, \underbar{x}_2)\qquad \int_\gamma \omega = \int_\varphi \omega$
+ \item $\int_\gamma \omega = 0\qquad\forall\gamma\subset A$ chiusa e regolare a tratti.
+\end{itemize}
+
+\begin{defi}[forma chiusa]
+ Una forma $\omega = \sum_{j=1}^n a_j(x)dx_j$ per cui, $\forall j\neq k$, valga
+ $$\frac{\partial a_j}{\partial x_k} = \frac{\partial a_k}{\partial x_j} $$
+ si dice chiusa.
+\end{defi}
+
+\begin{teo}
+ Sia $\omega$ esatta. Vale
+ $$\frac{\partial a_j}{\partial x_k} = \frac{\partial a_k}{\partial x_j} $$
+\end{teo}
+
+\begin{cor}
+ Sia $\omega$ una forma esatta. Allora $\omega$ è chiusa. Non vale il viceversa.
+\end{cor}
+
+\begin{defi}[insieme stellato]
+ Sia $A\subseteq\mathbb{R}^n$ aperto. $A$ si dice \textbf{stellato} se esiste $\underbar{x}_0\in A$ tale che
+ $\forall \underbar{x} \in A$ il segmento $[\underbar{x}_0,\underbar{x}]$ è tutto contenuto in $A$.
+\end{defi}
+\textbf{Osservazione}
+
+$A$ convesso $\Rightarrow$ $A$ stellato (ma non vale il viceversa).
+
+\begin{teo}
+Sia $\omega\in\cont^1(A)$, sia $A\subseteq \mathbb{R}^n$ aperto stellato. Allora $\omega$ chiusa $\Leftrightarrow\omega$ esatta.
+\end{teo}
+
 \subsubsection{Relazione tra 1-forme differenziali e campi vettoriali}
 
 Forme 1-differenziali e campi vettoriali hanno molto in comune.
@@ -626,19 +677,36 @@ a questa associamo il campo
 $$\underbar{V}(\underbar{x}) = (a_1(\underbar{x}), \dots, a_n(\underbar{x}))$$
 e viceversa.
 
-Valgono poi altre analogie, ad esempio il seguente teorema.
+Valgono poi altre analogie, ad esempio i seguente teoremi.
 \begin{teo}
 Un campo vettoriale è conservativo se e solo se la 1-forma differenziale associata è esatta.
 \end{teo}
 
+\begin{teo}
+Un campo vettoriale è irrotazionale se e solo se la 1-forma differenziale associata è chiusa.
+\end{teo}
 
-ADD MOAR.
+\subsubsection{Gauss Green}
+Sia $E\subseteq \mathbb{R}^2$ un insieme.
+\begin{defi}
+Il bordo di $E$ ($\partial E$) si dice orientato positivamente se esiste una parametrizzazione $\gamma(t)$ di esso, tale che, percorrendo $\gamma$ in senso antiorario, l'insieme $E$ si trovi tutto alla sua sinistra. (nota: $\gamma$ deve essere chiusa e semplice).
+\end{defi}
+
+\begin{teo}[Gauss Green]
+Sia $\omega$ una 1-forma differenziale in $E\subseteq\mathbb{R}^2$, definita come
+$$\omega=M(x,y)\ dx+N(x,y)\ dy\qquad\qquad M,N\in\cont(\bar E)$$
+Allora
+$$\int_{\partial^+E}\omega = \int_{E} \left( N_x(x,y)-M_y(x,y) \right)dxdy$$
+ove $N_x = \frac{\partial N}{\partial x}$, $M_y = \frac{\partial M}{\partial y}$ e $\partial^+E$ è il bordo orientato nel senso positivo di $E$.
+\end{teo}
+
 
 \section{Altro}
 \subsection{Norme}
-\paragraph{Norma 1}
-La norma 1 è definita come:
+\begin{defi}[norma 1]
+La \textbf{norma 1} è definita come:
 $$||f||_1 := \int_a^b|f|$$
+\end{defi}
 \paragraph{Norma $\infty$}
 La norma $\infty$ sull'insieme $E$ è definita come:
 $$||f(\underbar{x})||_{E,\infty} := \sup_{\underbar{x}\in E} |f(\underbar{x})|$$
