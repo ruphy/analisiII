@@ -700,6 +700,32 @@ $$\int_{\partial^+E}\omega = \int_{E} \left( N_x(x,y)-M_y(x,y) \right)dxdy$$
 ove $N_x = \frac{\partial N}{\partial x}$, $M_y = \frac{\partial M}{\partial y}$ e $\partial^+E$ è il bordo orientato nel senso positivo di $E$.
 \end{teo}
 
+\subsubsection{Rotore, gradiente, divergenza}
+
+Sia $\underbar{V}=(V_1, V_2, V_3)$ campo in $\mathbb{R}^3$.
+\begin{defi}
+Si definisce \textbf{divergenza} di $\underbar{V}$ la quantità
+$$\text{div}\underbar{V}= \partial_1V_1 + \partial_2V_2 + \partial_3V_3$$
+\end{defi}
+
+\begin{teo}[teorema della divergenza]
+Sia $d\sigma$ la quantità infinitesima di ``area'', e $\nu$ vettore normale (e normalizzato) al bordo di $E$.
+$$\int_E div(\underbar{V}) = \int_{\partial E} <\underbar{V},\nu> d\sigma$$
+\end{teo}
+\textbf{Osservazione}
+In $\mathbb{R}^2$
+$$\int_E (\partial_xV_1 + \partial_yV_2)dxdy = \int_{\partial^+ E} <\underbar{V},\nu> ds$$
+
+Quest'ultima quantità si chiama flusso di $V$ attraverso il bordo di $E$
+
+
+\begin{defi}[insieme semplicemente connesso]
+Sia $A\subseteq\mathbb{R}^2$ aperto. A si dice \textbf{semplicemente connesso} se per ogni curva chiusa semplice contenuta in $A$ l'interno della curva.
+
+\end{defi}
+
+
+
 
 \section{Altro}
 \subsection{Norme}
