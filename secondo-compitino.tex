@@ -328,23 +328,27 @@ Siano date le definizioni come in precedenza. Allora:
 \end{teo}
 Ricorda: una funzione di classe $\cont^n$ con $ n \geq 1 $ è localmente lipschitziana. 
 
-\paragraph{Teorema di esistenza e unicità in grande (o globale)}
-Siano $-\infty < \tau_1 < \tau_2 < +\infty$ e $I:=\left[\tau_1,\tau_2\right]\times\mathbb{R}$. Sia $f \in C\left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\right)$, con crescita al più lineare in x, cioè
-$$\exists\ a,b: |f \left(t,x\right)|\leq a + b|x|$$
-Allora l'unica soluzione del (PC)
-$$\begin{cases} x'=f\left(t,x\right) \\ x\left(t_0\right)=x_0 \end{cases}$$
-(ove $\left(t_0,x_0\right)$ è un punto qualunque di $I$), è definita in $\left[\tau_1,\tau_2\right]$.
+\begin{teo}[di esistenza e unicità in grande o globale]
+Siano $-\infty < \tau_1 < \tau_2 < +\infty$ e $I:=\left[\tau_1,\tau_2\right]\times\mathbb{R}$. Sia $f \in C\left(\Omega\right) \cap \text{Lip}^{\text{loc}}_y\left(\Omega\right)$, con crescita al più lineare in y, cioè:
+$$\exists\ a,b: |f \left(t,y\right)|\leq a + b|y|$$
+Allora la soluzione del (PC)
+$$\begin{cases} y'(t)=f\left(t,y\right) \\ y\left(t_0\right)=y_0 \end{cases}$$
+esiste ed è unica.
+\end{teo}
 
-\paragraph{Teorema di prolungamento delle soluzioni}
+(ove $\left(t_0,y_0\right)$ è un punto qualunque di $I$), è definita in $\left[\tau_1,\tau_2\right]$.
 
-Siano $$f \in C\left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\right)\qquad \text{e} \qquad\left(t_0,x_0\right) \in \Omega$$
-Sia $I:=(t_{min},t_{max})$ un intervallo tale che la coppia $\left(\phi,I\right)$ sia la soluzione massimale di (PC). Sia inoltre $K\subset \Omega$ compatto.
+\begin{teo}[di prolungamento delle soluzioni]
+Sia $K\subset \Omega$ compatto.\\ Sia $I:=(t_{min},t_{max})$ un intervallo tale che la coppia $\left(\phi,I\right)$ sia la soluzione massimale di (PC).
+Siano inoltre $$f \in C\left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\right)\qquad \text{e} \qquad\left(t_0,x_0\right) \in \Omega$$
+
 
 Allora il grafico di $\phi$ esce definitivamente da $K$ per $t\rightarrow t^+_{min}$ e $t\rightarrow t^-_{max}$.
+\end{teo}
 
 \subsubsection{Matrice wronskiana}
-Siano $\underbar{$\phi$}_1,...,\underbar{$\phi$}_n$ funzioni a valori su $\mathbb{R}^n$ definite in $I\subset \mathbb{R}$.
-\begin{defi}[Matrice wronskiana]
+Siano $\underbar{$\phi$}_1,...,\underbar{$\phi$}_n$ funzioni a valori su $\mathbb{R}^n$ definite in $I\subseteq \mathbb{R}$.
+\begin{defi}[matrice wronskiana]
 Si chiama \textbf{matrice wronskiana} di $\underbar{$\phi$}_1,...,\underbar{$\phi$}_n$ la matrice:
 $$W(t):=[\underbar{$\phi$}_1\ ...\ \underbar{$\phi$}_n]$$
 \end{defi}
