@@ -343,11 +343,16 @@ Sia $I:=(t_{min},t_{max})$ un intervallo tale che la coppia $\left(\phi,I\right)
 Allora il grafico di $\phi$ esce definitivamente da $K$ per $t\rightarrow t^+_{min}$ e $t\rightarrow t^-_{max}$.
 
 \subsubsection{Matrice wronskiana}
-Siano $\phi_1,...,\phi_n$ funzioni a valori su $\mathbb{R}^n$ definite in $I\subset \mathbb{R}$.
-Si chiama \textbf{matrice wronskiana} di $\phi_1,...,\phi_n$ la matrice:
-$$W(t):=[\phi_1(t)\ ...\ \phi_n(t)]$$
-Si chiama altresì \textbf{wronskiano} di $\phi_1,...,\phi_n$:
+Siano $\underbar{$\phi$}_1,...,\underbar{$\phi$}_n$ funzioni a valori su $\mathbb{R}^n$ definite in $I\subset \mathbb{R}$.
+\begin{defi}[Matrice wronskiana]
+Si chiama \textbf{matrice wronskiana} di $\underbar{$\phi$}_1,...,\underbar{$\phi$}_n$ la matrice:
+$$W(t):=[\underbar{$\phi$}_1\ ...\ \underbar{$\phi$}_n]$$
+\end{defi}
+\begin{defi}[wronskiano]
+Si chiama altresì \textbf{wronskiano} di $\underbar{$\phi$}_1,...,\underbar{$\phi$}_n$:
 $$w(t):=\text{det } W(t)$$
+\end{defi}
+
 \subparagraph*{Osservazione} l'annullarsi del wronskiano è condizione necessaria (ma non sufficiente) per la dipendenza lineare di $\phi_1,...,\phi_n$. 
 Condizione necessaria e sufficiente affinchè $n$ soluzioni su $I$ di una medesima equazione lineare omogenea siano linearmente indipendenti è che:
 $$ w(t)\neq0 \qquad\qquad \forall t \in I$$
