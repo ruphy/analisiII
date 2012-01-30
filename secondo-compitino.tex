@@ -1,6 +1,8 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage[utf8x]{inputenc}
 \usepackage{amssymb, amsmath, amsthm, mathrsfs}
+\usepackage[italian]{babel}
+
 \newcommand{\ubar}{\underbar}
 \newcommand{\cont}{\mathscr{C}}
 \newcommand{\Rint}{\mathcal{R}}
@@ -61,7 +63,7 @@ Utilizzando un'altra scrittura, la definizione di convergenza uniforme diviene:
 \subsubsection{Successioni}
 \begin{teo}[Condizione di Cauchy]
 Sia $\{f_n\}$ una successione di funzioni a valori reali (o complessi). Allora $\{f_n\}$ converge uniformemente in $E$ se e solo se $\forall \varepsilon>0\ \ \exists N=N(\varepsilon):\ \forall n,m \geq N\ \forall x\in E$ si ha che 
-$$|f_n(x) - f_m(x)| < \varepsilon$$.
+$$|f_n(x) - f_m(x)| < \varepsilon$$
 \end{teo}
 \subparagraph*{Osservazione}
 La convergenza uniforme di una successione è quindi condizione \textbf{necessaria e sufficiente} per verificare il criterio di Cauchy.
@@ -86,35 +88,50 @@ Sia $\{f_n\}$ una successione di funzioni continue definite in $E$ uniformemente
 \subsection{Convergenza Uniforme e Integrabilità}
 \begin{teo}
 Sia ${f_n}$ una successione di funzioni R-integrabili in $[a,b]\subseteq \mathbb{R}$, uniformemente convergente a $f$ in $[a,b]$. Allora $f\in \Rint([a,b])$ e
-$$\lim_{n\to\infty}\int_{a}^{b} f_n=\int_{a}^{b}f$$
+$$\lim_{n\to+\infty}\int_{a}^{b} f_n=\int_{a}^{b}\lim_{n\to+\infty} f_n=\int_{a}^{b}f$$
 \end{teo}
 \subsection{Convergenza Uniforme e Differenziabilità}
 \begin{teo}
 Sia $f_n$ una successione di funzioni differenziabili in  $[a,b]\subseteq \mathbb{R}$. Supponiamo che esista un $x_{0} \in [a,b] $ per il quale la successione numerica ${f_n(x_0)}$ converga e che ${f^{'}(x)}$ converga uniformemente in $[a,b]$. Allora ${f_n}$ converge uniformemente in $[a,b]$ a una funzione $f$ e
-$$\lim_{n\to\infty} f^{'}_n (x)=f^{'}(x) \qquad \qquad \forall x \in [a,b]$$
+$$\lim_{n\to+\infty} f^{'}_n (x)=f^{'}(x) \qquad \qquad \forall x \in [a,b]$$
 \end{teo}
 
 \subsection{Serie di potenze}
-\subsubsection{Definizioni}
+\subsubsection{Teoria}
+\begin{defi}[Serie di potenze]
 Una serie di potenze è una serie di funzioni della forma
-$$\label{seriepotenza} \displaystyle \sum_{n=0}^\infty c_n\left(x-x_0\right)^n$$
-con $x_0 \in \mathbb{R}$ fissato, ${c_n}$ è successione di numeri reali e $x$ una variabile reale. 
-E' sempre possibile ricondursi al caso $x_0 = 0$ con una opportuna traslazione. L'insieme di convergenza di \ref{seriepotenza} è l'insieme degli $x \in \mathbb{R}$ tali che \ref{seriepotenza} converge. L'insieme di convergenza di una serie di potenze è sempre un \textbf{intervallo.}
-\paragraph{Teorema della convergenza semplice}
+$$\displaystyle \sum_{n=0}^\infty c_n\left(x-x_0\right)^n$$
+con $x_0 \in \mathbb{R}$ fissato, ${c_n}$ è una successione di numeri reali e $x$ una variabile reale.
+\end{defi}
+E' sempre possibile ricondursi al caso $x_0 = 0$ con una opportuno cambio di variabili. L'insieme di convergenza di una serie è l'insieme degli $x \in \mathbb{R}$ tali che la serie converge. L'insieme di convergenza di una serie di potenze è sempre un \textbf{intervallo.}
+\begin{teo}[della convergenza semplice]
 Data la serie di potenze 
-$$ \displaystyle \sum_{n=0}^\infty c_n\left(x\right)^n$$
-poniamo $$ \alpha:=\limsup_{n\to \infty} \sqrt[n]{|c_n x^n|} \ e \ R:=\frac{1}{\alpha}$$
-(se $\alpha = +\infty$, allora $R=0$ e se $\alpha=0$, allora $R=+\infty$)
+$$ \displaystyle \sum_{n=0}^\infty c_nx^n$$
+poniamo $$ \alpha:=\limsup_{n\to \infty} \sqrt[n]{|c_n x^n|}\qquad \text{e}\qquad R:=\frac{1}{\alpha}$$
 La serie di potenze converge se $|x|<R$ e non converge se $|x|>R$.
-R è il raggio di convergenza della serie.
-\paragraph{Teorema della convergenza uniforme delle serie di potenza}
+\end{teo}
+La definizione si può banalmente estendere in casi particolari:
+$$\text{Se}\qquad \alpha = +\infty\qquad \text{allora}\qquad R:=0$$
+$$\text{Se}\qquad \alpha=0\qquad\text{allora}\qquad R=+\infty$$
+\begin{defi}[Raggio di convergenza]
+$R$ definito come sopra viene anche detto raggio di convergenza della serie.
+\end{defi}
+\begin{teo}[della convergenza uniforme]
 Supponiamo che $ \displaystyle \sum_{n=0}^\infty c_n\left(x\right)^n$ converga per $|x|<r$. Poniamo:
-$$ f(x):= \displaystyle \sum_{n=0}^\infty c_n\left(x\right)^n \ \ \forall t \in (-r,r) \forall \varepsilon > 0 $$
-Allora $$ \displaystyle \sum_{n=0}^\infty c_n\left(x\right)^n$$ converge uniformente a $f(x)$ in $[-r+\varepsilon,r-\varepsilon]$ Inoltre: $f \in \cont^\infty((-r,r))$ $$f^{(k)}(x) = \displaystyle \sum_{n=0}^\infty n(n-1)\dots(n-k+1)c_n x^{n-k} \ \ \forall x \in (-r,r)$$  $$f^{(k)}(0) = k!\ c_k \ \ k=0,1,2,3 \dots $$ 
+$$ \forall t \in (-r,r)\qquad \forall \varepsilon > 0 \qquad f(x):= \displaystyle \sum_{n=0}^{+\infty} c_n x^n$$
+Allora $\displaystyle \sum_{n=0}^{+\infty} c_n x^n$ converge uniformente a $f(x)$ in $[-r+\varepsilon,r-\varepsilon]$.
+Inoltre $f \in \cont^\infty((-r,r))$
+\end{teo}
+Si trova un'utile forma per il calcolo di ogni derivata di questa funzione (in $(-r, r)$). In particolare, la derivata di ordine $k$ di $f$ è uguale a
+$$\forall x \in (-r,r)\qquad f^{(k)}(x) = \displaystyle \sum_{n=0}^{+\infty}\frac{n!c_n}{(n-k)!}x^{n-k}$$
+E ovviamente, in 0
+$$f^{(k)}(0) = c_kk!$$ 
 
-\paragraph{Serie di Taylor}
+\begin{defi}[Serie di Taylor]
 La serie:
-$\displaystyle \sum_{n=0}^\infty \frac{f^{n}(0)}{n!} x^n$ si chiama serie di Taylor di $f$. Condizione necessaria affinchè la serie di Taylor di $f$ converga in  $x$ è che $$\lim_{n \to \infty}\displaystyle \left[ f(x) - \displaystyle  \sum_{k=0}^\infty \frac{f^{k}(0)}{k!}x^k \right] = 0 $$
+$\displaystyle \sum_{n=0}^\infty \frac{f^{(n)}(0)}{n!} x^n$ si chiama serie di Taylor di $f$.
+\end{defi}
+Condizione necessaria affinchè la serie di Taylor di $f$ converga in  $x$ è che $$\lim_{n \to +\infty}\displaystyle \left[ f(x) - \displaystyle  \sum_{k=0}^\infty \frac{f^{(k)}(0)}{k!}x^k \right] = 0 $$
 
 
 \subsection{Come risolvere gli esercizi}
@@ -134,7 +151,7 @@ $$\lim_{n\to\infty} f_n(x_i)=\lim_{n\to\infty} k = k $$
 allora ovviamente $f_n$ converge puntualmente a $k$ in $x_i$.
 \paragraph*{Convergenza uniforme}
 Per studiare la convergenza uniforme si procede applicando la definizione di convergenza uniforme sull'insieme $B$ di convergenza puntuale, ossia si procede verificando la seguente uguaglianza
-$$\lim_{n\to\infty} \sup_{x\in B} |f_n(x)- f(x)|=0$$.
+$$\lim_{n\to\infty} \sup_{x\in B} |f_n(x)- f(x)|=0$$
 Il calcolo dell'estremo superiore può non essere facile. Tuttavia se $B$ è chiuso, e $f_n, f \in\cont(B)$,   per il teorema di Weierstrass la funzione $\varphi:=|f_n-f|$ avrà un minimo e in particolare un massimo in $B$. Ovviamente questo massimo coincide con l'estremo superiore della medesima funzione. Sarà quindi sufficiente trovare il massimo di tale funzione, che potrà essere facilmente trovato studiando il segno della derivata prima.
 \paragraph*{Restrizione dell'insieme di convergenza uniforme}
 Può accadere che $f_n$ non converga uniformemente a $f$ in $B$, insieme di convergenza puntuale, ossia che 
@@ -245,73 +262,108 @@ $$\lim_{n\to\infty}\sup_{x\in B}\left|s- \sum (-1)^n f_n(x)  \right|\leq \lim_{n
 \subsubsection{Serie di potenze}
 
 
-\section{Contrazioni in spazi metrici}
-\subsection{Definizioni}
-Sia $(X, d)$ uno spazio metrico, sia $\phi : X\rightarrow X$.
-\paragraph{Contrazione}
-Si dice che $\phi$ è una contrazione di $X$ in sé quando:
-$$\exists c < 1:\ \ d(\phi(x_1), \phi(x_2)) \leq cd(x_1, x_2)\qquad\qquad\forall x_1, x_2 \in X$$
-\paragraph{Punto fisso}
-Si dice che $\bar{x}\in X$ è punto fisso per $\phi$ se:
-$$\phi(\bar{x})=\bar{x}$$
+\section{Intermezzo}
+\subsection{Contrazioni in spazi metrici}
+Sia $(X, d)$ uno spazio metrico, sia $\varphi : X\rightarrow X$.
+\begin{defi}[contrazione]
+Si dice che $\varphi$ è una \textbf{contrazione} di $X$ in sé quando:
+$$\exists c < 1:\ \ d(\varphi(x_1), \varphi(x_2)) \leq c\ d(x_1, x_2)\qquad\qquad\forall x_1, x_2 \in X$$
+\end{defi}
+\begin{defi}[punto fisso]
+Si dice che $\bar{x}\in X$ è \textbf{punto fisso} per $\varphi$ se:
+$$\varphi(\bar{x})=\bar{x}$$
+\end{defi}
+
+Esiste un interessante teorema sulle contrazioni
+\begin{teo}[di Banach-Caccioppoli]
+Sia $(X, d)$ uno spazio metrico, sia $\varphi : X\rightarrow X$ una contrazione.
+Allora $\varphi$ ha un unico punto fisso.
+\end{teo}
 
 \subsection{Lipschitzianità}
 Sia $f:\Omega\rightarrow\mathbb{R}$ ove $\Omega\subset\mathbb{R}^n$, aperto.
-\paragraph{Lipschitzianità semplice}
+\begin{defi}[lipschitzianità semplice]
 Si dice $f\left(x\right)$ lipschitziana se $\exists L>0$ t.c
 $$ |f\left(x\right)- f\left(y\right)| \leq L|x-y|\qquad\qquad\forall x,y \in \Omega $$
+\end{defi}
 
-\paragraph{Lipschitzianità uniforme}
+\begin{defi}[lipschitzianità uniforme]
 Si dice che $f(t, v)$ è lipschitziana rispetto a $v$, uniformemente rispetto a $t$, su $\Omega$ se $\exists L>0$ t.c.
-$$|f(t, v) - f(t, w)| \leq L|v-w|\qquad\qquad\forall (t,v), (t, w) \in \Omega$$
+$$|f(t, v) - f(t, w)| \leq L|v-w|\qquad\qquad\forall (t,v)\text{e} (t, w) \in \Omega$$
+\end{defi}
 In altre parole, fissata la variabile $t$, $f_t(v)$ è lipschitziana.
 
-\paragraph{Lipschitzianità locale}
-Si dice che $f(t, v)$ è localmente lipschitziana rispetto a $v$, uniformemente rispetto a $t$, se
+\begin{defi}[lipschitzianità locale]
+Si dice che $f(t, v)$ è \textbf{localmente lipschitziana} rispetto a $v$, uniformemente rispetto a $t$, se
 $$\exists U((t, v), r) : f(t, v)|_U \in \text{Lip}_t(v)\qquad\qquad\forall(t, v)\in \Omega$$
 (esiste un intorno $U$ di $(t, v)$ tale che la funzione ristretta a quell'intorno sia lipschitziana rispetto a $v$, uniformemente rispetto a $t$).
-
-\subsection{Teoremi}
-\paragraph{Teorema di Banach-Caccioppoli}
-Sia $(X, d)$ uno spazio metrico, sia $\phi : X\rightarrow X$ una contrazione.
-Allora $\phi$ ha un unico punto fisso.
-
+\end{defi}
 
 \section{Equazioni differenziali}
 
-\subsection{Definizioni}
+\subsection{Teoria}
 \paragraph{Il problema di Cauchy}
-Siano $f:\Omega \subseteq \mathbb{R}^2 \longrightarrow $ e $ \left(t_0,x_0\right) \in \Omega.$ 
-$$\label{PC}\begin{cases} x'=f\left(t,x\right) \\ x\left(t_0\right)=x_0 \end{cases}$$
-
-Una soluzione del problema di Cauchy è una coppia $\left( \phi , I \right)$ costituita da una funzione $\phi: I \longrightarrow \mathbb{R}$ differenziabile in $I$ tale che:
+\begin{defi}[problema di Cauchy]
+Siano $f:\Omega \subseteq \mathbb{R}^2 \rightarrow \mathbb{R}$ e $ \left(t_0,y_0\right) \in \Omega$. Il problema di Cauchy (PC) è il sistema
+$$\label{PC}\begin{cases} y'=f\left(t,y\right) \\ y\left(t_0\right)=y_0 \end{cases}$$
+\end{defi}
+Una soluzione del problema di Cauchy è una coppia $\left( \phi , I \right)$ costituita da una funzione $\phi: I \rightarrow \mathbb{R}$ differenziabile in $I$ tale che:
 \begin{itemize}
-\item $t_0 \in I$ e $ \phi\left(t_0\right)=x_0$
-\item $ \left(t,\phi\left(t\right)\right) \in \Omega \ \forall t \in I$
-\item $ \phi^{'}\left(t \right) = f\left(t,\phi\left(t\right)\right)\ \forall t \in I$
+\item $t_0 \in I\qquad\text{e}\qquad \phi\left(t_0\right)=y_0$
+\item $ \left(t,\phi\left(t\right)\right) \in \Omega \qquad \forall t \in I$
+\item $ \phi^{'}\left(t \right) = f\left(t,\phi\left(t\right)\right)\qquad \forall t \in I$
 \end{itemize}
 
 Se $\left(\phi,I\right)$ risolve il problema di Cauchy, allora è una soluzione continua dell'equazione di Volterra:
-$$ x\left(t\right) = x_0 + \displaystyle\int^t_{t_0} f\left(s,x\left(s\right)\right) ds $$
+$$ y\left(t\right) = y_0 + \displaystyle\int^t_{t_0} f\left(s,y\left(s\right)\right) ds $$
 
-\paragraph{Teorema di esistenza e unicità in piccolo o locale}
-Se $f \in \cont \left(\Omega\right)$ allora PC ha almeno una soluzione. \\
-Se $f \in \cont \left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\right)$, allora PC ha un'unica soluzione in un opportuno intorno di $t_0$.\\
-Una funzione di classe $\cont^n$ con $ n \geq 1 $ è localmente lipschitziana. 
+\subsubsection{Esistenza, unicità e prolungabilità delle soluzioni}
 
-\paragraph{Teorema di esistenza e unicità in grande o globale}
-Siano $-\infty < \tau_1 < \tau_2 < +\infty$ e $\S:=\left[\tau_1,\tau_2\right]\times\mathbb{R}$. Sia $f \in C\left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\right)$ con crescita al più lineare in x, cioè
-$$\exists a,b: |f \left(t,x\right)|\leq a + b|x|$$
-allora l'unica soluzione di 
-$$\begin{cases} x'=f\left(t,x\right) \\ x\left(t_0\right)=x_0 \end{cases}$$
-dove $\left(t_0,x_0\right)$ è un punto qualunque in S, è definita in $\left[\tau_1,\tau_2\right]$.
+\begin{teo}[di esistenza e unicità in piccolo o locale]
+Siano date le definizioni come in precedenza. Allora:
+\begin{itemize}
+ \item Se $f \in \cont \left(\Omega\right)$ allora il (PC) associato ha almeno una soluzione.
+ \item Se $f \in \cont \left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\right)$, allora il (PC) associato ha un'unica soluzione in un opportuno intorno di $t_0$.\\
+\end{itemize}
+\end{teo}
+Ricorda: una funzione di classe $\cont^n$ con $ n \geq 1 $ è localmente lipschitziana. 
 
-\paragraph{Teorema di prolungamento}
-Siano  $f \in C\left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\right)$ e $\left(t_0,x_0\right) \in \Omega$. Siano $\left(\phi,I\right)$ la soluzione massimale di PC e $K$ cpt $\subset \Omega$. Allora il grafico di $\phi$ esce definitivamente da $K$ per $t\rightarrow t^+_{min}$ e $t\rightarrow t^-_{max}$, con $I:=(t_{min},t_{max})$.
+\begin{teo}[di esistenza e unicità in grande o globale]
+Siano $-\infty < \tau_1 < \tau_2 < +\infty$ e $I:=\left[\tau_1,\tau_2\right]\times\mathbb{R}$. Sia $f \in C\left(\Omega\right) \cap \text{Lip}^{\text{loc}}_y\left(\Omega\right)$, con crescita al più lineare in y, cioè:
+$$\exists\ a,b: |f \left(t,y\right)|\leq a + b|y|$$
+Allora la soluzione del (PC)
+$$\begin{cases} y'(t)=f\left(t,y\right) \\ y\left(t_0\right)=y_0 \end{cases}$$
+esiste ed è unica.
+\end{teo}
+
+(ove $\left(t_0,y_0\right)$ è un punto qualunque di $I$), è definita in $\left[\tau_1,\tau_2\right]$.
+
+\begin{teo}[di prolungamento delle soluzioni]
+Sia $K\subset \Omega$ compatto.\\ Sia $I:=(t_{min},t_{max})$ un intervallo tale che la coppia $\left(\phi,I\right)$ sia la soluzione massimale di (PC).
+Siano inoltre $$f \in C\left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\right)\qquad \text{e} \qquad\left(t_0,x_0\right) \in \Omega$$
 
 
+Allora il grafico di $\phi$ esce definitivamente da $K$ per $t\rightarrow t^+_{min}$ e $t\rightarrow t^-_{max}$.
+\end{teo}
 
-\subsection{Sistemi lineari omogenei}
+\subsubsection{Matrice wronskiana}
+Siano $\underbar{$\phi$}_1,...,\underbar{$\phi$}_n$ funzioni a valori su $\mathbb{R}^n$ definite in $I\subseteq \mathbb{R}$.
+\begin{defi}[matrice wronskiana]
+Si chiama \textbf{matrice wronskiana} di $\underbar{$\phi$}_1,...,\underbar{$\phi$}_n$ la matrice:
+$$W(t):=[\underbar{$\phi$}_1\ ...\ \underbar{$\phi$}_n]$$
+\end{defi}
+\begin{defi}[wronskiano]
+Si chiama altresì \textbf{wronskiano} di $\underbar{$\phi$}_1,...,\underbar{$\phi$}_n$:
+$$w(t):=\text{det } W(t)$$
+\end{defi}
+
+\subparagraph*{Osservazione} l'annullarsi del wronskiano è condizione necessaria (ma non sufficiente) per la dipendenza lineare di $\phi_1,...,\phi_n$. 
+Condizione necessaria e sufficiente affinchè $n$ soluzioni su $I$ di una medesima equazione lineare omogenea siano linearmente indipendenti è che:
+$$ w(t)\neq0 \qquad\qquad \forall t \in I$$
+
+
+\subsection{Principali tipi di equazioni differenziali}
+\subsubsection{Sistemi lineari omogenei}
 Un sistema lineare omogeneo (LO) di equazioni differenziali è un sistema della forma:
 $$\underbar{x}' = A(t)\underbar{x}$$ 
 ove $$A(t)\in M_n(\mathbb{R})\qquad \qquad \forall t\in I\subset R$$ e $\underbar{x} = (x_1,x_2,x_3 \dots x_n)^t$
@@ -324,17 +376,7 @@ ove $$A(t)\in M_n(\mathbb{R})\qquad \qquad \forall t\in I\subset R$$ e $\underba
 \end{itemize}
 
 
-\paragraph{Matrice wronskiana}
-Siano $\phi_1,...,\phi_n$ funzioni a valori su $\mathbb{R}^n$ definite in $I\subset \mathbb{R}$.
-Si chiama \textbf{matrice wronskiana} di $\phi_1,...,\phi_n$ la matrice:
-$$W(t):=[\phi_1(t)\ ...\ \phi_n(t)]$$
-Si chiama altresì \textbf{wronskiano} di $\phi_1,...,\phi_n$:
-$$w(t):=\text{det } W(t)$$
-\subparagraph*{Osservazione} l'annullarsi del wronskiano è condizione necessaria (ma non sufficiente) per la dipendenza lineare di $\phi_1,...,\phi_n$. 
-Condizione necessaria e sufficiente affinchè $n$ soluzioni su $I$ di una medesima equazione lineare omogenea siano linearmente indipendenti è che:
-$$ w(t)\neq0 \qquad\qquad \forall t \in I$$
-
-\subsection{Sistemi lineari non omogenei}
+\subsubsection{Sistemi lineari non omogenei}
 Un sistema lineare non omogeneo (LNO) di equazioni differenziali è un sistema della forma:
 $$\underbar{x}' = A(t)\underbar{x} + \underbar{b}(t)$$
 \paragraph{Osservazioni}
@@ -347,24 +389,25 @@ $$\underbar{x}' = A(t)\underbar{x} + \underbar{b}(t)$$
  \item Se $\phi_1,...,\phi_n$ sono soluzioni di (LO), queste sono linearmente indipendenti se e solo se $w(t)\neq0$ $\forall t \in I$.
 \end{itemize}
 
+\begin{defi}[Integrale generale]
+L'\textbf{integrale generale} è una equazione che rappresenta tutte e sole le soluzioni di una equazione differenziale.
+\end{defi}
+Ad esempio, l'integrale generale, o soluzione generale, di un'equazione differenziale lineare non omogenea è data dalla somma tra una funzione soluzione dell'omogenea associata e una soluzione dell'equazione non omogenea. In questo caso, la soluzione particolare dell'equazione non omogenea è anche detta \textbf{integrale particolare}. Parlare di integrare un'equazione differenziale è equivalente a parlare di risolvere un'equazione differenziale.
 
-\paragraph{Integrale generale}
-L'integrale generale è una soluzione di una equazione differenziale.\\
-Ad esempio, l'integrale generale, o soluzione generale, di un'equazione differenziale lineare non omogenea è data dalla somma tra una funzione soluzione dell'omogenea associata e una soluzione dell'equazione non omogenea. La soluzione particolare dell'equazione non omogenea è anche detta \textbf{integrale particolare}. Parlare di integrare un'equazione differenziale è equivalente a parlare di risolvere un'equazione differenziale.
-
-\subsection{Sistemi lineari omogeni a coefficienti costanti}:
+\subsubsection{Sistemi lineari omogeni a coefficienti costanti}
+Un sistema lineare omogeneo a coefficiente costante (LOCC) è un sistema
 $$\underbar{x}' = A\underbar{x}$$
-dove $A \in M_n(\mathbb{R})$. Possiamo esprimere le soluzioni di questo sistema mediante l'esponenziale di $tA$.
-L'esponenziale gode delle seguenti proprietà:
+dove $A \in M_n(\mathbb{R})$ e $x,x'\in\mathbb{R}^n$. Possiamo esprimere le soluzioni di questo sistema mediante l'esponenziale della matrice $tA$, ove $t$ è uno scalare.
+L'esponenziale di matrici gode delle seguenti proprietà:
 \begin{itemize}
 \item $e^{(s+t)A} = e^{sA}e^{tA} \ \ \forall s,t \in \mathbb{R} $
-\item $det e^{tA}=e^{ttrA} \ \forall t \in \mathbb{R} $
-\item $	\frac{d}{dt} e^{tA} = A e^{tA} = e^{tA}A$
+\item $\det e^{tA}=e^{t\cdot\text{tr}(A)} \ \forall t \in \mathbb{R} $
+\item $\dfrac{d}{dt} e^{tA} = A e^{tA} = e^{tA}A$
 \end{itemize}
 
-\paragraph{Teorema} Per ogni (vettore colonna) $\underbar{c} \in \mathbb{R}^n $, la funzione $$ \underbar{ $\varphi$ }(t) = e^{tA} \underbar{c} $$è soluzione dell'eq (LOCC) su tutto $\mathbb{R}$.
+\paragraph{Teorema} Per ogni (vettore colonna) $\underbar{c} \in \mathbb{R}^n $, la funzione $$ \underbar{$\varphi$}(t) = e^{tA} \underbar{c} $$è soluzione dell'eq (LOCC) su tutto $\mathbb{R}$.
 
-\subsection{Sistemi lineari non omogenei a coefficienti costanti}
+\subsubsection{Sistemi lineari non omogenei a coefficienti costanti}
 Un sistema lineare non omogeneo (a coefficienti costanti) di equazioni differenziali è un sistema del tipo
 $$\underbar{x}'=A\underbar{x}+\underbar{b}(t)$$
 Ove $A\in M_n(\mathbb{R})$ e $b$ continua, allora, per ogni punto $t_0 \in \mathbb{R}$:
@@ -377,8 +420,8 @@ $$\phi(t)=e^{(t-t_0)A}\underbar{x}_0+\Psi^*(t)$$
 ovvero si somma alla soluzione generale del sistema omogeneo associato la soluzione particolare trovata in precedenza.
 Vedi anche il metodo di variazione delle costanti arbitrarie.
 
-\subsection{Equazioni di ordine n a coefficienti costanti}
-Sia $\lambda \in \mathbb{C}$: la funzione $e^\lambda t$ è soluzione di (ELOCC) se e solo se $\lambda$ è uno zero del polinomio caratteristico di (ELOCC) definito da: $$ p(\lambda) := \lambda^n + a_1\lambda^{(n-1)}+ \dots +a_{n-1}\lambda+a_n$$. 
+\subsubsection{Equazioni di ordine n a coefficienti costanti}
+Sia $\lambda \in \mathbb{C}$: la funzione $e^\lambda t$ è soluzione di (ELOCC) se e solo se $\lambda$ è uno zero del polinomio caratteristico di (ELOCC) definito da: $$ p(\lambda) := \lambda^n + a_1\lambda^{(n-1)}+ \dots +a_{n-1}\lambda+a_n$$
 \paragraph*{Osservazione}
 Se  $\lambda_1,\dots,\lambda_n$ sono complessi a due a due distinti, allora 
 $$ e^{\lambda_1 t}, \dots ,e^{\lambda_n t}$$ sono funzioni linearmente indipendenti. 
@@ -390,6 +433,7 @@ In generale, risolvere (integrare) un'equazione differenziale consiste principal
 
 \subsubsection{Grafici delle soluzioni}
 todo marco
+
 \subsubsection{Metodo di variazione delle costanti arbitrarie}
 Questo metodo (alternativo, e un pochino più semplice) viene utilizzato se conosciamo un sistema fondamentale di soluzioni di un (LO), e cerchiamo almeno una soluzione di un (LNO).
 Siano $\phi_1,...,\phi_n$ soluzioni di un (LO) $y'= A(t)y$, e sia $W(t)$ la corrispondente matrice wronskiana.
@@ -402,31 +446,31 @@ $$\frac{dW(t)}{dt} = A(t)W(t)$$
 si trova l'integrale particolare cercato:
 $$\Psi^*(t)= W(t)\int_{t_0}^t V(t)\underbar{b}(s) ds$$
 
-\subsection{Equazioni lineari}
+\subsubsection{Equazioni lineari}
 Con un'equazione di forma:
 $$y'(t) = P(t)y+Q(t)$$
 Allora
-$$y(t)=e^{- \displaystyle\int P(t)dt}\left(k + \int Q(t)e^{-\displaystyle\int P(t)dt}dt\right)$$
-\subsection{Equazione di Bernoulli}
+$$y(t)=e^{\ \displaystyle\int P(t)dt}\left(c_1 + \int Q(t)e^{-\displaystyle\int P(t)dt}dt\right)$$
+\subsubsection{Equazione di Bernoulli}
 Con un'equazione di forma:
 $$y'(t) = P(t)y+Q(t)$$
 con $\alpha \neq 0, 1$. Allora, si impone:
 $$ z(t)=y(t)^{1-\alpha} $$
 si risolve l'equazione lineare in $z$: $$z'(t)=(1-\alpha)P(t)z(t)+Q(t)$$ e, trovata $z(t)$ con la formula sopra, si ricava $y(t)$.
 
-\subsection{Equazione di Riccati}
+\subsubsection{Equazione di Riccati}
 $$y'(t) = P(t)y^2+Q(t)y+R(t)$$
 Conoscendo una soluzione particolare $\Psi(t)$, allora applico la sostituzione
 $$y(t)=\Psi(t)+\dfrac{1}{z(t)}$$
 e con un po' di passaggi si dimostra che alla fine
 $$z'(t)= -\left[2\Psi(t)P(t)+Q(t)\right]z(t)-P(t)$$
 che è lineare.
-\subsection{Variabili separabili}
+\subsubsection{Variabili separabili}
 Se invece
 $$y'(t) = f(t)g(y)$$
 Allora ovviamente si risolve ricordando che
 $$\int\dfrac{dy}{g(y)}=\int f(t)dt + c$$
-\subsection{Un'altro tipo di equazioni omogenee}
+\subsubsection{Un'altro tipo di equazioni omogenee}
 $$y'(t) = f\left(\dfrac{y(t)}{t}\right)$$
 Allora si sostituisce
 $$z=\dfrac{y}{t}$$
@@ -438,7 +482,7 @@ $$\int\dfrac{dz}{f(z)-z} = \log|t| + c$$
 
 Risostituendo e risolvendo rispetto a $y$ si ottiene la soluzione cercata.
 
-\subsection{Equazioni lineari di ordine $n$}
+\subsubsection{Equazioni lineari di ordine $n$}
 Sia
 $$y^{(n)} + a_1(t)y^{(n-1)} + a_2y^{(n-2)} + ... + a_n(t)y = 0$$
 ove le funzioni $a_j \in C(I)$
@@ -467,7 +511,7 @@ oppure
 $$\psi(t) = c'_1\sin(\omega t) + c'_2\cos(\omega t)$$
 a seconda della base scelta.
 
-\paragraph{Risonanza??}
+\paragraph{Caso 2}
 Invece, data un'equazione di forma
 $$x''-\omega^2 x=0$$
 questa ha soluzioni reali, più precisamente del tipo
@@ -475,18 +519,64 @@ $$\psi(t) = c_1 e^{\omega t} + c_2 e^{-\omega t}$$
 
 \paragraph{Oscillazioni smorzate}
 Nel terzo caso, abbiamo un'equazione del tipo
-$$x''-2x +x=0$$
+$$x''-2x' +x=0$$
 la cui soluzione è del tipo
-$$\phi(t) = c_1e^t +c_2 t + e^t$$
+$$\varphi(t) = c_1e^t +c_2 t + e^t$$
 (check)
 
 \paragraph{Casi non omogenei}
 In un caso del tipo
 $$x''+\omega^2 x=b(t)$$
 bisogna sommare una soluzione particolare. Si scopre facilmente che tutte e sole le soluzioni sono fatte
-$$\phi(t) = c'_1\sin(\omega t) + c'_2\cos(\omega t) + \frac{1}{\omega^2}t$$
+$$\varphi(t) = c'_1\sin(\omega t) + c'_2\cos(\omega t) + \frac{1}{\omega^2}t$$
 
-o equivalentemente scegliendo una base complessa, la soluzione particolare da sommare è $\psi^*(t) = \frac{1}{\omega^2}t$.
+o equivalentemente scegliendo una base complessa, la soluzione particolare da sommare è $\Psi^*(t) = \frac{1}{\omega^2}t$.
+
+\subsection{Equazioni differenziali esatte}
+
+Un'equazione differenziale esatta è una equazione del tipo
+
+\begin{equation}\label{eq-diff-esatte}
+y'(t)=\frac{P(t, y)}{Q(t,y)} 
+\end{equation}
+
+Per risolvere questa equazione bisogna trovare una 1-forma differenziale $\omega$ esatta. Chiamando $F$ la funzione di cui $\omega$ è differenziale, si trova che:
+
+$$\omega = Q(t,y)dy - P(t,y)dt = \frac{\partial F}{\partial y}dy+\frac{\partial F}{\partial t}dt = dF$$
+che è vero se e solo se
+$$\frac{\partial F}{\partial t}=-P(t,y)$$
+$$\frac{\partial F}{\partial y}=Q(t,y)$$
+a questo punto l'equazione
+$$F(t, y(t)) = \text{costante}$$
+definisce in maniera implicita tutte e sole le soluzioni dell'equazione differenziale (\ref{eq-diff-esatte}).
+
+Nota: condizione necessaria per cui (\ref{eq-diff-esatte}) abbia soluzione è che
+$$\frac{\partial P}{\partial y}=-\frac{\partial Q}{\partial t}$$
+
+\subsubsection{Altre cose da trovare}
+A volte capita che bisogni trovare una funzione $g(x,y)$ tale che $g\cdot\omega$ (ove il punto indica la moltiplicazione semplice) sia ancora una forma esatta. In questo caso:
+$$P\frac{\partial g}{\partial y} + Q\frac{\partial g}{\partial t} = -g\left(\frac{\partial P}{\partial y} + \frac{\partial Q}{\partial t}\right)$$
+che è molto complicato.
+Se $g=g(t)$, allora si può riscrivere come:
+$$\frac{\partial_tg}{g} = -\frac{1}{Q}(\partial_yP+\partial_tQ)$$
+e se $g=g(y)$
+$$\frac{\partial_yg}{g} = -\frac{1}{P}(\partial_yP+\partial_tQ)$$
+
+\paragraph{Esempio}
+Sia ad esempio
+$$y'=-\frac{y+2xy^3}{x+3x^2y^2}$$
+In questo caso
+$$\partial_xQ=1+6xy^2\qquad \partial_yP=-1-6xy^2$$
+Se
+$$\frac{\partial F}{\partial x}=-P = y+2xy^3$$
+allora
+$$F(x,y(x)) = \int (y+2xy^3)dx = yx+y^2x^2 + g(y)$$
+e derivando $F$ rispetto a $y$, questa deve soddisfare la relazione
+$$\frac{\partial F}{\partial y}=Q(x,y)\qquad(=x+3x^2y^2)$$
+Dunque
+$$x+3x^2y^2+g'(y)=x+3x^2y^2$$
+Quindi in particolare $g'(x) = 0$ e dunque $g(x)$ è una costante. L'integrale generale è dunque
+$$F(x, y(x)) = yx+x^2 + c$$
 
 \section{Curve in $\mathbb{R}^n$}
 \subsection{Definizioni principali}
@@ -514,23 +604,174 @@ Una 1-forma differenziale è una funzione del tipo
 $$\omega := \sum_{j=1}^n a_j(x)dx_j$$
 In questo esempio, i vari $a_j(x)$ si chiamano coefficienti della 1-forma differenziale.
 Una nota 1-forma differenziale è ad esempio il differenziale di una funzione.
-\paragraph{Integrale di una 1-forma differenziale}
+\begin{defi}[integrale di una 1-forma differenziale]
 Sia $\gamma$ una curva regolare, di estremi $a$ e $b$.
-Si definisce l'integrale di una 1-forma differenziale su $\gamma$ in questo modo:
+Si definisce l'integrale di una 1-forma differenziale su $\gamma$
 $$\int_\gamma \omega:=\int_a^b \sum_{j=1}^n <a_j(\gamma(t)), \gamma'(t)> dt$$
+\end{defi}
 ove l'operatore $<,>$ sia il prodotto scalare standard.
-\paragraph{Forme esatte}
-Una forma differenziale $\omega$, definita in un aperto $A\subset\mathbb{R}^n$ si dice esatta se è il differenziale di un'altra funzione.
-Esplicitamente, la forma è esatta se esiste $f$ tale che:
+
+\begin{defi}[esattezza]
+Una forma differenziale $\omega$, definita in un aperto $A\subset\mathbb{R}^n$, si dice \textbf{esatta} se è il differenziale di un'altra funzione.
+\end{defi}
+Più esplicitamente, la forma è esatta se esiste $f$ tale che:
 $$\forall j\in\{1 ... n\}: a_j(x) = \frac{\partial f(\underbar{x})}{\partial x_j}$$
+
+\subsubsection{Forme chiuse, forme esatte}
+Altre proprietà delle 1-forme differenziali:
+\begin{teo}
+ Sia $\omega$ una 1-forma differenziale. Se $\gamma$ e $\varphi$ sono curve equivalenti, allora
+ $$\int_\gamma \omega = \int_\varphi \omega$$
+ se $\alpha$ e $\omega$ hanno lo stesso verso. Altrimenti
+ $$\int_\gamma \omega = -\int_\varphi \omega$$
+ se hanno versi opposti.
+\end{teo}
+
+\begin{defi}
+ Siano $\underbar{x}_1, \underbar{x}_2\in A$ connesso.
+ Definiamo $\Gamma(\underbar{x}_1, \underbar{x}_2)$ come l'insieme delle curve regolari a tratti che congiungono $\underbar{x}_1$ e $\underbar{x}_2$ regolari a tratti, tutte contenute in $A$.
+\end{defi}
+
+\paragraph{Osservazione}
+È equivalente dire che:
+\begin{itemize}
+ \item Una 1-forma diffferenziale $\omega$ è esatta su $A$
+ \item $\forall \underbar{x}_1, \underbar{x}_2 \in A\qquad \forall\gamma_1,\gamma_2\in\Gamma(\underbar{x}_1, \underbar{x}_2)\qquad \int_\gamma \omega = \int_\varphi \omega$
+ \item $\int_\gamma \omega = 0\qquad\forall\gamma\subset A$ chiusa e regolare a tratti.
+\end{itemize}
+
+\begin{defi}[forma chiusa]
+ Una forma $\omega = \sum_{j=1}^n a_j(x)dx_j$ per cui, $\forall j\neq k$, valga
+ $$\frac{\partial a_j}{\partial x_k} = \frac{\partial a_k}{\partial x_j} $$
+ si dice chiusa.
+\end{defi}
+
+\begin{teo}
+ Sia $\omega$ esatta. Vale
+ $$\frac{\partial a_j}{\partial x_k} = \frac{\partial a_k}{\partial x_j} $$
+\end{teo}
+
+\begin{cor}
+ Sia $\omega$ una forma esatta. Allora $\omega$ è chiusa. Non vale il viceversa.
+\end{cor}
+
+\begin{defi}[insieme stellato]
+ Sia $A\subseteq\mathbb{R}^n$ aperto. $A$ si dice \textbf{stellato} se esiste $\underbar{x}_0\in A$ tale che
+ $\forall \underbar{x} \in A$ il segmento $[\underbar{x}_0,\underbar{x}]$ è tutto contenuto in $A$.
+\end{defi}
+\textbf{Osservazione}
+
+$A$ convesso $\Rightarrow$ $A$ stellato (ma non vale il viceversa).
+
+\begin{teo}
+Sia $\omega\in\cont^1(A)$, sia $A\subseteq \mathbb{R}^n$ aperto stellato. Allora $\omega$ chiusa $\Leftrightarrow\omega$ esatta.
+\end{teo}
+
 \subsubsection{Relazione tra 1-forme differenziali e campi vettoriali}
+
+Forme 1-differenziali e campi vettoriali hanno molto in comune.
+Ogni 1-forma definisce implicitamente un campo vettoriale, e viceversa. Infatti un campo vettoriale è una n-upla di funzioni $V_i:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}^n$.
+Se abbiamo ad esempio una 1-forma $\omega$
+$$\omega(x) = \sum_{j=1}^n a_j(x)dx_j$$
+a questa associamo il campo
+$$\underbar{V}(\underbar{x}) = (a_1(\underbar{x}), \dots, a_n(\underbar{x}))$$
+e viceversa.
+
+Valgono poi altre analogie, ad esempio i seguente teoremi.
+\begin{teo}
+Un campo vettoriale è conservativo se e solo se la 1-forma differenziale associata è esatta.
+\end{teo}
+
+\begin{teo}
+Un campo vettoriale è irrotazionale se e solo se la 1-forma differenziale associata è chiusa.
+\end{teo}
+
+\subsubsection{Gauss Green}
+Sia $E\subseteq \mathbb{R}^2$ un insieme.
+\begin{defi}
+Il bordo di $E$ ($\partial E$) si dice orientato positivamente se esiste una parametrizzazione $\gamma(t)$ di esso, tale che, percorrendo $\gamma$ in senso antiorario, l'insieme $E$ si trovi tutto alla sua sinistra. (nota: $\gamma$ deve essere chiusa e semplice).
+\end{defi}
+
+\begin{teo}[Gauss Green]
+Sia $\omega$ una 1-forma differenziale in $E\subseteq\mathbb{R}^2$, definita come
+$$\omega=M(x,y)\ dx+N(x,y)\ dy\qquad\qquad M,N\in\cont(\bar E)$$
+Allora
+$$\int_{\partial^+E}\omega = \int_{E} \left( N_x(x,y)-M_y(x,y) \right)dxdy$$
+ove $N_x = \frac{\partial N}{\partial x}$, $M_y = \frac{\partial M}{\partial y}$ e $\partial^+E$ è il bordo orientato nel senso positivo di $E$.
+\end{teo}
+
+\subsubsection{Rotore, gradiente, divergenza}
+
+Sia $\underbar{V}=(V_1, V_2, V_3)$ campo in $\mathbb{R}^3$.
+\begin{defi}
+Si definisce \textbf{divergenza} di $\underbar{V}$ la quantità
+$$\text{div}\underbar{V}= \partial_1V_1 + \partial_2V_2 + \partial_3V_3$$
+\end{defi}
+
+\begin{teo}[teorema della divergenza]
+Sia $d\sigma$ la quantità infinitesima di ``area'', e $\nu$ vettore normale (e normalizzato) al bordo di $E$.
+$$\int_E div(\underbar{V}) = \int_{\partial E} <\underbar{V},\nu> d\sigma$$
+\end{teo}
+\textbf{Osservazione}
+In $\mathbb{R}^2$
+$$\int_E (\partial_xV_1 + \partial_yV_2)dxdy = \int_{\partial^+ E} <\underbar{V},\nu> ds$$
+
+Quest'ultima quantità si chiama flusso di $V$ attraverso il bordo di $E$
+
+
+\begin{defi}[insieme semplicemente connesso]
+Sia $A\subseteq\mathbb{R}^2$ aperto. A si dice \textbf{semplicemente connesso} se per ogni curva chiusa semplice contenuta in $A$ l'interno della curva è anch'esso tutto contenuto in A.
+\end{defi}
+
+\textbf{Osservazione}
+Se un insieme $A$ è stellato, $A$ è semplicemente connesso.
+
+\begin{teo}
+ Sia $A$ semplicemente connesso, $\omega$ definita in $A$, chiusa.
+ Allora, $\omega$ è esatta.
+\end{teo}
+
+\begin{defi}[rotore]
+ Il rotore di $V$ è il vettore definito come
+ $$\text{rot}(V) = \nabla\wedge V$$
+\end{defi}
+
+\subsubsection{Teorema di Stokes}
+Siano dati i seguenti oggetti:
+\begin{itemize}
+ \item $K\subseteq\mathbb{R}^2$ compatto
+ \item $A\subset K$ aperto
+ \item $\psi: K\rightarrow\mathbb{R}^3$ superficie regolare
+ \item $\varphi = \psi|_A$
+ \item $\gamma:[a,b]\rightarrow\partial A$ curva
+ \item $\gamma(t) = (\gamma_1(t), \gamma_2(t))$
+ \item $\varphi(u,v) = (x(u, v), y(u, v), z(u, v))$
+ \item $\Gamma:[a, b]\rightarrow\partial(\varphi(a))$
+ \item $\Gamma = \varphi\circ\gamma$
+ \item $\Gamma(t)=(x(\gamma_1(t), \gamma_2(t)), y(\gamma_1(t), \gamma_2(t)), z(\gamma_1(t), \gamma_2(t)))$
+ \item $\underbar{V} = (X, Y, Z)$ definito in una regione che contiene $\varphi(\bar{A})$
+ \item $\forall x_0 \in \varphi(A)\ \exists \nu = \dfrac{\varphi_u\wedge\varphi_v}{|\varphi_u\wedge\varphi_v|}$ vettore normale
+\end{itemize}
+
+\begin{teo}[di Stokes]
+ Sotto le ipotesi precedenti, se $\varphi(A) = S$, $\varphi(\partial A)=\partial^+S$, allora
+ $$\int_S <rot(V), \nu>d\sigma = \int_{\partial^+S}(Xdx+Ydy+Zdz) = \int_{\partial^+S}<V, \tau>ds$$
+\end{teo}
+
+
 
 \section{Altro}
 \subsection{Norme}
-\paragraph{Norma 1}
-La norma 1 è definita come:
+\begin{defi}[norma 1]
+La \textbf{norma 1} è definita come:
 $$||f||_1 := \int_a^b|f|$$
-\subsection{Formule varie}
+\end{defi}
+\paragraph{Norma $\infty$}
+La norma $\infty$ sull'insieme $E$ è definita come:
+$$||f(\underbar{x})||_{E,\infty} := \sup_{\underbar{x}\in E} |f(\underbar{x})|$$
+
+
+\subsection{Calcoli vari}
 \paragraph{Esponenziale di una matrice}
 Ricordiamo la definizione di esponenziale di una matrice.
 $$e^{tA} := \sum_{k=0}^{+\infty} \dfrac{(tA)^k}{k!}$$
@@ -552,6 +793,8 @@ $$A = SDS^{-1}$$
 Allora, con dei semplici passaggi si verifica che
 $$e^{tA} = Se^{tD}S^{-1}$$
 e dunque il calcolo di esponenziale di una matrice qualunque viene ricondotto al calclolo di una matrice diagonale, appena risolto.
+\paragraph{Caso particolare: matrice non diagonalizzabile}
+write me.
 
 \end{document}
 
