@@ -720,10 +720,43 @@ Quest'ultima quantità si chiama flusso di $V$ attraverso il bordo di $E$
 
 
 \begin{defi}[insieme semplicemente connesso]
-Sia $A\subseteq\mathbb{R}^2$ aperto. A si dice \textbf{semplicemente connesso} se per ogni curva chiusa semplice contenuta in $A$ l'interno della curva.
-
+Sia $A\subseteq\mathbb{R}^2$ aperto. A si dice \textbf{semplicemente connesso} se per ogni curva chiusa semplice contenuta in $A$ l'interno della curva è anch'esso tutto contenuto in A.
 \end{defi}
 
+\textbf{Osservazione}
+Se un insieme $A$ è stellato, $A$ è semplicemente connesso.
+
+\begin{teo}
+ Sia $A$ semplicemente connesso, $\omega$ definita in $A$, chiusa.
+ Allora, $\omega$ è esatta.
+\end{teo}
+
+\begin{defi}[rotore]
+ Il rotore di $V$ è il vettore definito come
+ $$\text{rot}(V) = \nabla\wedge V$$
+\end{defi}
+
+\subsubsection{Teorema di Stokes}
+Siano dati i seguenti oggetti:
+\begin{itemize}
+ \item $K\subseteq\mathbb{R}^2$ compatto
+ \item $A\subset K$ aperto
+ \item $\psi: K\rightarrow\mathbb{R}^3$ superficie regolare
+ \item $\varphi = \psi|_A$
+ \item $\gamma:[a,b]\rightarrow\partial A$ curva
+ \item $\gamma(t) = (\gamma_1(t), \gamma_2(t))$
+ \item $\varphi(u,v) = (x(u, v), y(u, v), z(u, v))$
+ \item $\Gamma:[a, b]\rightarrow\partial(\varphi(a))$
+ \item $\Gamma = \varphi\circ\gamma$
+ \item $\Gamma(t)=(x(\gamma_1(t), \gamma_2(t)), y(\gamma_1(t), \gamma_2(t)), z(\gamma_1(t), \gamma_2(t)))$
+ \item $\underbar{V} = (X, Y, Z)$ definito in una regione che contiene $\varphi(\bar{A})$
+ \item $\forall x_0 \in \varphi(A)\ \exists \nu = \dfrac{\varphi_u\wedge\varphi_v}{|\varphi_u\wedge\varphi_v|}$ vettore normale
+\end{itemize}
+
+\begin{teo}[di Stokes]
+ Sotto le ipotesi precedenti, se $\varphi(A) = S$, $\varphi(\partial A)=\partial^+S$, allora
+ $$\int_S <rot(V), \nu>d\sigma = \int_{\partial^+S}(Xdx+Ydy+Zdz) = \int_{\partial^+S}<V, \tau>ds$$
+\end{teo}
 
 
 
