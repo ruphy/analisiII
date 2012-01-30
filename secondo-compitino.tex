@@ -299,15 +299,19 @@ Se $f \in \cont \left(\Omega\right)$ allora PC ha almeno una soluzione. \\
 Se $f \in \cont \left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\right)$, allora PC ha un'unica soluzione in un opportuno intorno di $t_0$.\\
 Una funzione di classe $\cont^n$ con $ n \geq 1 $ è localmente lipschitziana. 
 
-\paragraph{Teorema di esistenza e unicità in grande o globale}
+\paragraph{Teorema di esistenza e unicità in grande (o globale)}
 Siano $-\infty < \tau_1 < \tau_2 < +\infty$ e $\S:=\left[\tau_1,\tau_2\right]\times\mathbb{R}$. Sia $f \in C\left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\right)$ con crescita al più lineare in x, cioè
 $$\exists a,b: |f \left(t,x\right)|\leq a + b|x|$$
 allora l'unica soluzione di 
 $$\begin{cases} x'=f\left(t,x\right) \\ x\left(t_0\right)=x_0 \end{cases}$$
 dove $\left(t_0,x_0\right)$ è un punto qualunque in S, è definita in $\left[\tau_1,\tau_2\right]$.
 
-\paragraph{Teorema di prolungamento}
-Siano  $f \in C\left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\right)$ e $\left(t_0,x_0\right) \in \Omega$. Siano $\left(\phi,I\right)$ la soluzione massimale di PC e $K$ cpt $\subset \Omega$. Allora il grafico di $\phi$ esce definitivamente da $K$ per $t\rightarrow t^+_{min}$ e $t\rightarrow t^-_{max}$, con $I:=(t_{min},t_{max})$.
+\paragraph{Teorema di prolungamento delle soluzioni}
+
+Siano $$f \in C\left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\right)\qquad \text{e} \qquad\left(t_0,x_0\right) \in \Omega$$
+Sia $I=(t_{min},t_{max})$ un intervallo tale che la coppia $\left(\phi,I\right)$ sia la soluzione massimale di (PC). Sia inoltre $K\subset \Omega$ compatto.
+
+Allora il grafico di $\phi$ esce definitivamente da $K$ per $t\rightarrow t^+_{min}$ e $t\rightarrow t^-_{max}$, con 
 
 
 
@@ -355,8 +359,8 @@ Ad esempio, l'integrale generale, o soluzione generale, di un'equazione differen
 \subsection{Sistemi lineari omogeni a coefficienti costanti}
 Un sistema lineare omogeneo a coefficiente costante (LOCC) è un sistema
 $$\underbar{x}' = A\underbar{x}$$
-dove $A \in M_n(\mathbb{R})$ e $x,x'\in\mathbb{R}^n$. Possiamo esprimere le soluzioni di questo sistema mediante l'esponenziale di $tA$.
-L'esponenziale gode delle seguenti proprietà:
+dove $A \in M_n(\mathbb{R})$ e $x,x'\in\mathbb{R}^n$. Possiamo esprimere le soluzioni di questo sistema mediante l'esponenziale della matrice $tA$, ove $t$ è uno scalare.
+L'esponenziale di matrici gode delle seguenti proprietà:
 \begin{itemize}
 \item $e^{(s+t)A} = e^{sA}e^{tA} \ \ \forall s,t \in \mathbb{R} $
 \item $\det e^{tA}=e^{t\cdot\text{tr}(A)} \ \forall t \in \mathbb{R} $
