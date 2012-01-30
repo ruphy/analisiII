@@ -302,16 +302,16 @@ Se $f \in \cont \left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\r
 Ricorda: una funzione di classe $\cont^n$ con $ n \geq 1 $ è localmente lipschitziana. 
 
 \paragraph{Teorema di esistenza e unicità in grande (o globale)}
-Siano $-\infty < \tau_1 < \tau_2 < +\infty$ e $\S:=\left[\tau_1,\tau_2\right]\times\mathbb{R}$. Sia $f \in C\left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\right)$, con crescita al più lineare in x, cioè
+Siano $-\infty < \tau_1 < \tau_2 < +\infty$ e $I:=\left[\tau_1,\tau_2\right]\times\mathbb{R}$. Sia $f \in C\left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\right)$, con crescita al più lineare in x, cioè
 $$\exists a,b: |f \left(t,x\right)|\leq a + b|x|$$
 Allora l'unica soluzione del (PC)
 $$\begin{cases} x'=f\left(t,x\right) \\ x\left(t_0\right)=x_0 \end{cases}$$
-(ove $\left(t_0,x_0\right)$ è un punto qualunque di $S$), è definita in $\left[\tau_1,\tau_2\right]$.
+(ove $\left(t_0,x_0\right)$ è un punto qualunque di $I$), è definita in $\left[\tau_1,\tau_2\right]$.
 
 \paragraph{Teorema di prolungamento delle soluzioni}
 
 Siano $$f \in C\left(\Omega\right) \cap \text{Lip}^{\text{loc}}_x\left(\Omega\right)\qquad \text{e} \qquad\left(t_0,x_0\right) \in \Omega$$
-Sia $I=(t_{min},t_{max})$ un intervallo tale che la coppia $\left(\phi,I\right)$ sia la soluzione massimale di (PC). Sia inoltre $K\subset \Omega$ compatto.
+Sia $I:=(t_{min},t_{max})$ un intervallo tale che la coppia $\left(\phi,I\right)$ sia la soluzione massimale di (PC). Sia inoltre $K\subset \Omega$ compatto.
 
 Allora il grafico di $\phi$ esce definitivamente da $K$ per $t\rightarrow t^+_{min}$ e $t\rightarrow t^-_{max}$.
 
@@ -397,6 +397,11 @@ In generale, risolvere (integrare) un'equazione differenziale consiste principal
 
 \subsubsection{Grafici delle soluzioni}
 todo marco
+
+\subsubsection{Sistemi lineari omogenei (LO)}
+Per risolvere un sistema del tipo
+$$\underbar{y}'=A(t)\underbar{y}$$
+
 \subsubsection{Metodo di variazione delle costanti arbitrarie}
 Questo metodo (alternativo, e un pochino più semplice) viene utilizzato se conosciamo un sistema fondamentale di soluzioni di un (LO), e cerchiamo almeno una soluzione di un (LNO).
 Siano $\phi_1,...,\phi_n$ soluzioni di un (LO) $y'= A(t)y$, e sia $W(t)$ la corrispondente matrice wronskiana.
