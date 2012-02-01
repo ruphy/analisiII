@@ -450,7 +450,7 @@ $$\Psi^*(t)= W(t)\int_{t_0}^t V(t)\underbar{b}(s) ds$$
 Con un'equazione di forma:
 $$y'(t) = P(t)y+Q(t)$$
 Allora
-$$y(t)=e^{\ \displaystyle\int P(t)dt}\left(c_1 + \int Q(t)e^{-\displaystyle\int P(t)dt}dt\right)$$
+$$y(t)=e^{- \displaystyle\int P(t)dt}\left(c_1 + \int Q(t)e^{-\displaystyle\int P(t)dt}dt\right)$$
 \subsubsection{Equazione di Bernoulli}
 Con un'equazione di forma:
 $$y'(t) = P(t)y+Q(t)$$
@@ -597,9 +597,34 @@ $$\gamma(t) = \delta(f(t))$$
 In modo simile a quanto si farebbe in Fisica, si ottiene la lunghezza di una curva integrando il modulo della sua velocità vettoriale. Essendo $\gamma$ una curva definita su $[a, b]$:
 $$L= \int_a^b ||\gamma'(t)|| dt = \int_a^b\sqrt{\gamma'_1(t)^2+\gamma'_2(t)^2+...+\gamma'_n(t)^2}dt$$
 
-\paragraph{Superfici}
-...
+\section{Superfici in $\mathbb{R}^n$}
+ 
+\paragraph{Definizione}
 
+Una mappa $\varphi :K \subset \mathbb{R}^2 \rightarrow \mathbb{R}^3$ \'{e} una superficie regolare se K \'{e} la chiusura di un aperto connesso e limitato e:
+
+\begin{itemize}
+ \item $\varphi \in \cont (K)$
+ \item La restrizione di $\varphi$ a $K^i$ \'{e} initettiva
+ \item $\varphi$ soddisfa $\varphi_u \land \varphi_v \neq 0$ ($\varphi_u , \varphi_v $ generano un piano non degenere)
+\end{itemize}
+
+
+\paragraph{Area}
+
+Sia $\varphi :K \rightarrow \mathbb{R}^3$ si definisce area su K:
+$$A(\varphi) := \int_K \mid \varphi_u \land \varphi_v \mid dudv$$
+In coordinate cartesiane:
+$$A(\varphi) := \int_K \sqrt{1+(\partial_x f)^2+(\partial_y f)^2} dxdy$$
+In coordinate polari:
+$$A(\varphi) := \int_K \sqrt{f(z)^2(1+(f'(z))^2} dxdy$$
+
+\paragraph{Definizione}
+
+Sia $\varphi$ una superficie regolare. $f: \Omega \subset \varphi(K) \rightarrow \mathbb{R}$ continua. Definiamo:
+
+$$\int_\varphi f := \int_K f(\varphi(u,v)) \mid \varphi_u \land \varphi_v \mid dudv$$
+ 
 
 \section{1-forme differenziali}
 \subsubsection{Definizioni}
