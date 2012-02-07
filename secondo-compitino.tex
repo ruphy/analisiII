@@ -224,7 +224,7 @@ allora:
 \item Se $\alpha>1 $ allora la serie diverge.
 \end{itemize}
 \end{teo}
-\subparagraph*{Criterio della rapporto}
+\subparagraph*{Criterio del rapporto}
 \begin{teo}
 Sia  $\sum_{n=1}^{\infty}a_n$ una serie numerica definitivamente positiva. Esista $\alpha$ tale che
 $$\alpha=\lim_{n\to\infty}\frac{a_{n+1}}{a_n}$$
@@ -382,7 +382,6 @@ $$w(t):=\text{det } W(t)$$
 \subparagraph*{Osservazione} l'annullarsi del wronskiano è condizione necessaria (ma non sufficiente) per la dipendenza lineare di $\phi_1,...,\phi_n$. 
 Condizione necessaria e sufficiente affinchè $n$ soluzioni su $I$ di una medesima equazione lineare omogenea siano linearmente indipendenti è che:
 $$ w(t)\neq0 \qquad\qquad \forall t \in I$$
->>>>>>> b4a89dcc6722d483f9023c180270c67c47bc1d60
 
 
 \subsection{Principali tipi di equazioni differenziali}
@@ -443,13 +442,6 @@ $$\phi(t)=e^{(t-t_0)A}\underbar{x}_0+\Psi^*(t)$$
 ovvero si somma alla soluzione generale del sistema omogeneo associato la soluzione particolare trovata in precedenza.
 Vedi anche il metodo di variazione delle costanti arbitrarie.
 
-\subsubsection{Equazioni di ordine n a coefficienti costanti}
-Sia $\lambda \in \mathbb{C}$: la funzione $e^\lambda t$ è soluzione di (ELOCC) se e solo se $\lambda$ è uno zero del polinomio caratteristico di (ELOCC) definito da: $$ p(\lambda) := \lambda^n + a_1\lambda^{(n-1)}+ \dots +a_{n-1}\lambda+a_n$$
-\paragraph*{Osservazione}
-Se  $\lambda_1,\dots,\lambda_n$ sono complessi a due a due distinti, allora 
-$$ e^{\lambda_1 t}, \dots ,e^{\lambda_n t}$$ sono funzioni linearmente indipendenti. 
-
-
 
 \subsection{Risoluzione esercizi}
 In generale, risolvere (integrare) un'equazione differenziale consiste principalmente nel riconoscere un tipo di equazione, ed applicare procedimenti noti. Vediamone qualcuno.
@@ -474,6 +466,7 @@ Con un'equazione di forma:
 $$y'(t) = P(t)y+Q(t)$$
 Allora
 $$y(t)=e^{- \displaystyle\int P(t)dt}\left(c_1 + \int Q(t)e^{\ \displaystyle\int P(t)dt}dt\right)$$
+ove $c_1$ è una costante.
 \subsubsection{Equazione di Bernoulli}
 Con un'equazione di forma:
 $$y'(t) = P(t)y+Q(t)$$
@@ -506,7 +499,7 @@ $$\int\dfrac{dz}{f(z)-z} = \log|t| + c$$
 Risostituendo e risolvendo rispetto a $y$ si ottiene la soluzione cercata.
 
 \subsubsection{Equazioni lineari di ordine $n$}
-Sia
+Sia (ELOCC)
 $$y^{(n)} + a_1(t)y^{(n-1)} + a_2y^{(n-2)} + ... + a_n(t)y = 0$$
 ove le funzioni $a_j \in C(I)$
 Allora il sistema è equivalente al sistema:
@@ -523,6 +516,16 @@ $$A(t) =
 $$
 
 che si risolve come un (LO) qualunque.
+Un modo più semplificato per risolvere queste equazioni è quello di supporre che le soluzioni siano proporzionali a $e^{\lambda_i t}$.
+Sostituendo questa funzione nell'equazione originale si possono determinare i vari $\lambda_i$.
+In altre parole: sia $\lambda \in \mathbb{C}$: la funzione $e^{\lambda t}$ è soluzione di (ELOCC) se e solo se $\lambda$ è uno zero del polinomio caratteristico di (ELOCC) definito da: $$ p(\lambda) := \lambda^n + a_1\lambda^{(n-1)}+ \dots +a_{n-1}\lambda+a_n$$
+A questo punto la soluzione è sono del tipo:
+$$\phi(t) = \sum_{i=1}^n c_ie^{\lambda_it}$$
+con ovvie costanti $c_i$ eventualmente da determinare.
+\paragraph*{Osservazione}
+Se  $\lambda_1,\dots,\lambda_n$ sono complessi a due a due distinti, allora 
+$$ e^{\lambda_1 t}, \dots ,e^{\lambda_n t}$$ sono funzioni linearmente indipendenti. 
+
 
 \subsubsection{Oscillatori armonici}
 \paragraph{Oscillazioni libere}
